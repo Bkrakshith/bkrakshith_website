@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body { margin: 0; }
+  ::selection { background: var(--accent-soft, #EFE3DA); }
+</style>
+</helmet>
+
+<div style="{{ shell }}">
+
+  <!-- ===================== NAV ===================== -->
+  <header style="position:sticky;top:0;z-index:50;background:var(--bg, #FAF7F1);border-bottom:1px solid var(--line, #E5DFD3);">
+    <nav style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,40px);min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <a href="#top" style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-size:17px;font-weight:500;letter-spacing:-0.01em;color:var(--ink, #1C1A16);text-decoration:none;padding:14px 0;white-space:nowrap;">Rakshith Bangalore</a>
+      <div style="display:flex;align-items:center;gap:clamp(14px,2.2vw,26px);flex-wrap:wrap;padding-bottom:6px;">
+        <a href="#building" style="font-size:14px;color:var(--muted, #6B6459);text-decoration:none;" style-hover="color:var(--ink, #1C1A16)">Building</a>
+        <a href="#about" style="font-size:14px;color:var(--muted, #6B6459);text-decoration:none;" style-hover="color:var(--ink, #1C1A16)">About</a>
+        <a href="#earlier" style="font-size:14px;color:var(--muted, #6B6459);text-decoration:none;" style-hover="color:var(--ink, #1C1A16)">Earlier work</a>
+        <a href="#contact" style="font-size:14px;color:var(--muted, #6B6459);text-decoration:none;" style-hover="color:var(--ink, #1C1A16)">Get in touch</a>
+        <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="font-size:14px;color:var(--accent, #B05A38);font-weight:500;text-decoration:none;" style-hover="text-decoration:underline">Unfiltered Robotics&nbsp;↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+  <!-- ===================== 01 HERO ===================== -->
+  <section data-screen-label="Hero" style="max-width:1080px;margin:0 auto;padding:clamp(72px,11vh,148px) clamp(20px,5vw,40px) clamp(60px,9vw,112px);">
+    <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint, #A8A092);margin-bottom:30px;">Updated June 2026</div>
+    <h1 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:clamp(2.4rem,5.2vw,4.4rem);line-height:1.06;letter-spacing:-0.02em;color:var(--ink, #1C1A16);margin:0;max-width:20ch;text-wrap:balance;">Robotics is the thread. I build intelligence into humanoid robots and ship AI software into studios. From the United Kingdom and Singapore.</h1>
+    <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.62;color:var(--muted, #6B6459);margin:32px 0 0;max-width:58ch;text-wrap:pretty;">Director of Engineering at PodFirst, where I lead delivery on PodCut and GoBox. Before this, two years building intelligence into humanoid robots. The thread through both is the same: getting models to hold up in systems that have to actually work.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:38px;align-items:center;">
+      <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--ink, #1C1A16);text-decoration:none;border-bottom:1px solid var(--line, #E5DFD3);padding-bottom:2px;" style-hover="border-color:var(--ink, #1C1A16)">LinkedIn</a>
+      <a href="{{ mailtoPlain }}" style="font-size:14.5px;color:var(--ink, #1C1A16);text-decoration:none;border-bottom:1px solid var(--line, #E5DFD3);padding-bottom:2px;" style-hover="border-color:var(--ink, #1C1A16)">Email</a>
+      <a href="https://www.instagram.com/mr.rakshith/" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--ink, #1C1A16);text-decoration:none;border-bottom:1px solid var(--line, #E5DFD3);padding-bottom:2px;" style-hover="border-color:var(--ink, #1C1A16)">Instagram</a>
+      <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--accent, #B05A38);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent-soft, #EFE3DA);padding-bottom:2px;" style-hover="border-color:var(--accent, #B05A38)">Listen to Unfiltered Robotics&nbsp;↗</a>
+    </div>
+  </section>
+
+  <!-- ===================== 02 WHAT I'M BUILDING ===================== -->
+  <section id="building" data-screen-label="What I'm building" style="border-top:1px solid var(--line, #E5DFD3);">
+    <div style="max-width:1080px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,5vw,40px);">
+      <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted, #6B6459);margin-bottom:clamp(28px,4vw,44px);display:flex;align-items:center;gap:14px;">
+        <span style="color:var(--accent, #B05A38);">01</span>
+        <span>What I'm building now</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(16px,2vw,22px);">
+        <!-- PodCut -->
+        <article style="background:var(--bg, #FAF7F1);border:1px solid var(--line, #E5DFD3);border-radius:14px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;">
+          <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent, #B05A38);">AI post-production engine</div>
+          <h2 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-0.01em;color:var(--ink, #1C1A16);margin:12px 0 14px;">PodCut</h2>
+          <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16px;line-height:1.62;color:var(--muted, #6B6459);margin:0;text-wrap:pretty;">PodFirst's proprietary AI post-production engine, with a web app and a Premiere Pro integration. I run execution between the founders and the build team, and own the work of bringing several AI models into one editing pipeline. Editing that used to take a studio team hours comes down to minutes of supervised output.</p>
+        </article>
+        <!-- GoBox -->
+        <article style="background:var(--bg, #FAF7F1);border:1px solid var(--line, #E5DFD3);border-radius:14px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;">
+          <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent, #B05A38);">Portable studio, going to production</div>
+          <h2 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-0.01em;color:var(--ink, #1C1A16);margin:12px 0 14px;">GoBox</h2>
+          <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16px;line-height:1.62;color:var(--muted, #6B6459);margin:0;text-wrap:pretty;">A portable studio you can unfold in a hotel room or an empty office and record broadcast-quality audio and video. We're moving from working prototype to first production run. Mostly that's a fight with suppliers, tolerances, and unit cost.</p>
+        </article>
+      </div>
+
+      <!-- Unfiltered Robotics featured band -->
+      <div style="margin-top:clamp(16px,2vw,22px);background:var(--accent-soft, #EFE3DA);border:1px solid var(--line, #E5DFD3);border-radius:14px;padding:clamp(24px,3vw,34px);display:flex;gap:clamp(20px,3vw,32px);align-items:center;flex-wrap:wrap;">
+        <div style="width:60px;height:60px;flex:0 0 auto;border-radius:12px;background:var(--bg, #FAF7F1);border:1px solid var(--line, #E5DFD3);display:flex;align-items:center;justify-content:center;font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:15px;font-weight:500;letter-spacing:0.04em;color:var(--accent, #B05A38);">UR</div>
+        <div style="flex:1 1 280px;">
+          <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent, #B05A38);margin-bottom:8px;">My own venture</div>
+          <h2 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-0.01em;color:var(--ink, #1C1A16);margin:0 0 10px;">Unfiltered Robotics</h2>
+          <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16px;line-height:1.6;color:var(--muted, #6B6459);margin:0;max-width:56ch;text-wrap:pretty;">A podcast on legged robots, hobby builds, and the side of hardware development that doesn't make it into papers. The conversations that happen in Discord channels at midnight rather than in formal venues.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;flex:0 0 auto;">
+          <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:14px;font-weight:500;color:var(--bg, #FAF7F1);background:var(--accent, #B05A38);border:1px solid var(--accent, #B05A38);border-radius:9px;padding:11px 18px;text-decoration:none;text-align:center;white-space:nowrap;" style-hover="opacity:0.9">Listen &amp; subscribe&nbsp;↗</a>
+          <a href="#contact" style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:14px;font-weight:500;color:var(--accent, #B05A38);background:var(--bg, #FAF7F1);border:1px solid var(--accent, #B05A38);border-radius:9px;padding:11px 18px;text-decoration:none;text-align:center;white-space:nowrap;" style-hover="background:var(--accent-soft, #EFE3DA)">Come on the show&nbsp;→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 03 ABOUT ===================== -->
+  <section id="about" data-screen-label="About" style="border-top:1px solid var(--line, #E5DFD3);background:var(--bg2, #F3EEE4);">
+    <div style="max-width:1080px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,5vw,40px);">
+      <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted, #6B6459);margin-bottom:clamp(28px,4vw,44px);display:flex;align-items:center;gap:14px;">
+        <span style="color:var(--accent, #B05A38);">02</span>
+        <span>About</span>
+      </div>
+      <div style="display:flex;gap:clamp(28px,5vw,64px);align-items:stretch;flex-wrap:wrap;">
+        <div style="flex:2 1 380px;">
+          <p style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-size:clamp(1.2rem,1.8vw,1.5rem);line-height:1.5;color:var(--ink, #1C1A16);margin:0 0 22px;text-wrap:pretty;">I build intelligence into machines. For two years that meant humanoid robots: training neural policies for legged control, working out why an actuator that behaves in simulation falls apart on real hardware. Now it means software at PodFirst, where I lead delivery on PodCut and GoBox.</p>
+          <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16.5px;line-height:1.68;color:var(--muted, #6B6459);margin:0 0 18px;text-wrap:pretty;">The work looks different from the outside. From the inside it's the same problem. The model is rarely what makes or breaks a system. Everything around the model is. A controller that holds up in simulation and fails the moment it meets a real actuator is the same failure as an AI feature that demos well and falls over on the fifth client job of the day.</p>
+          <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16.5px;line-height:1.68;color:var(--muted, #6B6459);margin:0;text-wrap:pretty;">Most production AI I see fails the way humanoid robots fail in simulation. The discipline that fixes it isn't a better model. It's the habit hardware engineers have of identifying the system before they trust it. That's the thread I work on, in robotics and in software, at the same time.</p>
+        </div>
+        <div style="flex:1 1 320px;display:flex;align-items:flex-end;justify-content:center;align-self:stretch;min-height:480px;">
+          <img src="assets/rakshith-cutout.png" alt="Rakshith Bangalore at the podcast mic" style="display:block;width:auto;max-width:100%;height:100%;min-height:480px;object-fit:contain;object-position:bottom center;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 04 EARLIER WORK ===================== -->
+  <section id="earlier" data-screen-label="Earlier work" style="border-top:1px solid var(--line, #E5DFD3);">
+    <div style="max-width:1080px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,5vw,40px);">
+      <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted, #6B6459);margin-bottom:20px;display:flex;align-items:center;gap:14px;">
+        <span style="color:var(--accent, #B05A38);">03</span>
+        <span>Earlier work</span>
+      </div>
+      <p style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-size:clamp(1.15rem,1.7vw,1.4rem);line-height:1.5;color:var(--ink, #1C1A16);margin:0 0 clamp(28px,4vw,44px);max-width:60ch;">Before PodFirst, a few years in robotics R&amp;D and manufacturing automation.</p>
+
+      <div style="display:flex;flex-direction:column;">
+        <div style="display:flex;gap:clamp(16px,4vw,48px);flex-wrap:wrap;align-items:flex-start;padding:clamp(22px,2.5vw,30px) 0;border-top:1px solid var(--line, #E5DFD3);">
+          <div style="flex:1 1 240px;">
+            <h3 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:1.25rem;color:var(--ink, #1C1A16);margin:0;">Industry 4.0 mobile manipulator</h3>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+              <span style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent, #B05A38);border:1px solid var(--line, #E5DFD3);border-radius:5px;padding:3px 7px;">Walkers</span>
+              <span style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--faint, #A8A092);border:1px solid var(--line, #E5DFD3);border-radius:5px;padding:3px 7px;">MEng capstone</span>
+            </div>
+          </div>
+          <div style="flex:2 1 360px;">
+            <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16px;line-height:1.62;color:var(--muted, #6B6459);margin:0;text-wrap:pretty;">Designed in Fusion 360 and physically integrated: a Universal Robots UR-10 collaborative arm on an Omron LD250 autonomous mobile base, inside a custom frame that enclosed the power systems and the robot controller, with a SmartShift tool changer for swapping end effectors.</p>
+            <ul style="list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;">
+              <li style="display:flex;gap:11px;font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:15px;line-height:1.55;color:var(--muted, #6B6459);"><span style="flex:0 0 auto;width:6px;height:6px;margin-top:8px;background:var(--accent, #B05A38);border-radius:1px;"></span><span>Scoped with a senior automation director in packaging at Walkers, around the real workflow of their Leicester crisp factory.</span></li>
+              <li style="display:flex;gap:11px;font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:15px;line-height:1.55;color:var(--muted, #6B6459);"><span style="flex:0 0 auto;width:6px;height:6px;margin-top:8px;background:var(--accent, #B05A38);border-radius:1px;"></span><span>Swapped end effectors across very different jobs: reloading seasoning onto the flavouring line, palletising packed cases, and running a leak-detection effector over the oil fryers.</span></li>
+              <li style="display:flex;gap:11px;font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:15px;line-height:1.55;color:var(--muted, #6B6459);"><span style="flex:0 0 auto;width:6px;height:6px;margin-top:8px;background:var(--accent, #B05A38);border-radius:1px;"></span><span>Novel and low-TRL, so not cleared for a live line. I validated the pick-and-place on a conveyor rig instead.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(16px,4vw,48px);flex-wrap:wrap;align-items:flex-start;padding:clamp(22px,2.5vw,30px) 0;border-top:1px solid var(--line, #E5DFD3);">
+          <div style="flex:1 1 240px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;">
+            <h3 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:1.25rem;color:var(--ink, #1C1A16);margin:0;">Humanoid robotics</h3>
+            <span style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent, #B05A38);border:1px solid var(--line, #E5DFD3);border-radius:5px;padding:3px 7px;">PepsiCo</span>
+          </div>
+          <p style="flex:2 1 360px;font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16px;line-height:1.62;color:var(--muted, #6B6459);margin:0;text-wrap:pretty;">Took the same use cases onto humanoid platforms, the Unitree H1-2 and G1: training neural policies for legged control and working the sim-to-real gap on real hardware, where a controller that behaves in simulation comes apart against a real actuator.</p>
+        </div>
+        <div style="display:flex;gap:clamp(16px,4vw,48px);flex-wrap:wrap;align-items:flex-start;padding:clamp(22px,2.5vw,30px) 0;border-top:1px solid var(--line, #E5DFD3);border-bottom:1px solid var(--line, #E5DFD3);">
+          <div style="flex:1 1 240px;">
+            <h3 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:1.25rem;color:var(--ink, #1C1A16);margin:0;">Laparoscopic surgery trainer</h3>
+          </div>
+          <p style="flex:2 1 360px;font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:16px;line-height:1.62;color:var(--muted, #6B6459);margin:0;text-wrap:pretty;">Project manager on an eight-month build of a next-generation trainer, a compliant robotic mechanism that gives force feedback for training surgeons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 05 CALL TO ACTION ===================== -->
+  <section id="contact" data-screen-label="Get in touch" style="border-top:1px solid var(--line, #E5DFD3);background:var(--bg2, #F3EEE4);">
+    <div style="max-width:1080px;margin:0 auto;padding:clamp(60px,8vw,104px) clamp(20px,5vw,40px);">
+      <div style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted, #6B6459);margin-bottom:clamp(24px,4vw,36px);display:flex;align-items:center;gap:14px;">
+        <span style="color:var(--accent, #B05A38);">04</span>
+        <span>Get in touch</span>
+      </div>
+      <h2 style="font-family:var(--serif, 'Newsreader', Georgia, serif);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.12;letter-spacing:-0.015em;color:var(--ink, #1C1A16);margin:0;max-width:20ch;text-wrap:balance;">Want to come on Unfiltered Robotics?</h2>
+      <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:clamp(1.02rem,1.4vw,1.18rem);line-height:1.6;color:var(--muted, #6B6459);margin:22px 0 30px;max-width:54ch;text-wrap:pretty;">Working roboticists, hobbyists deep in a build, founders in legged or applied robotics. If that's you and you want to record, get in touch.</p>
+      <a href="{{ mailtoGuest }}" style="display:inline-block;font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:15px;font-weight:500;color:var(--bg, #FAF7F1);background:var(--ink, #1C1A16);border:1px solid var(--ink, #1C1A16);border-radius:10px;padding:13px 22px;text-decoration:none;white-space:nowrap;" style-hover="background:var(--accent, #B05A38);border-color:var(--accent, #B05A38)">Pitch yourself as a guest&nbsp;→</a>
+      <p style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:15.5px;line-height:1.6;color:var(--muted, #6B6459);margin:clamp(34px,5vw,52px) 0 0;max-width:52ch;">Building in hardware, putting AI into production, or up for a collaboration? Same inbox. <a href="{{ mailtoPlain }}" style="color:var(--ink, #1C1A16);text-decoration:none;border-bottom:1px solid var(--line, #E5DFD3);" style-hover="border-color:var(--ink, #1C1A16)">{{ email }}</a></p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===================== 06 FOOTER ===================== -->
+  <footer style="border-top:1px solid var(--line, #E5DFD3);">
+    <div style="max-width:1080px;margin:0 auto;padding:clamp(32px,4vw,48px) clamp(20px,5vw,40px);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;">
+      <div style="font-family:var(--sans, 'Hanken Grotesk', sans-serif);font-size:14px;color:var(--muted, #6B6459);">Rakshith Bangalore <span style="color:var(--faint, #A8A092);">· © 2026</span></div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener" style="font-size:14px;color:var(--muted, #6B6459);text-decoration:none;" style-hover="color:var(--ink, #1C1A16)">LinkedIn</a>
+        <a href="{{ mailtoPlain }}" style="font-size:14px;color:var(--muted, #6B6459);text-decoration:none;" style-hover="color:var(--ink, #1C1A16)">Email</a>
+        <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="font-size:14px;color:var(--accent, #B05A38);text-decoration:none;" style-hover="text-decoration:underline">Unfiltered Robotics&nbsp;↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== THEME SWITCHER (preview control) ===================== -->
+  <div style="position:fixed;bottom:20px;right:20px;z-index:100;display:flex;align-items:center;gap:12px;background:var(--bg, #FAF7F1);border:1px solid var(--line, #E5DFD3);border-radius:12px;padding:9px 13px;box-shadow:0 6px 24px rgba(0,0,0,0.10);">
+    <span style="font-family:var(--mono, 'Spline Sans Mono', monospace);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint, #A8A092);">Theme</span>
+    <div style="display:flex;gap:7px;">
+      <button onClick="{{ pickPaper }}" title="Paper" aria-label="Paper theme" style="{{ swPaper }}"></button>
+      <button onClick="{{ pickInk }}" title="Ink" aria-label="Ink theme" style="{{ swInk }}"></button>
+      <button onClick="{{ pickSage }}" title="Sage" aria-label="Sage theme" style="{{ swSage }}"></button>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'paper' };
+
+
+
+  themes() {
+    return {
+      paper: {
+        '--bg': '#FAF7F1', '--bg2': '#F3EEE4', '--ink': '#1C1A16',
+        '--muted': '#6B6459', '--faint': '#A8A092', '--line': '#E5DFD3',
+        '--accent': '#B05A38', '--accent-soft': '#EFE3DA',
+        '--serif': '"Newsreader", Georgia, serif',
+        '--sans': '"Hanken Grotesk", system-ui, sans-serif',
+        '--mono': '"Spline Sans Mono", ui-monospace, monospace'
+      },
+      ink: {
+        '--bg': '#FBFAF7', '--bg2': '#F1F0EA', '--ink': '#15140F',
+        '--muted': '#5E5C55', '--faint': '#9C998F', '--line': '#E6E3DB',
+        '--accent': '#335489', '--accent-soft': '#E3E8F1',
+        '--serif': '"Spectral", Georgia, serif',
+        '--sans': '"IBM Plex Sans", system-ui, sans-serif',
+        '--mono': '"Spline Sans Mono", ui-monospace, monospace'
+      },
+      sage: {
+        '--bg': '#F7F6EF', '--bg2': '#EDEDE1', '--ink': '#1A1B14',
+        '--muted': '#63655A', '--faint': '#9EA08F', '--line': '#E1E1D4',
+        '--accent': '#55683E', '--accent-soft': '#E6E9DA',
+        '--serif': '"Source Serif 4", Georgia, serif',
+        '--sans': '"Hanken Grotesk", system-ui, sans-serif',
+        '--mono': '"Spline Sans Mono", ui-monospace, monospace'
+      }
+    };
+  }
+
+  renderVals() {
+    const vars = this.themes()[this.state.theme];
+    const shell = Object.assign({}, vars, {
+      minHeight: '100vh',
+      background: 'var(--bg)',
+      color: 'var(--ink)',
+      fontFamily: 'var(--sans)'
+    });
+    const swatchBg = {
+      paper: 'linear-gradient(135deg,#FAF7F1 0 54%,#B05A38 54% 100%)',
+      ink: 'linear-gradient(135deg,#FBFAF7 0 54%,#335489 54% 100%)',
+      sage: 'linear-gradient(135deg,#F7F6EF 0 54%,#55683E 54% 100%)'
+    };
+    const sw = (name) => ({
+      width: '24px', height: '24px', borderRadius: '7px', border: 'none',
+      cursor: 'pointer', padding: 0, background: swatchBg[name],
+      boxShadow: this.state.theme === name ? '0 0 0 2px var(--ink)' : '0 0 0 1px var(--line)'
+    });
+    const pick = (name) => () => this.setState({ theme: name });
+    const email = 'rakshith' + '@' + 'bkrakshith' + '.com';
+    return {
+      shell,
+      email,
+      mailtoPlain: 'mailto:' + email,
+      mailtoGuest: 'mailto:' + email + '?subject=Unfiltered%20Robotics%20guest',
+      pickPaper: pick('paper'),
+      pickInk: pick('ink'),
+      pickSage: pick('sage'),
+      swPaper: sw('paper'),
+      swInk: sw('ink'),
+      swSage: sw('sage')
+    };
+  }
+}
+</script>
+</body>
+</html>
