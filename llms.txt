@@ -1,0 +1,26 @@
+# Rakshith Bangalore
+
+> Robotics engineer and entrepreneur working between the United Kingdom and Singapore. Builds intelligence into machines: humanoid robots (Unitree H1-2 and G1 on a PepsiCo programme), Industry 4.0 mobile manipulation, medical robotics, and AI products — with software project management (JIRA, Confluence, Miro) and hardware product management (BOM, DFM, US market entry). Hosts Unfiltered Robotics, a podcast on legged robots and hardware development.
+
+Facts:
+- Professional humanoid R&D: neural policies for legged control, sim-to-real transfer and actuator identification on Unitree H1-2 and G1.
+- Industry 4.0 mobile manipulator (award-winning MEng capstone): UR-10 arm on an Omron LD250 base with SmartShift tool changing, scoped with Walkers around a live factory workflow.
+- Laparoscopic surgery trainer: compliant force-feedback mechanism, eight-month build with an NHS Trust.
+- Aircraft cabin lab: a decommissioned Embraer ERJ 145 turned into a flight-comfort research platform (EU Clean Sky 2, Comfdemo).
+- Product work: PodCut, an AI post-production SaaS (pilot post-production down from 4 days to 4 hours), and GoBox, a portable studio moving to its first production run.
+- Education: MEng, Nottingham Trent University.
+
+## Pages
+- [Home](https://bkrakshith.com/): who he is and what he builds
+- [Featured projects](https://bkrakshith.com/projects.dc.html): humanoid robotics, mobile manipulator, surgical trainer
+- [Humanoid robotics](https://bkrakshith.com/project-humanoid.dc.html): Unitree H1-2 & G1 for PepsiCo
+- [Mobile manipulator](https://bkrakshith.com/project-manipulator.dc.html): UR-10 + Omron LD250, tool-changing
+- [Surgical trainer](https://bkrakshith.com/project-laparoscopic.dc.html): force-feedback medical robotics
+- [Aircraft cabin lab](https://bkrakshith.com/project-cabin-lab.dc.html): ERJ 145 research platform
+- [PodCut](https://bkrakshith.com/project-podcut.dc.html): SaaS project management
+- [GoBox](https://bkrakshith.com/project-gobox.dc.html): hardware product management
+- [Full index](https://bkrakshith.com/projects-archive.dc.html): all sixteen projects
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/rakshithbangalore
+- Podcast: https://unfilteredrobotics.com

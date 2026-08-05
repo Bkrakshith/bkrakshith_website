@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/styles.css">
+<script src="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/_ds_bundle.js"></script>
+<title>Humanoid Robotics for PepsiCo — Unitree H1-2 & G1 | Rakshith Bangalore</title>
+<meta name="description" content="Use-case programming on Unitree H1-2 and G1 humanoids: neural policies for legged control, sim-to-real transfer and actuator identification on real hardware.">
+<link rel="canonical" href="https://bkrakshith.com/project-humanoid.dc.html">
+<meta property="og:site_name" content="Rakshith Bangalore">
+<meta property="og:title" content="Humanoid Robotics for PepsiCo — Unitree H1-2 & G1 | Rakshith Bangalore">
+<meta property="og:description" content="Use-case programming on Unitree H1-2 and G1 humanoids: neural policies for legged control, sim-to-real transfer and actuator identification on real hardware.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bkrakshith.com/project-humanoid.dc.html">
+<meta property="og:image" content="https://bkrakshith.com/assets/raks-profile.png">
+<meta name="twitter:card" content="summary_large_image">
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;">
+
+  <header style="position:sticky;top:0;z-index:50;background:var(--color-bg);border-bottom:1px solid var(--color-divider);">
+    <div style="max-width:1140px;margin:0 auto;">
+      <nav class="nav" style="padding-inline:var(--space-6);flex-wrap:wrap;">
+        <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;letter-spacing:0.02em;">RAKSHITH BANGALORE</a>
+        <a href="index.html">Home</a>
+        <a href="projects.dc.html" aria-current="page">Featured projects</a>
+        <a href="projects-archive.dc.html">Full index</a>
+        <a href="index.html#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1;">
+
+  <section data-screen-label="Humanoid project" style="max-width:1140px;margin:0 auto;padding:calc(var(--space-8) * 1.6) var(--space-6) calc(var(--space-8) * 2.4);width:100%;box-sizing:border-box;">
+    <a href="projects.dc.html" class="btn btn-ghost" style="margin-bottom:calc(var(--space-8) * 1);margin-left:calc(var(--space-1) * -1);">← Featured projects</a>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);margin:var(--space-6) 0 var(--space-4);">
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:30px;color:var(--color-accent-700);border:1px solid var(--color-divider);width:54px;height:54px;display:grid;place-items:center;flex:none;">01</div>
+      <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">Professional R&amp;D · PepsiCo</h6>
+    </div>
+    <h1 style="font-size:clamp(40px, 5.5vw, 66px);max-width:16ch;margin-bottom:var(--space-4);text-wrap:balance;">Humanoid robotics.</h1>
+    <p style="font-size:16px;max-width:62ch;color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty;margin-bottom:var(--space-4);">The professional headline. Two years building intelligence into humanoid robots: use-case programming on Unitree H1-2 and G1 platforms for PepsiCo, taking real industrial tasks onto legged hardware.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:calc(var(--space-8) * 1.4);">
+      <span class="tag tag-accent">Legged control</span>
+      <span class="tag tag-neutral">Neural policies</span>
+      <span class="tag tag-neutral">Sim-to-real</span>
+      <span class="tag tag-neutral">Actuator identification</span>
+    </div>
+
+    <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+      <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Film</h6>
+      <div class="blueprint" style="position:relative;aspect-ratio:16/9;margin-bottom:calc(var(--space-8) * 1.4);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <iframe src="{{ videoSrc }}" title="Humanoid robotics project video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+      </div>
+    </sc-if>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">What</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">Use-case programming on Unitree H1-2 and G1 humanoid platforms for PepsiCo: defined industrial tasks deployed onto legged hardware, with locomotion governed by learned neural policies rather than scripted gait.</p>
+        <h6 style="color:var(--color-accent-700);margin:var(--space-6) 0 var(--space-3);">How</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">Policies were trained for legged control in simulation, then carried across the sim-to-real gap: system identification on the actuators, characterising where physical torque response and compliance diverge from the simulated model, and instrumenting the failure modes that only present on hardware. A controller that behaves in simulation comes apart against a real actuator, so the actuator is identified before the controller is trusted.</p>
+        <h6 style="color:var(--color-accent-700);margin:var(--space-6) 0 var(--space-3);">Results</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">Use cases delivered on both platforms, and a transfer methodology, identify the system before trusting it, that has carried into every system built since.</p>
+      </div>
+      <div class="blueprint" style="padding:var(--space-4) var(--space-6);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Programme</div>
+          <div style="font-size:13.5px;">PepsiCo · use-case programming</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Platforms</div>
+          <div style="font-size:13.5px;">Unitree H1-2 · Unitree G1</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Stack</div>
+          <div style="font-size:13.5px;">Neural policies for legged control</div>
+        </div>
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Focus</div>
+          <div style="font-size:13.5px;">Sim-to-real gap · actuator identification · real-hardware failure modes</div>
+        </div>
+      </div>
+    </div>
+
+    <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Stills</h6>
+    <div class="blueprint" role="group" aria-label="Project photographs" style="padding:var(--space-4);margin-bottom:calc(var(--space-8) * 1.6);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="position:relative;aspect-ratio:3/2;overflow:hidden;border:1px solid var(--color-divider);background:var(--color-surface);">
+        <div onClick="{{ openGallery }}" role="img" aria-label="{{ galleryCap }}" title="Click to enlarge" style="{{ galleryBg }}"></div>
+        <button onClick="{{ prevPhoto }}" aria-label="Previous photo" class="btn btn-secondary" style="position:absolute;left:var(--space-3);top:50%;transform:translateY(-50%);width:44px;height:44px;padding:0;font-size:19px;line-height:1;background:var(--color-bg);">←</button>
+        <button onClick="{{ nextPhoto }}" aria-label="Next photo" class="btn btn-secondary" style="position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%);width:44px;height:44px;padding:0;font-size:19px;line-height:1;background:var(--color-bg);">→</button>
+        <div style="position:absolute;right:var(--space-3);bottom:var(--space-3);background:var(--color-bg);border:1px solid var(--color-divider);font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:0.08em;padding:4px 10px;">{{ galleryCount }}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap;padding-top:var(--space-3);">
+        <div style="font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent);">{{ galleryCap }}</div>
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);">Click the photo to enlarge · arrow keys work too</div>
+      </div>
+    </div>
+
+    <p style="font-size:12px;letter-spacing:0.02em;color:color-mix(in srgb, var(--color-text) 52%, transparent);margin:0 0 var(--space-4);">Website under construction — it will be updated with images and videos of my projects by the end of August 2026.</p>
+    <div class="blueprint" style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding:var(--space-6);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div>
+        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:2px;">Next project</div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:20px;">02 · Industry 4.0 mobile manipulator</div>
+      </div>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+        <a href="project-manipulator.dc.html" class="btn btn-primary blueprint" style="padding:var(--space-3) calc(var(--space-6) * 1.1);font-size:15px;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Next&nbsp;→</a>
+        <a href="projects-archive.dc.html" class="btn btn-secondary" style="padding:var(--space-3) calc(var(--space-6) * 1.1);font-size:15px;">Full index</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer style="border-top:1px solid var(--color-divider);">
+    <div style="max-width:1140px;margin:0 auto;padding:var(--space-6);display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);flex-wrap:wrap;">
+      <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 55%, transparent);">© 2026 Rakshith Bangalore · RB-PRJ-001 · Project 01</div>
+      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;font-size:13px;">
+        <a href="index.html" style="text-decoration:none;">Home</a>
+        <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener" style="text-decoration:none;">LinkedIn</a>
+        <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="text-decoration:none;">Unfiltered Robotics&nbsp;↗</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:200;background:color-mix(in srgb, var(--color-text) 62%, transparent);display:flex;align-items:center;justify-content:center;padding:var(--space-8);cursor:zoom-out;">
+    <div onClick="{{ stopClick }}" class="blueprint" style="position:relative;background:var(--color-bg);padding:var(--space-4);max-width:min(1100px, 92vw);max-height:88vh;box-shadow:var(--shadow-lg);cursor:default;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div role="img" aria-label="Project image, enlarged" style="{{ lightboxBg }}"></div>
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:var(--space-2);text-align:center;">Click outside to close</div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Media&quot;}}">
+class Component extends DCLogic {
+  state = { idx: 0, lightbox: null };
+
+  photos() {
+    return [
+      { src: 'assets/humanoid-01-gantry.png', fit: 'cover', pos: 'center 30%', cap: 'Hands on with the humanoid, on its gantry' },
+      { src: 'assets/humanoid-02-render.png', fit: 'contain', bg: '#ffffff', cap: 'H1-2 in programme livery · PepsiCo × RISE Laboratory, NTU' },
+      { src: 'assets/humanoid-03-case-grip.jpg', fit: 'cover', pos: 'center', cap: 'End effector taking a packed case' },
+      { src: 'assets/humanoid-04-palletising.jpg', fit: 'cover', pos: 'center', cap: 'Palletising trials on the lab floor' },
+      { src: 'assets/humanoid-05-lab.jpg', fit: 'cover', pos: 'center', cap: 'The robotics lab after hours' }
+    ];
+  }
+
+  componentDidMount() {
+    this._key = (e) => {
+      const t = e.target && e.target.tagName;
+      if (t === 'INPUT' || t === 'TEXTAREA') return;
+      const n = this.photos().length;
+      if (e.key === 'ArrowRight') this.setState((s) => ({ idx: (s.idx + 1) % n }));
+      else if (e.key === 'ArrowLeft') this.setState((s) => ({ idx: (s.idx + n - 1) % n }));
+      else if (e.key === 'Escape') this.setState({ lightbox: null });
+    };
+    window.addEventListener('keydown', this._key);
+  }
+
+  componentWillUnmount() {
+    if (this._key) window.removeEventListener('keydown', this._key);
+  }
+
+  renderVals() {
+    const raw = (this.props.videoUrl || '').trim();
+    let src = '';
+    if (raw) {
+      let m = raw.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
+      if (m) src = 'https://www.youtube.com/embed/' + m[1];
+      else if (raw.indexOf('wistia') !== -1) {
+        m = raw.match(/(?:iframe\/|medias\/)(\w+)/);
+        src = m ? 'https://fast.wistia.net/embed/iframe/' + m[1] : raw;
+      } else src = raw;
+    }
+    const list = this.photos();
+    const n = list.length;
+    const i = ((this.state.idx % n) + n) % n;
+    const p = list[i];
+    const pad = (v) => (v < 10 ? '0' + v : '' + v);
+    return {
+      videoSrc: src, hasVideo: !!src, noVideo: !src,
+      galleryBg: {
+        position: 'absolute', inset: 0, cursor: 'zoom-in',
+        backgroundImage: 'url("' + p.src + '")',
+        backgroundSize: p.fit, backgroundPosition: p.pos || 'center',
+        backgroundRepeat: 'no-repeat', backgroundColor: p.bg || 'var(--color-surface)'
+      },
+      galleryCap: p.cap,
+      galleryCount: pad(i + 1) + ' / ' + pad(n),
+      prevPhoto: () => this.setState((s) => ({ idx: (s.idx + n - 1) % n })),
+      nextPhoto: () => this.setState((s) => ({ idx: (s.idx + 1) % n })),
+      openGallery: () => this.setState({ lightbox: p.src }),
+      lightboxBg: { width: 'min(1050px, 82vw)', height: 'min(700px, 74vh)', backgroundImage: this.state.lightbox ? 'url("' + this.state.lightbox + '")' : 'none', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' },
+      lightboxOpen: !!this.state.lightbox,
+      closeLightbox: () => this.setState({ lightbox: null }),
+      stopClick: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>
