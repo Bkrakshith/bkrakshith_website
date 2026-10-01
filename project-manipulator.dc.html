@@ -148,6 +148,7 @@
 </sc-if></x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Media&quot;}}">
 class Component extends DCLogic {
+  state = { lightbox: null };
   renderVals() {
     const raw = (this.props.videoUrl || '').trim();
     let src = '';
@@ -159,13 +160,8 @@ class Component extends DCLogic {
         src = m ? 'https://fast.wistia.net/embed/iframe/' + m[1] : raw;
       } else src = raw;
     }
-    return { videoSrc: src, hasVideo: !!src, noVideo: !src };
-  }
-}
-class Component extends DCLogic {
-  state = { lightbox: null };
-  renderVals() {
     return {
+      videoSrc: src, hasVideo: !!src, noVideo: !src,
       lightboxBg: { width: 'min(1050px, 82vw)', height: 'min(700px, 74vh)', backgroundImage: this.state.lightbox ? 'url(' + this.state.lightbox + ')' : 'none', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' },
       lightboxOpen: !!this.state.lightbox,
       openLightbox: (e) => {

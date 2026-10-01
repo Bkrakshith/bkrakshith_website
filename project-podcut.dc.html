@@ -10,6 +10,16 @@
 <helmet>
 <link rel="stylesheet" href="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/styles.css">
 <script src="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/_ds_bundle.js"></script>
+<title>PodCut — AI Post-Production SaaS, Project Management | Rakshith Bangalore</title>
+<meta name="description" content="Project management of PodCut, an AI post-production SaaS in live pilot: delivery between engineering and senior management, studio onboarding, and the timeline in JIRA.">
+<link rel="canonical" href="https://bkrakshith.com/project-podcut.dc.html">
+<meta property="og:site_name" content="Rakshith Bangalore">
+<meta property="og:title" content="PodCut — AI Post-Production SaaS, Project Management | Rakshith Bangalore">
+<meta property="og:description" content="Project management of PodCut, an AI post-production SaaS in live pilot: delivery between engineering and senior management, studio onboarding, and the timeline in JIRA.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bkrakshith.com/project-podcut.dc.html">
+<meta property="og:image" content="https://bkrakshith.com/podcut.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   image-slot { display: block; width: 100%; height: 100%; }
 </style>
@@ -103,7 +113,7 @@
           </div>
         </div>
         <div onClick="{{ openLightbox }}" title="Click to enlarge" style="position:relative;aspect-ratio:480/301;border:1px solid var(--color-divider);width:50%;cursor:zoom-in;">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="prj-podcut" shape="rect" placeholder="Drop a PodCut interface screenshot" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;display:block;"></x-import>
+          <img src="podcut.png" alt="PodCut workspace: video preview, waveform and generated clips" style="position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:left top;" />
         </div>
       </div>
     </div>
@@ -157,8 +167,7 @@ class Component extends DCLogic {
         const path = e.nativeEvent && e.nativeEvent.composedPath ? e.nativeEvent.composedPath() : [];
         // ignore clicks on the slot's own controls (replace/clear/browse)
         if (path.some((n) => n && n.getAttribute && (n.getAttribute('data-act') || n.tagName === 'BUTTON' || n.tagName === 'INPUT'))) return;
-        const slot = document.querySelector('#prj-podcut');
-        const img = slot && slot.shadowRoot && slot.shadowRoot.querySelector('img');
+        const img = e.currentTarget.querySelector('img');
         if (img && img.src && getComputedStyle(img).display !== 'none') this.setState({ lightbox: img.src });
       },
       closeLightbox: () => this.setState({ lightbox: null }),

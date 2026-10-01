@@ -22,7 +22,8 @@ then point your domain's DNS at GitHub Pages per GitHub's "Managing a custom dom
 - `_ds/` — design-system stylesheet + component bundle, required by every page
 - `assets/` — photos currently in use
 - `support.js`, `image-slot.js`, `tweaks-panel.jsx`, `animations-v2.jsx`, `university-life-video.jsx` — runtime the pages load
-- `.image-slots.state.json` — the PodCut/GoBox photos already dropped in (keep this file — deleting it clears those images for visitors)
+- `GoBox.png`, `podcut.png` — the PodCut/GoBox photos, referenced directly from their project pages
+- `.nojekyll` — required. Without it GitHub Pages runs Jekyll, which silently drops the `_ds/` folder (anything starting with `_`) and every page loses its stylesheet. Dot-files are easy to miss when drag-and-drop uploading, so check it made it into the repo.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO/GEO files, already pointed at bkrakshith.com
 
 ## After you add more photos or videos
