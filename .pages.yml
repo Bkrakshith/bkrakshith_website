@@ -1,0 +1,48 @@
+# Pages CMS (app.pagescms.org) — defines the Articles editor.
+
+media:
+  input: assets/articles
+  output: /assets/articles
+
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Summary
+        description: One or two sentences. Shown on the Articles page, in Google results and in LinkedIn link previews.
+        type: text
+        required: true
+      - name: date
+        label: Publish date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: image
+        label: Cover image
+        description: Optional. Also used as the LinkedIn preview image. Landscape works best (about 1200×630).
+        type: image
+      - name: published
+        label: Published
+        description: Off = draft (saved, but not on the website). Turn on to make it live.
+        type: boolean
+        default: false
+      - name: body
+        label: Article
+        type: rich-text
+        options:
+          format: markdown

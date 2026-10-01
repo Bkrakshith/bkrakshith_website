@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.title and page.layout == "article" -%}
+  {%- assign meta_title = page.title | append: " | " | append: site.title -%}
+{%- else -%}
+  {%- assign meta_title = page.title | default: site.title -%}
+{%- endif -%}
+{%- assign meta_desc = page.description | default: site.description | strip_html | strip_newlines | truncate: 200 -%}
+{%- assign meta_image = page.image | default: site.default_image | absolute_url -%}
+<title>{{ meta_title | escape }}</title>
+<meta name="description" content="{{ meta_desc | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ meta_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ meta_image }}">
+{%- if page.layout == "article" %}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:author" content="{{ site.author }}">
+{%- else %}
+<meta property="og:type" content="website">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Articles" href="{{ '/articles/feed.xml' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/articles.css' | relative_url }}">
+{%- if page.layout == "article" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ meta_desc | jsonify }},"image":{{ meta_image | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"author":{"@id":"https://bkrakshith.com/#person","@type":"Person","name":"Rakshith Bangalore","url":"https://bkrakshith.com/"}}</script>
+{%- endif %}
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="{{ '/' | relative_url }}" class="brand" aria-label="Home">R<span>B</span><span>.</span></a>
+    <div class="nav-links">
+      <a href="{{ '/projects.dc.html' | relative_url }}">Projects</a>
+      <a href="{{ '/articles/' | relative_url }}"{% if page.url contains '/articles/' %} aria-current="page"{% endif %}>Articles</a>
+      <a href="{{ '/#about' | relative_url }}" class="hide-narrow">About</a>
+      <a href="{{ '/#contact' | relative_url }}" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Rakshith Bangalore<span>.</span></div>
+      <p>Robotics engineer building intelligence into machines.</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/articles/feed.xml' | relative_url }}">RSS feed</a>
+      <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics&nbsp;↗</a>
+    </div>
+  </div>
+  <div class="footer-base">© {{ site.time | date: "%Y" }} Rakshith Bangalore</div>
+</footer>
+
+</body>
+</html>

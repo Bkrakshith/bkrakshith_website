@@ -1,0 +1,54 @@
+# Opens a GitHub issue (which emails you) every time anything on the
+# website changes, listing who changed what. Close the issue once you've
+# checked it. If you ever see one you didn't make, revert that commit and
+# change your GitHub password.
+name: Change alert
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  issues: write
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const p = context.payload;
+            const owner = context.repo.owner;
+            const commits = p.commits || [];
+            const files = new Set();
+            for (const c of commits) {
+              for (const f of [...(c.added || []), ...(c.modified || []), ...(c.removed || [])]) files.add(f);
+            }
+            const articles = [...files].filter((f) => f.startsWith('_posts/'));
+            const what = articles.length
+              ? `${articles.length} article file${articles.length > 1 ? 's' : ''}`
+              : `${files.size} file${files.size === 1 ? '' : 's'}`;
+            const lines = commits.map((c) =>
+              `- [\`${c.id.slice(0, 7)}\`](${c.url}) ${c.message.split('\n')[0]} — **${c.author.name}**${c.author.username ? ` (@${c.author.username})` : ''}`
+            );
+            const body = [
+              `@${owner} the website was changed by **${p.pusher.name}**.`,
+              '',
+              '**Commits**',
+              ...lines,
+              '',
+              '**Files**',
+              ...[...files].slice(0, 50).map((f) => `- \`${f}\``),
+              files.size > 50 ? `- …and ${files.size - 50} more` : '',
+              '',
+              `[See the full diff](${p.compare})`,
+              '',
+              'If this was you, close this issue. If it wasn\'t, revert the commit and change your GitHub password straight away.',
+            ].join('\n');
+            await github.rest.issues.create({
+              owner,
+              repo: context.repo.repo,
+              title: `Site changed: ${what} by ${p.pusher.name}`,
+              body,
+            });

@@ -23,8 +23,19 @@ then point your domain's DNS at GitHub Pages per GitHub's "Managing a custom dom
 - `assets/` — photos currently in use
 - `support.js`, `image-slot.js`, `tweaks-panel.jsx`, `animations-v2.jsx`, `university-life-video.jsx` — runtime the pages load
 - `GoBox.png`, `podcut.png` — the PodCut/GoBox photos, referenced directly from their project pages
-- `.nojekyll` — required. Without it GitHub Pages runs Jekyll, which silently drops the `_ds/` folder (anything starting with `_`) and every page loses its stylesheet. Dot-files are easy to miss when drag-and-drop uploading, so check it made it into the repo.
-- `robots.txt`, `sitemap.xml`, `llms.txt` — SEO/GEO files, already pointed at bkrakshith.com
+- `_config.yml` — GitHub Pages (Jekyll) settings. Its `include: [_ds]` line is required: without it Jekyll silently drops the `_ds/` folder and every project page loses its stylesheet.
+- `robots.txt`, `sitemap.xml`, `llms.txt` — SEO/GEO files. `sitemap.xml` adds published articles automatically.
+
+## Articles
+Written and managed in Pages CMS at https://app.pagescms.org (log in with GitHub).
+- `_posts/` — one Markdown file per article. `published: false` = draft, not on the site.
+- `_layouts/site.html`, `_layouts/article.html`, `articles/index.html`, `assets/articles.css` — the Articles templates and styling.
+- `assets/articles/` — images uploaded from the CMS.
+- `.pages.yml` — defines the CMS editor fields.
+- `/articles/feed.xml` — RSS feed, generated automatically.
+- `.github/workflows/change-alert.yml` — opens a GitHub issue (and emails you) whenever anything on the site changes.
+
+When re-exporting from the design tool, don't delete the files above. Add the "Articles" nav link to the pages in the design tool too, or the next export will drop it.
 
 ## After you add more photos or videos
 Come back to the design tool and re-export, rather than hand-editing here, so the "under construction" notes clear correctly as each project fills in.

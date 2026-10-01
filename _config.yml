@@ -1,0 +1,44 @@
+# Jekyll config — GitHub Pages builds the Articles section from this.
+# The rest of the site (index.html, *.dc.html, support.js …) has no front
+# matter, so Jekyll copies it through untouched.
+
+title: Rakshith Bangalore
+description: >-
+  Robotics engineer and entrepreneur across the UK and Singapore: humanoid
+  robots, mobile manipulation, and AI software and hardware products.
+url: https://bkrakshith.com
+baseurl: ""
+lang: en-GB
+timezone: Europe/London
+author: Rakshith Bangalore
+default_image: /assets/raks-profile.png
+
+# Articles live in _posts/ and are served at /articles/<slug>/
+permalink: /articles/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+
+# RSS feed (for Medium import, email newsletters, LinkedIn schedulers)
+feed:
+  path: articles/feed.xml
+
+# Jekyll skips folders starting with "_" unless listed here. The design
+# system in _ds/ is required by every project page — do not remove.
+include:
+  - _ds
+
+exclude:
+  - README.md
+  - LICENSE
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article

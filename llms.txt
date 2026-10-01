@@ -19,6 +19,7 @@ Facts:
 - [Aircraft cabin lab](https://bkrakshith.com/project-cabin-lab.dc.html): ERJ 145 research platform
 - [PodCut](https://bkrakshith.com/project-podcut.dc.html): SaaS project management
 - [GoBox](https://bkrakshith.com/project-gobox.dc.html): hardware product management
+- [Articles](https://bkrakshith.com/articles/): writing on robotics, sim-to-real and building AI and hardware products
 - [Full index](https://bkrakshith.com/projects-archive.dc.html): all sixteen projects
 
 ## Contact

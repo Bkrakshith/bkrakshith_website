@@ -1,0 +1,33 @@
+---
+layout: site
+title: Articles — Robotics, AI products and building hardware | Rakshith Bangalore
+description: Writing by Rakshith Bangalore on humanoid robots, sim-to-real, mobile manipulation, and taking AI software and hardware products to market.
+---
+<section class="articles-hero">
+  <div class="eyebrow accent">Articles</div>
+  <h1>Notes from building robots and the products around them<span class="dot">.</span></h1>
+  <p class="lede">What actually breaks between simulation and hardware, between demo and production, and between prototype and first production run.</p>
+</section>
+
+<section class="article-list">
+  {%- if site.posts.size > 0 %}
+  {%- for post in site.posts %}
+  <a class="article-row" href="{{ post.url | relative_url }}">
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+    <div>
+      <h2>{{ post.title }}</h2>
+      {%- if post.description %}
+      <p>{{ post.description }}</p>
+      {%- endif %}
+    </div>
+    <span class="arrow" aria-hidden="true">→</span>
+  </a>
+  {%- endfor %}
+  {%- else %}
+  <p class="empty">The first articles are on their way. In the meantime, <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">listen to Unfiltered Robotics&nbsp;↗</a></p>
+  {%- endif %}
+</section>
+
+<section class="subscribe">
+  <p>Follow new articles via <a href="{{ '/articles/feed.xml' | relative_url }}">RSS</a> or on <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn</a>.</p>
+</section>

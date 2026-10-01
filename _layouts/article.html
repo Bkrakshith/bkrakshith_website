@@ -1,0 +1,54 @@
+---
+layout: site
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
+<article class="article">
+  <a href="{{ '/articles/' | relative_url }}" class="back-link">← All articles</a>
+
+  <header class="article-head">
+    <div class="eyebrow">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      &nbsp;·&nbsp; {{ minutes }} min read
+    </div>
+    <h1>{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="standfirst">{{ page.description }}</p>
+    {%- endif %}
+  </header>
+
+  {%- if page.image %}
+  <figure class="cover">
+    <img src="{{ page.image | relative_url }}" alt="">
+  </figure>
+  {%- endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="article-foot">
+    <div class="byline">
+      <img src="{{ '/assets/raks-profile.png' | relative_url }}" alt="" width="56" height="56">
+      <div>
+        <div class="byline-name">Rakshith Bangalore</div>
+        <div class="byline-role">Robotics engineer · Host of <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics</a></div>
+      </div>
+    </div>
+    <div class="article-actions">
+      <a class="pill" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener">Share on LinkedIn&nbsp;↗</a>
+      <a class="pill pill-solid" href="{{ '/#contact' | relative_url }}">Get in touch&nbsp;→</a>
+    </div>
+  </footer>
+
+  {%- if page.previous or page.next %}
+  <nav class="more-articles" aria-label="More articles">
+    {%- if page.next %}
+    <a href="{{ page.next.url | relative_url }}"><span>Newer</span>{{ page.next.title }}</a>
+    {%- endif %}
+    {%- if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}"><span>Older</span>{{ page.previous.title }}</a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+</article>
