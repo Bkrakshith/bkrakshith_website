@@ -10,6 +10,7 @@ on:
 
 permissions:
   issues: write
+  contents: read
 
 jobs:
   alert:
@@ -22,8 +23,13 @@ jobs:
             const owner = context.repo.owner;
             const commits = p.commits || [];
             const files = new Set();
-            for (const c of commits) {
-              for (const f of [...(c.added || []), ...(c.modified || []), ...(c.removed || [])]) files.add(f);
+            try {
+              const { data } = /^0+$/.test(p.before)
+                ? await github.rest.repos.getCommit({ ...context.repo, ref: p.after })
+                : await github.rest.repos.compareCommitsWithBasehead({ ...context.repo, basehead: `${p.before}...${p.after}` });
+              for (const f of data.files || []) files.add(f.filename);
+            } catch (e) {
+              core.warning(`Could not list changed files: ${e.message}`);
             }
             const articles = [...files].filter((f) => f.startsWith('_posts/'));
             const what = articles.length
