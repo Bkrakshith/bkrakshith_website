@@ -175,6 +175,11 @@
     </div>
   </section>
 
+  <!-- ===================== SOCIAL (Instagram carousel + LinkedIn cards) =====================
+       Self-contained: everything is drawn by social-feed.js from social/feed.json,
+       which is edited in Pages CMS. Hidden automatically when there is nothing to show. -->
+  <x-import component-from-global-scope="social-feed" from="./social-feed.js" data-config="social/feed.json"></x-import>
+
   <!-- ===================== CTA ===================== -->
   <section id="contact" data-screen-label="Get in touch" style="border-top:1px solid var(--line, #E7E1D5);background:var(--ink, #181712);color:var(--bg, #FBFAF7);">
     <div style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,128px) clamp(20px,5vw,52px);text-align:center;">

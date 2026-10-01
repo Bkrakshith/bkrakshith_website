@@ -1,0 +1,29 @@
+---
+layout: null
+---
+{%- assign s = site.data.social -%}
+{%- assign posts = site.linkedin | sort: "date", "last" | reverse -%}
+{
+  "instagram_feed_url": {{ s.instagram_feed_url | jsonify }},
+  "instagram_handle": {{ s.instagram_handle | jsonify }},
+  "instagram_max": {{ s.instagram_max | default: 12 | jsonify }},
+  "linkedin_url": {{ s.linkedin_url | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "headline": {{ s.headline | jsonify }},
+  "heading": {{ s.heading | jsonify }},
+  "avatar": {{ "/assets/raks-profile.png" | relative_url | jsonify }},
+  "linkedin": [
+    {%- assign first = true -%}
+    {%- for p in posts -%}
+      {%- if p.show == false -%}{%- continue -%}{%- endif -%}
+      {%- unless first %},{% endunless %}
+    {
+      "url": {{ p.link | jsonify }},
+      "excerpt": {{ p.text | strip | jsonify }},
+      "date": {{ p.date | date: "%Y-%m-%d" | jsonify }},
+      "image": {% if p.image and p.image != "" %}{{ p.image | relative_url | jsonify }}{% else %}null{% endif %}
+    }
+      {%- assign first = false -%}
+    {%- endfor %}
+  ]
+}

@@ -13,6 +13,11 @@ timezone: Europe/London
 author: Rakshith Bangalore
 default_image: /assets/raks-profile.png
 
+# Curated LinkedIn posts for the homepage "Latest" section (data only).
+collections:
+  linkedin:
+    output: false
+
 # Articles live in _posts/ and are served at /articles/<slug>/
 permalink: /articles/:title/
 

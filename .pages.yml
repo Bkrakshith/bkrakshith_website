@@ -1,8 +1,8 @@
-# Pages CMS (app.pagescms.org) — defines the Articles editor.
+# Pages CMS (app.pagescms.org) — defines the Articles, LinkedIn posts and Social settings editors.
 
 media:
-  input: assets/articles
-  output: /assets/articles
+  input: assets/uploads
+  output: /assets/uploads
 
 content:
   - name: articles
@@ -46,3 +46,72 @@ content:
         type: rich-text
         options:
           format: markdown
+
+  - name: linkedin
+    label: LinkedIn posts
+    type: collection
+    path: _linkedin
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, show]
+      primary: title
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Label (only you see this)
+        description: A short name so you can find the post in this list.
+        type: string
+        required: true
+      - name: link
+        label: LinkedIn post link
+        description: On LinkedIn, open the post → ••• → Copy link to post, and paste it here.
+        type: string
+        required: true
+      - name: text
+        label: Excerpt
+        description: The opening lines of the post, as you want them shown on the card (about 2–5 sentences).
+        type: text
+        required: true
+      - name: date
+        label: Posted on
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: image
+        label: Image
+        description: Optional — the image or first slide from the post.
+        type: image
+      - name: show
+        label: Show on website
+        type: boolean
+        default: true
+
+  - name: social
+    label: Social settings
+    type: file
+    path: _data/social.yml
+    format: yaml
+    fields:
+      - name: instagram_feed_url
+        label: Instagram feed URL (from Behold)
+        description: Looks like https://feeds.behold.so/xxxxxxxx. Leave empty to hide the Instagram carousel.
+        type: string
+      - name: instagram_handle
+        label: Instagram username
+        type: string
+      - name: instagram_max
+        label: Max Instagram posts to show
+        type: number
+      - name: linkedin_url
+        label: LinkedIn profile URL
+        type: string
+      - name: headline
+        label: Headline on LinkedIn cards
+        type: string
+      - name: heading
+        label: Section heading on the homepage
+        type: string
