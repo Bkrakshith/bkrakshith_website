@@ -11,11 +11,11 @@
 <link rel="stylesheet" href="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/styles.css">
 <script src="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/_ds_bundle.js"></script>
 <title>Featured Robotics Projects — Humanoid, Mobile Manipulation, Medical | Rakshith Bangalore</title>
-<meta name="description" content="Three robotics engineering projects end to end: humanoid robots for PepsiCo, an award-winning Industry 4.0 mobile manipulator, and a force-feedback surgical trainer.">
+<meta name="description" content="Four robotics projects: WardZero, a simulated hospital for robot training; humanoid robots for PepsiCo; an Industry 4.0 mobile manipulator; and a force-feedback surgery trainer.">
 <link rel="canonical" href="https://bkrakshith.com/projects.dc.html">
 <meta property="og:site_name" content="Rakshith Bangalore">
 <meta property="og:title" content="Featured Robotics Projects — Humanoid, Mobile Manipulation, Medical | Rakshith Bangalore">
-<meta property="og:description" content="Three robotics engineering projects end to end: humanoid robots for PepsiCo, an award-winning Industry 4.0 mobile manipulator, and a force-feedback surgical trainer.">
+<meta property="og:description" content="Four robotics projects: WardZero, a simulated hospital for robot training; humanoid robots for PepsiCo; an Industry 4.0 mobile manipulator; and a force-feedback surgery trainer.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bkrakshith.com/projects.dc.html">
 <meta property="og:image" content="https://bkrakshith.com/assets/raks-profile.png">
@@ -46,8 +46,8 @@
   <!-- hero + title block -->
   <section data-screen-label="Projects hero" style="max-width:1140px;margin:0 auto;padding:calc(var(--space-8) * 2.4) var(--space-6) calc(var(--space-8) * 1.8);width:100%;box-sizing:border-box;">
     <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-4);">Project index · Robotics</h6>
-    <h1 style="font-size:clamp(44px, 6vw, 74px);max-width:16ch;margin-bottom:var(--space-4);text-wrap:balance;">Three projects, end to end.</h1>
-    <p style="font-size:16px;max-width:62ch;color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty;margin-bottom:calc(var(--space-8) * 1.4);">The humanoid work is the professional programme. The other two are university builds scoped with industry, from a crisp-factory floor to the operating theatre. Click into any of the three for the film and the detail; the complete record sits one sheet deeper.</p>
+    <h1 style="font-size:clamp(44px, 6vw, 74px);max-width:16ch;margin-bottom:var(--space-4);text-wrap:balance;">Four projects, end to end.</h1>
+    <p style="font-size:16px;max-width:62ch;color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty;margin-bottom:calc(var(--space-8) * 1.4);">WardZero is my latest project, an open simulation platform for hospital robots. The humanoid work is my professional programme. The other two are university projects that I did with partners from industry and healthcare. Each project page shows the film and the details. The full index shows all projects.</p>
     <div class="blueprint" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));background:transparent;">
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <div style="padding:var(--space-3) var(--space-4);border-right:1px solid var(--color-divider);">
@@ -72,6 +72,46 @@
   <!-- featured plates -->
   <section data-screen-label="Featured projects" style="max-width:1140px;margin:0 auto;padding:0 var(--space-6) calc(var(--space-8) * 2);width:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:calc(var(--space-8) * 1.5);">
 
+    <!-- R·1 WardZero (latest) -->
+    <article class="blueprint" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);padding:calc(var(--space-8) * 1.3);align-items:center;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <a href="project-wardzero.dc.html" aria-label="Open the WardZero project" style="display:block;">
+        <div style="position:relative;aspect-ratio:4/3;border:1px solid var(--color-divider);overflow:hidden;">
+        <img src="assets/wardzero/hospital-wing.jpg" alt="WardZero: operating theatre in the simulated surgical wing, Isaac Sim" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+      </div>
+      </a>
+      <div>
+        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4);">
+          <div style="font-family:var(--font-heading);font-weight:600;font-size:26px;color:var(--color-accent-700);border:1px solid var(--color-divider);width:54px;height:54px;display:grid;place-items:center;flex:none;">R·1</div>
+          <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">Latest · Independent research · Open source</h6>
+        </div>
+        <h2 style="font-size:clamp(26px, 3vw, 36px);margin-bottom:var(--space-3);"><a href="project-wardzero.dc.html" style="color:inherit;text-decoration:none;" style-hover="color:var(--color-accent-700)">WardZero</a></h2>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">WardZero is an open platform to develop and test robot solutions for hospitals. It gives a full simulated hospital with a surgical wing, two simulators, a safety layer and navigation. The reference robot is a Unitree G1 humanoid with two BrainCo Revo2 hands. All parts use the low-level interface of the real robot. Thus, the same software runs in MuJoCo, in Isaac Sim and on the real robot.</p>
+        <div style="margin-top:var(--space-4);">
+          <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Robot</div>
+            <div style="font-size:13.5px;">Unitree G1, 29 DoF · BrainCo Revo2 hands</div>
+          </div>
+          <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Simulators</div>
+            <div style="font-size:13.5px;">Isaac Sim 6.0 · MuJoCo · MuJoCo MJX</div>
+          </div>
+          <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Stack</div>
+            <div style="font-size:13.5px;">ROS 2 Humble · Nav2 · slam_toolbox · PPO · ONNX</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4);">
+          <span class="tag tag-accent">Robot simulation</span>
+          <span class="tag tag-neutral">Reinforcement learning</span>
+          <span class="tag tag-neutral">Navigation</span>
+        </div>
+        <div style="margin-top:var(--space-4);">
+          <a href="project-wardzero.dc.html" class="btn btn-ghost" style="margin-left:calc(var(--space-1) * -1);">Open project&nbsp;→</a>
+        </div>
+      </div>
+    </article>
+
     <!-- 01 Humanoid (professional highlight) -->
     <article class="blueprint" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);padding:calc(var(--space-8) * 1.3);align-items:center;">
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
@@ -86,7 +126,7 @@
           <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">Professional R&amp;D · PepsiCo</h6>
         </div>
         <h2 style="font-size:clamp(26px, 3vw, 36px);margin-bottom:var(--space-3);"><a href="project-humanoid.dc.html" style="color:inherit;text-decoration:none;" style-hover="color:var(--color-accent-700)">Humanoid robotics</a></h2>
-        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">Use-case programming on Unitree H1-2 and G1 humanoid systems: training neural policies for legged control and working the sim-to-real gap on real hardware, where a controller that behaves in simulation comes apart against a real actuator. Actuator identification, and the failure modes that only appear once a controller leaves simulation.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">I programmed industrial use cases on Unitree H1-2 and G1 humanoid robots. Neural policies control the legs. I trained the policies in simulation and transferred them to the real robots. A controller that works in simulation can fail on a real actuator. Thus, I identified the actuators and recorded the failure modes that occur only on real hardware.</p>
         <div style="margin-top:var(--space-4);">
           <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
             <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Platforms</div>
@@ -121,7 +161,7 @@
           <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">MEng capstone · Award-winning</h6>
         </div>
         <h2 style="font-size:clamp(26px, 3vw, 36px);margin-bottom:var(--space-3);"><a href="project-manipulator.dc.html" style="color:inherit;text-decoration:none;" style-hover="color:var(--color-accent-700)">Industry 4.0 mobile manipulator</a></h2>
-        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">A Universal Robots UR-10 collaborative arm on an Omron LD250 autonomous base, inside a custom frame enclosing the power systems and robot controller, with a SmartShift tool changer for swapping end effectors. Scoped with a senior automation director in packaging at Walkers around the real workflow of their Leicester crisp factory: reloading seasoning onto the flavouring line, palletising packed cases, and running a leak-detection effector over the oil fryers.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">A Universal Robots UR-10 collaborative arm is on an Omron LD250 autonomous mobile base. A custom frame holds the power systems and the robot controller. A SmartShift tool changer replaces the end effectors. I defined the scope with a senior packaging automation director at Walkers, for their crisp factory in Leicester. The robot reloads seasoning, puts packed cases on pallets and moves a leak-detection effector above the oil fryers.</p>
         <div style="margin-top:var(--space-4);">
           <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
             <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Platform</div>
@@ -133,7 +173,7 @@
           </div>
           <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
             <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Validation</div>
-            <div style="font-size:13.5px;">Low-TRL, so pick-and-place proven on a conveyor rig</div>
+            <div style="font-size:13.5px;">Pick-and-place tested on a conveyor rig (low TRL)</div>
           </div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4);">
@@ -156,7 +196,7 @@
           <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">University build · NHS Trust collaboration</h6>
         </div>
         <h2 style="font-size:clamp(26px, 3vw, 36px);margin-bottom:var(--space-3);"><a href="project-laparoscopic.dc.html" style="color:inherit;text-decoration:none;" style-hover="color:var(--color-accent-700)">Laparoscopic surgery trainer</a></h2>
-        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">Project manager on an eight-month, eight-person build of a next-generation trainer: a compliant robotic mechanism, designed and programmed to give surgeons realistic force feedback during practice. Modular so multiple incisions can be simulated, built from off-the-shelf parts to keep it affordable, with VR integration to put trainees under the pressure of a real theatre.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 75%, transparent);text-wrap:pretty;">I was the project manager for an eight-month project with a team of eight people. The team designed and programmed a compliant robotic mechanism for a surgery trainer. The mechanism gives realistic force feedback to surgeons during practice. The modules connect to simulate more than one incision. Off-the-shelf parts keep the cost low, and a VR system gives trainees the stress of a real operating theatre.</p>
         <div style="margin-top:var(--space-4);">
           <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
             <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Role</div>
@@ -168,7 +208,7 @@
           </div>
           <div style="display:grid;grid-template-columns:110px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
             <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Principles</div>
-            <div style="font-size:13.5px;">Modular · affordable · VR-integrated</div>
+            <div style="font-size:13.5px;">Modular · low cost · VR integration</div>
           </div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4);">
@@ -190,7 +230,7 @@
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Sheet 2 of 2</h6>
       <h2 style="font-size:clamp(28px, 4vw, 42px);margin-bottom:var(--space-3);text-wrap:balance;">Thirteen more in the index.</h2>
-      <p style="font-size:15px;max-width:52ch;margin:0 auto var(--space-6);color:color-mix(in srgb, var(--color-text) 70%, transparent);text-wrap:pretty;">Mars rovers, aircraft cabins, laser energy transmission, and the early builds that taught me to ship. Every project on record, in one table.</p>
+      <p style="font-size:15px;max-width:52ch;margin:0 auto var(--space-6);color:color-mix(in srgb, var(--color-text) 70%, transparent);text-wrap:pretty;">The index shows Mars rovers, aircraft cabins, laser energy transmission and my first university projects. It shows all projects in one table.</p>
       <p style="font-size:12px;letter-spacing:0.02em;color:color-mix(in srgb, var(--color-text) 52%, transparent);margin:var(--space-3) auto 0;max-width:52ch;">Website under construction — it will be updated with images and videos of my projects by the end of August 2026.</p>
       <div style="display:flex;justify-content:center;gap:var(--space-3);flex-wrap:wrap;">
         <a href="projects-archive.dc.html" class="btn btn-primary blueprint" style="padding:var(--space-3) calc(var(--space-6) * 1.2);font-size:15px;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>View all projects&nbsp;→</a>

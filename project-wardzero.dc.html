@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/styles.css">
+<script src="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/_ds_bundle.js"></script>
+<title>WardZero — Simulated Hospital for Robot Training | Rakshith Bangalore</title>
+<meta name="description" content="WardZero is an open platform to develop and test hospital robots in simulation. It has a simulated hospital, Isaac Sim and MuJoCo, a safety layer and navigation, with a Unitree G1 humanoid.">
+<link rel="canonical" href="https://bkrakshith.com/project-wardzero.dc.html">
+<meta property="og:site_name" content="Rakshith Bangalore">
+<meta property="og:title" content="WardZero — Simulated Hospital for Robot Training | Rakshith Bangalore">
+<meta property="og:description" content="WardZero is an open platform to develop and test hospital robots in simulation. It has a simulated hospital, Isaac Sim and MuJoCo, a safety layer and navigation, with a Unitree G1 humanoid.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bkrakshith.com/project-wardzero.dc.html">
+<meta property="og:image" content="https://bkrakshith.com/assets/wardzero/hospital-wing.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column;">
+
+  <header style="position:sticky;top:0;z-index:50;background:var(--color-bg);border-bottom:1px solid var(--color-divider);">
+    <div style="max-width:1140px;margin:0 auto;">
+      <nav class="nav" style="padding-inline:var(--space-6);flex-wrap:wrap;">
+        <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;letter-spacing:0.02em;">RAKSHITH BANGALORE</a>
+        <a href="index.html">Home</a>
+        <a href="projects.dc.html" aria-current="page">Featured projects</a>
+        <a href="projects-archive.dc.html">Full index</a>
+        <a href="articles/">Articles</a>
+        <a href="index.html#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="flex:1;">
+
+  <section data-screen-label="WardZero project" style="max-width:1140px;margin:0 auto;padding:calc(var(--space-8) * 1.6) var(--space-6) calc(var(--space-8) * 2.4);width:100%;box-sizing:border-box;">
+    <a href="projects.dc.html" class="btn btn-ghost" style="margin-bottom:calc(var(--space-8) * 1);margin-left:calc(var(--space-1) * -1);">← Featured projects</a>
+
+    <div style="display:flex;align-items:center;gap:var(--space-3);margin:var(--space-6) 0 var(--space-4);">
+      <div style="font-family:var(--font-heading);font-weight:600;font-size:26px;color:var(--color-accent-700);border:1px solid var(--color-divider);width:54px;height:54px;display:grid;place-items:center;flex:none;">R·1</div>
+      <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">Latest · Independent research · Open source</h6>
+    </div>
+    <h1 style="font-size:clamp(40px, 5.5vw, 66px);max-width:18ch;margin-bottom:var(--space-4);text-wrap:balance;">WardZero: a simulated hospital for robots.</h1>
+    <p style="font-size:16px;max-width:62ch;color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty;margin-bottom:var(--space-4);">WardZero is an open platform to develop and test robot solutions for hospitals. It gives a full simulated hospital, two simulators, a safety layer and navigation. The reference robot is a Unitree G1 humanoid with two BrainCo Revo2 hands. Robots train in WardZero before they work near patients.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:calc(var(--space-8) * 1.4);">
+      <span class="tag tag-accent">Robot simulation</span>
+      <span class="tag tag-neutral">Isaac Sim · MuJoCo</span>
+      <span class="tag tag-neutral">ROS 2 Humble</span>
+      <span class="tag tag-neutral">Reinforcement learning</span>
+      <span class="tag tag-neutral">Humanoid robots</span>
+    </div>
+
+    <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Film</h6>
+      <div class="blueprint" style="position:relative;aspect-ratio:16/9;margin-bottom:var(--space-3);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <video src="assets/wardzero/wardzero-film.mp4" poster="assets/wardzero/hospital-wing.jpg" controls="controls" preload="metadata" playsinline="true" title="WardZero hospital and surgical wing, Isaac Sim" style="position:absolute;inset:0;width:100%;height:100%;display:block;background:#000;object-fit:cover;"></video>
+      </div>
+      <p style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin:0 0 calc(var(--space-8) * 1.4);">Hospital and surgical wing in Isaac Sim 6.0, path traced. The camera moves on a scripted path. It is not a robot view.</p>
+
+    <!-- key results -->
+    <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Results in simulation</h6>
+    <div class="blueprint" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:calc(var(--space-8) * 1.4);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);">
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:var(--space-2);">Map accuracy</div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:44px;line-height:1;color:var(--color-accent-700);">99.6%</div>
+        <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-top:var(--space-2);">Wall cells within 0.10 m of the Isaac ground truth</div>
+      </div>
+      <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);">
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:var(--space-2);">Map coverage</div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:44px;line-height:1;">96.6%</div>
+        <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-top:var(--space-2);">Of the floor that the robot can reach</div>
+      </div>
+      <div style="padding:var(--space-6);border-right:1px solid var(--color-divider);">
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:var(--space-2);">Stand survival, stage A1</div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:44px;line-height:1;">0.05 → 0.97</div>
+        <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-top:var(--space-2);">In 39 million steps, approximately 1 hour</div>
+      </div>
+      <div style="padding:var(--space-6);">
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:var(--space-2);">Parallel training</div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:44px;line-height:1;">2048</div>
+        <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-top:var(--space-2);">Robots on one RTX 3070 GPU</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">What</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">WardZero is a full simulated hospital for robot development. The hospital has a surgical wing with corridors, pre-operative bays, a recovery ward, a sterile store, a scrub room and an operating theatre. Users can bring their own robot, controller or task. The platform is for mapping, navigation, controller training, teleoperation, safety functions and robot tasks. It also records synchronised sensor data with exact ground truth.</p>
+        <h6 style="color:var(--color-accent-700);margin:var(--space-6) 0 var(--space-3);">How</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">All parts use the low-level interface of the real robot. The controller sends motor targets on <code>/lowcmd</code> at 500 Hz. It reads the joint states on <code>/lowstate</code>. Thus, the same software runs in MuJoCo, in Isaac Sim and on the real robot.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">The component repositories with the prefix <code>hospital-sim-</code> contain no robot-specific code. A different robot supplies its own model, simulator bindings and controller. Thus, the platform is robot agnostic.</p>
+        <h6 style="color:var(--color-accent-700);margin:var(--space-6) 0 var(--space-3);">Results</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">The hospital, the two simulators, the safety layer, teleoperation, mapping and navigation are complete. The controller completed training stage A1 (stand). All tests used simulation only. No test on a real robot and no sim-to-real test is complete yet.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-6);">
+        <div class="blueprint" style="padding:var(--space-4) var(--space-6);">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Project</div>
+            <div style="font-size:13.5px;"><a href="https://bkrakshith.github.io/wardzero/" target="_blank" rel="noopener">WardZero website&nbsp;↗</a></div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Role</div>
+            <div style="font-size:13.5px;">Author and developer</div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Robot</div>
+            <div style="font-size:13.5px;">Unitree G1, 29 DoF · two BrainCo Revo2 hands, 6 DoF each</div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Simulators</div>
+            <div style="font-size:13.5px;">Isaac Sim 6.0 · MuJoCo · MuJoCo MJX</div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Stack</div>
+            <div style="font-size:13.5px;">ROS 2 Humble · Nav2 · slam_toolbox · Brax PPO · ONNX · MediaPipe</div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Licence</div>
+            <div style="font-size:13.5px;">Apache 2.0 · open source</div>
+          </div>
+          <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
+            <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Status</div>
+            <div style="font-size:13.5px;">In development · simulation only</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- architecture -->
+    <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">System architecture</h6>
+    <div onClick="{{ openFigure }}" title="Click to enlarge" class="blueprint" style="padding:var(--space-4);margin-bottom:var(--space-4);cursor:zoom-in;background:#ffffff;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <img src="assets/wardzero/architecture.svg" alt="WardZero architecture: inputs and autonomy send requests to the mode manager, the mode manager drives the controller, and the controller drives MuJoCo, Isaac Sim or the real G1" style="display:block;width:100%;height:auto;" />
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-6);margin-bottom:calc(var(--space-8) * 1.4);">
+      <div style="border-top:1px solid var(--color-divider);padding-top:var(--space-3);">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;margin-bottom:var(--space-2);">One interface</div>
+        <p style="font-size:14px;color:color-mix(in srgb, var(--color-text) 75%, transparent);margin:0;text-wrap:pretty;">The controller sends <code>/lowcmd</code> and receives <code>/lowstate</code>, as on the real robot. The simulators also publish the lidar scan, the odometry and the head camera.</p>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);padding-top:var(--space-3);">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;margin-bottom:var(--space-2);">One safety layer</div>
+        <p style="font-size:14px;color:color-mix(in srgb, var(--color-text) 75%, transparent);margin:0;text-wrap:pretty;">All input sources send requests to the mode manager. The mode manager uses a control lease, a watchdog, an emergency-stop gate and speed zones.</p>
+      </div>
+      <div style="border-top:1px solid var(--color-divider);padding-top:var(--space-3);">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;margin-bottom:var(--space-2);">One building</div>
+        <p style="font-size:14px;color:color-mix(in srgb, var(--color-text) 75%, transparent);margin:0;text-wrap:pretty;">One Python layout file defines the hospital. It makes the Isaac scene and the MuJoCo walls in the same world frame. Thus, a map from one simulator is correct in the other.</p>
+      </div>
+    </div>
+
+    <!-- technical detail -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">World</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">The hospital is the NVIDIA Isaac Sim hospital building. A generated surgical wing connects to its south-east door. The wing uses the operating theatre and the props of NVIDIA Isaac for Healthcare and Lightwheel SimReady.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">A generator makes the scene from the layout file. A build check stops the build if furniture blocks a door, if two props overlap or if a prop is outside its room. The corridors are 2 m and 4 m wide. The doors have 2 m of clear width.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">The scene uses a reduced copy of the assets, so it can run on an 8 GB graphics card. The light levels are calibrated, so the white walls do not show as plain white.</p>
+      </div>
+      <div onClick="{{ openFigure }}" title="Click to enlarge" class="blueprint" style="padding:var(--space-4);cursor:zoom-in;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <img src="assets/wardzero/wing_plan.png" alt="Plan of the surgical wing" style="display:block;width:100%;height:auto;" />
+        <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 60%, transparent);padding-top:var(--space-3);">Plan of the surgical wing. Top row: pre-operative bays, link corridor and recovery ward. Middle: surgical corridor. Bottom row: sterile store, scrub room and operating theatre.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Simulation for training and test</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">Two simulators replace the robot. They use the same low-level interface. All the software above the controller is the same in the two simulators.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">MuJoCo gives fast physics. The ROS 2 simulator node steps it at 500 Hz, and MuJoCo MJX trains the controller. Isaac Sim gives realistic rendering, a GPU lidar and a head camera. Use Isaac Sim to test navigation and perception with realistic sensor data.</p>
+      </div>
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Controller training</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">PPO trains the whole-body controller in MuJoCo MJX. 2048 robots train in parallel on one RTX 3070. The curriculum has three stages. Stage A teaches the robot to stand. Stage B teaches it to walk with arm targets. Stage C teaches it to follow full-body motions.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">A teacher policy with privileged data trains a student policy. The student uses only the sensors of the real robot. The controller loads the student as an ONNX file. Each stage has gates, and the trainer keeps the checkpoint that passes the gates.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div onClick="{{ openFigure }}" title="Click to enlarge" class="blueprint" style="padding:var(--space-4);cursor:zoom-in;background:#ffffff;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <img src="assets/wardzero/training_curve.svg" alt="Survival in stage A1 against training steps" style="display:block;width:100%;height:auto;" />
+        <div style="font-size:12.5px;color:#5b6472;padding-top:var(--space-3);">Survival in stage A1 against training steps. The green ring shows the checkpoint that passed the gate.</div>
+      </div>
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Stage A1 result</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">Stage A1 is complete. The survival increased from 0.05 to 0.97 in 39 million steps. The stage took approximately one hour.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">Before the training, the policy falls after 1.0 s. After the training, it stands for the full 11 s test. The maximum tilt is 2.7 degrees.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">To examine the robot model, WardZero also runs the released ULTRA teacher policy. This is a third-party policy with a non-commercial licence. Approximately 90% of the motion clips complete, with a mean body position error of approximately 5.6 cm.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Teleoperation and safety</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">All input sources send requests to the mode manager, and the mode manager makes the decision. A control lease sets which source has control. A watchdog sets HOLD if the interface signal stops. A hardware emergency stop has priority over all inputs. Speed zones on the map set the maximum speed.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">Webcam teleoperation controls the arms and the hands. MediaPipe tracks the operator, and a fork of xr_teleoperate calculates the arm and finger positions. The operator does not need a VR headset.</p>
+      </div>
+      <div class="blueprint" style="padding:var(--space-4) var(--space-6);">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding:var(--space-2) 0;">Mode manager · seven modes</div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">DAMP</div><div style="font-size:13.5px;">Removes the power from the motors</div></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">STAND</div><div style="font-size:13.5px;">The robot stands</div></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">LOCO</div><div style="font-size:13.5px;">Walks to velocity commands</div></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">MANIP</div><div style="font-size:13.5px;">Arm and hand control</div></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">NAV</div><div style="font-size:13.5px;">Nav2 drives the robot</div></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">AUTO</div><div style="font-size:13.5px;">The task layer drives the robot</div></div>
+        <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-family:var(--font-heading);font-weight:600;font-size:13.5px;">HOLD</div><div style="font-size:13.5px;">Stops the robot in its position. The robot moves again only after an explicit resume.</div></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Autonomy</h6>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;">Navigation uses standard ROS 2 packages. slam_toolbox makes the map. AMCL finds the position of the robot on the map. Nav2 with the MPPI controller plans the path and drives the robot.</p>
+        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">In the test, the robot moved on a route of 60 points through the hospital and the surgical wing. slam_toolbox made the map from the lidar during the walk. 99.6% of the wall cells are within 0.10 m of the Isaac ground truth. The map shows 96.6% of the floor that the robot can reach.</p>
+      </div>
+      <div>
+        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Components</h6>
+        <div class="blueprint" style="padding:var(--space-4) var(--space-6);">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;"><div style="font-size:12.5px;font-weight:600;">hospital-sim</div><div style="font-size:13px;">Master repository: interface contract, environment script, component list</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">hospital-sim-env</div><div style="font-size:13px;">Isaac Sim hospital and surgical wing, layout generator</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">g1-brainco-description</div><div style="font-size:13px;">Robot model: URDF, MJCF, meshes, specification</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">g1-mujoco-sim</div><div style="font-size:13px;">MuJoCo hospital, made from the same layout</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">g1-isaac-sim</div><div style="font-size:13px;">Physics layer, lidar, cameras, DDS and ROS 2 bridge</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">g1-whole-body-rl</div><div style="font-size:13px;">Controller training in MuJoCo MJX, ONNX export</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">hospital-sim-ros2</div><div style="font-size:13px;">Controller, mode manager, teleoperation, navigation, tasks</div></div>
+          <div style="display:grid;grid-template-columns:150px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><div style="font-size:12.5px;font-weight:600;">g1-webcam-teleop</div><div style="font-size:13px;">Webcam teleoperation of the arms and the hands</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- status -->
+    <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Status and next steps</h6>
+    <div class="blueprint" style="padding:var(--space-4) var(--space-6);margin-bottom:calc(var(--space-8) * 1.4);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;"><span class="tag tag-accent">Done</span><div style="font-size:14px;">Hospital and surgical wing in Isaac Sim and MuJoCo, from one layout, in one world frame</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-accent">Done</span><div style="font-size:14px;">Low-level interface of the real robot in the two simulators, with lidar, odometry and head camera</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-accent">Done</span><div style="font-size:14px;">Mode manager with control lease, watchdog, emergency-stop gate and speed zones</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-accent">Done</span><div style="font-size:14px;">Keyboard and webcam teleoperation · mapping and navigation</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-outline">Partial</span><div style="font-size:14px;">Controller: stage A1 (stand) is complete. Distillation, export, walking and motion tracking are next.</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-neutral">Next</span><div style="font-size:14px;">Simulated patient personas, to study robot-human interaction in simulation before tests with people</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-neutral">Next</span><div style="font-size:14px;">Data from the simulators to train and test learned world models</div></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:var(--space-3);padding:var(--space-2) 0;align-items:baseline;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);"><span class="tag tag-neutral">Next</span><div style="font-size:14px;">Sim-to-real transfer and tests on a real robot</div></div>
+    </div>
+
+    <!-- stills -->
+    <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Stills</h6>
+    <div class="blueprint" role="group" aria-label="WardZero stills" style="padding:var(--space-4);margin-bottom:calc(var(--space-8) * 1.4);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--color-divider);background:var(--color-surface);">
+        <div onClick="{{ openGallery }}" role="img" aria-label="{{ galleryCap }}" title="Click to enlarge" style="{{ galleryBg }}"></div>
+        <button onClick="{{ prevPhoto }}" aria-label="Previous still" class="btn btn-secondary" style="position:absolute;left:var(--space-3);top:50%;transform:translateY(-50%);width:44px;height:44px;padding:0;font-size:19px;line-height:1;background:var(--color-bg);">←</button>
+        <button onClick="{{ nextPhoto }}" aria-label="Next still" class="btn btn-secondary" style="position:absolute;right:var(--space-3);top:50%;transform:translateY(-50%);width:44px;height:44px;padding:0;font-size:19px;line-height:1;background:var(--color-bg);">→</button>
+        <div style="position:absolute;right:var(--space-3);bottom:var(--space-3);background:var(--color-bg);border:1px solid var(--color-divider);font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:0.08em;padding:4px 10px;">{{ galleryCount }}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap;padding-top:var(--space-3);">
+        <div style="font-size:13px;color:color-mix(in srgb, var(--color-text) 70%, transparent);">{{ galleryCap }}</div>
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 50%, transparent);">Click the still to enlarge · arrow keys work too</div>
+      </div>
+    </div>
+
+    <!-- disclaimer + credits -->
+    <div style="border-top:1px solid var(--color-divider);padding-top:var(--space-4);margin-bottom:calc(var(--space-8) * 1.2);">
+      <p style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 62%, transparent);max-width:90ch;text-wrap:pretty;margin:0 0 var(--space-2);"><strong>Disclaimer.</strong> WardZero is research software in development. All tests used simulation only. WardZero is not a medical device. It is not for patient care, for a clinical procedure, or for the control of a real robot near people without a separate safety analysis, tests and approvals.</p>
+      <p style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 62%, transparent);max-width:90ch;text-wrap:pretty;margin:0;"><strong>Assets.</strong> Hospital building: NVIDIA Isaac Sim (NVIDIA Limited Use Content). Operating theatre: NVIDIA Isaac for Healthcare (Apache 2.0). Surgical props: Lightwheel SimReady assets © Lightwheel AI, CC BY-NC 4.0. Robot: Unitree G1 descriptions from unitree_ros and BrainCo Revo2 hand descriptions. Based on hospital-sim by Bkrakshith.</p>
+    </div>
+
+    <div class="blueprint" style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding:var(--space-6);">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div>
+        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:2px;">Next project</div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:20px;">01 · Humanoid robotics</div>
+      </div>
+      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
+        <a href="project-humanoid.dc.html" class="btn btn-primary blueprint" style="padding:var(--space-3) calc(var(--space-6) * 1.1);font-size:15px;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Next&nbsp;→</a>
+        <a href="https://bkrakshith.github.io/wardzero/" target="_blank" rel="noopener" class="btn btn-secondary" style="padding:var(--space-3) calc(var(--space-6) * 1.1);font-size:15px;">WardZero website&nbsp;↗</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer style="border-top:1px solid var(--color-divider);">
+    <div style="max-width:1140px;margin:0 auto;padding:var(--space-6);display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);flex-wrap:wrap;">
+      <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 55%, transparent);">© 2026 Rakshith Bangalore · RB-RES-001 · Research R·1</div>
+      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;font-size:13px;">
+        <a href="index.html" style="text-decoration:none;">Home</a>
+        <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener" style="text-decoration:none;">LinkedIn</a>
+        <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="text-decoration:none;">Unfiltered Robotics&nbsp;↗</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:200;background:color-mix(in srgb, var(--color-text) 62%, transparent);display:flex;align-items:center;justify-content:center;padding:var(--space-8);cursor:zoom-out;">
+    <div onClick="{{ stopClick }}" class="blueprint" style="position:relative;background:var(--color-bg);padding:var(--space-4);max-width:min(1100px, 92vw);max-height:88vh;box-shadow:var(--shadow-lg);cursor:default;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div role="img" aria-label="Project image, enlarged" style="{{ lightboxBg }}"></div>
+      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:var(--space-2);text-align:center;">Click outside to close</div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { idx: 0, lightbox: null };
+
+  photos() {
+    return [
+      { src: 'assets/wardzero/hospital-wing.jpg', fit: 'cover', pos: 'center', cap: 'Operating theatre in the surgical wing · Isaac Sim 6.0, path traced' },
+      { src: 'assets/wardzero/wing_plan.png', fit: 'contain', bg: '#ffffff', cap: 'Plan of the surgical wing, made from the layout file' },
+      { src: 'assets/wardzero/robot-model.jpg', fit: 'cover', pos: 'center', cap: 'Reference robot: Unitree G1, 29 DoF, with two BrainCo Revo2 hands' },
+      { src: 'assets/wardzero/slam-navigation.jpg', fit: 'contain', bg: '#161b26', cap: 'Mapping and navigation: slam_toolbox map, robot path and head camera' }
+    ];
+  }
+
+  componentDidMount() {
+    this._key = (e) => {
+      const t = e.target && e.target.tagName;
+      if (t === 'INPUT' || t === 'TEXTAREA' || t === 'VIDEO') return;
+      const n = this.photos().length;
+      if (e.key === 'ArrowRight') this.setState((s) => ({ idx: (s.idx + 1) % n }));
+      else if (e.key === 'ArrowLeft') this.setState((s) => ({ idx: (s.idx + n - 1) % n }));
+      else if (e.key === 'Escape') this.setState({ lightbox: null });
+    };
+    window.addEventListener('keydown', this._key);
+  }
+
+  componentWillUnmount() {
+    if (this._key) window.removeEventListener('keydown', this._key);
+  }
+
+  renderVals() {
+    const list = this.photos();
+    const n = list.length;
+    const i = ((this.state.idx % n) + n) % n;
+    const p = list[i];
+    const pad = (v) => (v < 10 ? '0' + v : '' + v);
+    return {
+      galleryBg: {
+        position: 'absolute', inset: 0, cursor: 'zoom-in',
+        backgroundImage: 'url("' + p.src + '")',
+        backgroundSize: p.fit, backgroundPosition: p.pos || 'center',
+        backgroundRepeat: 'no-repeat', backgroundColor: p.bg || 'var(--color-surface)'
+      },
+      galleryCap: p.cap,
+      galleryCount: pad(i + 1) + ' / ' + pad(n),
+      prevPhoto: () => this.setState((s) => ({ idx: (s.idx + n - 1) % n })),
+      nextPhoto: () => this.setState((s) => ({ idx: (s.idx + 1) % n })),
+      openGallery: () => this.setState({ lightbox: p.src }),
+      openFigure: (e) => {
+        const img = e.currentTarget.querySelector('img');
+        if (img && img.getAttribute('src')) this.setState({ lightbox: img.getAttribute('src') });
+      },
+      lightboxBg: { width: 'min(1050px, 82vw)', height: 'min(700px, 74vh)', backgroundColor: '#ffffff', backgroundImage: this.state.lightbox ? 'url("' + this.state.lightbox + '")' : 'none', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' },
+      lightboxOpen: !!this.state.lightbox,
+      closeLightbox: () => this.setState({ lightbox: null }),
+      stopClick: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>
