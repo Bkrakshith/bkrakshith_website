@@ -1,166 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/styles.css">
-<script src="_ds/industry-21e5a8ed-0f5c-4a70-ae07-076443cd454b/_ds_bundle.js"></script>
-<title>Laparoscopic Surgery Trainer — Force-Feedback Medical Robotics | Rakshith Bangalore</title>
-<meta name="description" content="An eight-month project with an NHS Trust: a compliant robotic mechanism that gives surgeons realistic force feedback in training. It is modular, low in cost and has VR integration.">
-<link rel="canonical" href="https://bkrakshith.com/project-laparoscopic.dc.html">
-<meta property="og:site_name" content="Rakshith Bangalore">
-<meta property="og:title" content="Laparoscopic Surgery Trainer — Force-Feedback Medical Robotics | Rakshith Bangalore">
-<meta property="og:description" content="An eight-month project with an NHS Trust: a compliant robotic mechanism that gives surgeons realistic force feedback in training. It is modular, low in cost and has VR integration.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://bkrakshith.com/project-laparoscopic.dc.html">
-<meta property="og:image" content="https://bkrakshith.com/assets/raks-profile.png">
-<meta name="twitter:card" content="summary_large_image">
-<style>
-  image-slot { display: block; width: 100%; height: 100%; }
-</style>
-</helmet>
+---
+layout: site
+nav: projects
+title: "Laparoscopic Surgery Trainer — Force-Feedback Medical Robotics | Rakshith Bangalore"
+description: "Rakshith Bangalore managed an eight-month project with an NHS Trust to develop a laparoscopic surgery trainer with a compliant robotic mechanism that gives surgeons realistic force feedback."
+image: /assets/raks-profile.png
+---
+<header class="wrap page-head">
+  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">Surgery trainer</span></nav>
+  <div class="kicker"><span class="no">03</span><span class="label">University project · NHS Trust collaboration</span></div>
+  <h1 class="h1">Laparoscopic surgery trainer</h1>
+  <p class="deck">Rakshith was the project manager of an eight-person team that worked with an NHS Trust for eight months. The team designed and programmed a compliant robotic mechanism that gives surgeons realistic force feedback during practice.</p>
+  <div class="chips"><span class="chip chip-dark">Medical robotics</span><span class="chip">Force feedback</span><span class="chip">Product design</span><span class="chip">Project management</span></div>
+</header>
 
-<div style="min-height:100vh;display:flex;flex-direction:column;">
-
-  <header style="position:sticky;top:0;z-index:50;background:var(--color-bg);border-bottom:1px solid var(--color-divider);">
-    <div style="max-width:1140px;margin:0 auto;">
-      <nav class="nav" style="padding-inline:var(--space-6);flex-wrap:wrap;">
-        <a href="index.html" class="nav-brand" style="text-decoration:none;color:inherit;letter-spacing:0.02em;">RAKSHITH BANGALORE</a>
-        <a href="index.html">Home</a>
-        <a href="projects.dc.html" aria-current="page">Featured projects</a>
-        <a href="projects-archive.dc.html">Full index</a>
-        <a href="articles/">Articles</a>
-        <a href="index.html#contact">Get in touch</a>
-      </nav>
-    </div>
-  </header>
-
-  <main style="flex:1;">
-
-  <section data-screen-label="Laparoscopic trainer project" style="max-width:1140px;margin:0 auto;padding:calc(var(--space-8) * 1.6) var(--space-6) calc(var(--space-8) * 2.4);width:100%;box-sizing:border-box;">
-    <a href="projects.dc.html" class="btn btn-ghost" style="margin-bottom:calc(var(--space-8) * 1);margin-left:calc(var(--space-1) * -1);">← Featured projects</a>
-
-    <div style="display:flex;align-items:center;gap:var(--space-3);margin:var(--space-6) 0 var(--space-4);">
-      <div style="font-family:var(--font-heading);font-weight:600;font-size:30px;color:var(--color-accent-700);border:1px solid var(--color-divider);width:54px;height:54px;display:grid;place-items:center;flex:none;">03</div>
-      <h6 style="margin:0;color:color-mix(in srgb, var(--color-text) 60%, transparent);">University build · NHS Trust collaboration</h6>
-    </div>
-    <h1 style="font-size:clamp(40px, 5.5vw, 66px);max-width:18ch;margin-bottom:var(--space-4);text-wrap:balance;">Laparoscopic surgery trainer.</h1>
-    <p style="font-size:16px;max-width:62ch;color:color-mix(in srgb, var(--color-text) 72%, transparent);text-wrap:pretty;margin-bottom:var(--space-4);">I was the project manager for an eight-month project with a team of eight people and an NHS Trust. The team designed and programmed a compliant robotic mechanism for a laparoscopic surgery trainer. The mechanism gives realistic force feedback to surgeons during practice.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:calc(var(--space-8) * 1.4);">
-      <span class="tag tag-accent">Medical robotics</span>
-      <span class="tag tag-neutral">Force feedback</span>
-      <span class="tag tag-neutral">Product design</span>
-      <span class="tag tag-neutral">Project management</span>
-    </div>
-
-    <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
-      <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">Film</h6>
-      <div class="blueprint" style="position:relative;aspect-ratio:16/9;margin-bottom:calc(var(--space-8) * 1.4);">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <iframe src="{{ videoSrc }}" title="Laparoscopic trainer project video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+<section class="wrap sec">
+  <div class="split">
+    <div>
+      <div class="block">
+        <h2 class="label">What</h2>
+        <p class="body">A new type of laparoscopic surgery trainer, developed in eight months with an NHS Trust. A compliant robotic mechanism gives realistic force feedback at the tool. Connected modules simulate more than one incision, off-the-shelf parts keep the cost low, and a VR system recreates the pressure of a real operating theatre.</p>
       </div>
-    </sc-if>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:calc(var(--space-8) * 1.2);align-items:start;margin-bottom:calc(var(--space-8) * 1.4);">
-      <div>
-        <h6 style="color:var(--color-accent-700);margin-bottom:var(--space-3);">What</h6>
-        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">This is a new type of laparoscopic surgery trainer. We developed it in eight months with an NHS Trust. A compliant robotic mechanism gives realistic force feedback at the tool. The modules connect to simulate more than one incision. Off-the-shelf parts keep the cost low. A VR system gives trainees the stress of a real operating theatre.</p>
-        <h6 style="color:var(--color-accent-700);margin:var(--space-6) 0 var(--space-3);">How</h6>
-        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">I was the project manager, and I divided the team of eight people into sub-groups with clear responsibilities. The team had regular gateway reviews with the NHS Trust. The control system was the most difficult part, because the mechanism must stay compliant and also control the tool accurately. A PID controller and servo angle control closed the loop. The team added a soft tool point where the servo torque was above the displacement threshold. My individual technical work was the CAD model.</p>
-        <h6 style="color:var(--color-accent-700);margin:var(--space-6) 0 var(--space-3);">Results</h6>
-        <p style="font-size:15px;color:color-mix(in srgb, var(--color-text) 78%, transparent);text-wrap:pretty;margin-bottom:0;">At the end of the eight months, the team delivered a working demonstrator. It is modular, low in cost and has VR integration. It helps with two problems in laparoscopic training: there are not sufficient trained instructors, and there is no standard qualification route.</p>
+      <div class="block">
+        <h2 class="label">How</h2>
+        <p class="body">Rakshith divided the team into sub-groups with clear responsibilities and held regular gateway reviews with the NHS Trust. The control system was the most difficult part, because the mechanism must stay compliant and still control the tool accurately.</p>
+        <p class="body">A PID controller and servo angle control closed the loop. The team added a soft tool point where the servo torque exceeded the displacement threshold. Rakshith's individual technical contribution was the CAD model.</p>
       </div>
-      <div class="blueprint" style="padding:var(--space-4) var(--space-6);">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;">
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Role</div>
-          <div style="font-size:13.5px;">Project manager · team of eight · eight months</div>
-        </div>
-        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Collaboration</div>
-          <div style="font-size:13.5px;">NHS Trust</div>
-        </div>
-        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Mechanism</div>
-          <div style="font-size:13.5px;">Compliant · PID-controlled servo force feedback</div>
-        </div>
-        <div style="display:grid;grid-template-columns:120px 1fr;gap:var(--space-2);padding:var(--space-2) 0;border-top:1px solid color-mix(in srgb, var(--color-text) 8%, transparent);">
-          <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:2px;">Principles</div>
-          <div style="font-size:13.5px;">Modular · low cost · VR integration</div>
-        </div>
+      <div class="block">
+        <h2 class="label">Results</h2>
+        <p class="body">At the end of the eight months, the team delivered a working demonstrator. It is modular, low in cost and integrated with VR. It addresses two problems in laparoscopic training: the shortage of trained instructors and the lack of a standard qualification route.</p>
       </div>
     </div>
-
-    <div class="blueprint" style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);flex-wrap:wrap;padding:var(--space-6);">
-      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-      <div>
-        <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-bottom:2px;">End of featured projects</div>
-        <div style="font-family:var(--font-heading);font-weight:600;font-size:20px;">Thirteen more in the full index</div>
-      </div>
-      <div style="display:flex;gap:var(--space-3);flex-wrap:wrap;">
-        <a href="projects-archive.dc.html" class="btn btn-primary blueprint" style="padding:var(--space-3) calc(var(--space-6) * 1.1);font-size:15px;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>View all projects&nbsp;→</a>
-        <a href="project-manipulator.dc.html" class="btn btn-secondary" style="padding:var(--space-3) calc(var(--space-6) * 1.1);font-size:15px;">←&nbsp;Previous</a>
-      </div>
-    </div>
-  </section>
-
-  </main>
-
-  <footer style="border-top:1px solid var(--color-divider);">
-    <div style="max-width:1140px;margin:0 auto;padding:var(--space-6);display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);flex-wrap:wrap;">
-      <div style="font-size:12.5px;color:color-mix(in srgb, var(--color-text) 55%, transparent);">© 2026 Rakshith Bangalore · RB-PRJ-001 · Project 03</div>
-      <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;font-size:13px;">
-        <a href="index.html" style="text-decoration:none;">Home</a>
-        <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener" style="text-decoration:none;">LinkedIn</a>
-        <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="text-decoration:none;">Unfiltered Robotics&nbsp;↗</a>
-      </div>
-    </div>
-  </footer>
-
-</div>
-
-<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
-  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:200;background:color-mix(in srgb, var(--color-text) 62%, transparent);display:flex;align-items:center;justify-content:center;padding:var(--space-8);cursor:zoom-out;">
-    <div onClick="{{ stopClick }}" class="blueprint" style="position:relative;background:var(--color-bg);padding:var(--space-4);max-width:min(1100px, 92vw);max-height:88vh;box-shadow:var(--shadow-lg);cursor:default;">
-      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-      <div role="img" aria-label="Project image, enlarged" style="{{ lightboxBg }}"></div>
-      <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:color-mix(in srgb, var(--color-text) 55%, transparent);padding-top:var(--space-2);text-align:center;">Click outside to close</div>
-    </div>
+    <aside aria-label="Project facts">
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Project manager · team of eight</dd></div>
+        <div><dt>Duration</dt><dd>Eight months</dd></div>
+        <div><dt>Partner</dt><dd>NHS Trust</dd></div>
+        <div><dt>Mechanism</dt><dd>Compliant · PID-controlled servo force feedback</dd></div>
+        <div><dt>Principles</dt><dd>Modular · low cost · VR integration</dd></div>
+        <div><dt>Contribution</dt><dd>Project management · CAD model</dd></div>
+      </dl>
+    </aside>
   </div>
-</sc-if></x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Media&quot;}}">
-class Component extends DCLogic {
-  state = { lightbox: null };
-  renderVals() {
-    const raw = (this.props.videoUrl || '').trim();
-    let src = '';
-    if (raw) {
-      let m = raw.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{6,})/);
-      if (m) src = 'https://www.youtube.com/embed/' + m[1];
-      else if (raw.indexOf('wistia') !== -1) {
-        m = raw.match(/(?:iframe\/|medias\/)(\w+)/);
-        src = m ? 'https://fast.wistia.net/embed/iframe/' + m[1] : raw;
-      } else src = raw;
-    }
-    return {
-      videoSrc: src, hasVideo: !!src, noVideo: !src,
-      lightboxBg: { width: 'min(1050px, 82vw)', height: 'min(700px, 74vh)', backgroundImage: this.state.lightbox ? 'url(' + this.state.lightbox + ')' : 'none', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' },
-      lightboxOpen: !!this.state.lightbox,
-      openLightbox: (e) => {
-        const path = e.nativeEvent && e.nativeEvent.composedPath ? e.nativeEvent.composedPath() : [];
-        if (path.some((n) => n && n.getAttribute && (n.getAttribute('data-act') || n.tagName === 'BUTTON' || n.tagName === 'INPUT'))) return;
-        const slot = e.currentTarget.querySelector('image-slot');
-        const img = slot && slot.shadowRoot && slot.shadowRoot.querySelector('img');
-        if (img && img.src && getComputedStyle(img).display !== 'none') this.setState({ lightbox: img.src });
-      },
-      closeLightbox: () => this.setState({ lightbox: null }),
-      stopClick: (e) => e.stopPropagation()
-    };
-  }
-}</script>
-</body>
-</html>
+</section>
+
+<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
+  <nav class="prevnext" aria-label="More projects">
+    <a href="{{ '/project-manipulator.dc.html' | relative_url }}"><span class="label label-muted">← Previous</span><div class="h3">Industry 4.0 mobile manipulator</div></a>
+    <a href="{{ '/project-cabin-lab.dc.html' | relative_url }}"><span class="label label-muted">Next →</span><div class="h3">Aircraft cabin lab</div></a>
+  </nav>
+</section>

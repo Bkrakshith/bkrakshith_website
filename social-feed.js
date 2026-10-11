@@ -7,8 +7,8 @@
  * parsed as HTML — and only https:// or same-site URLs are used.
  *
  * Usage (index.html):
- *   <x-import component-from-global-scope="social-feed" from="./social-feed.js"
- *             data-config="social/feed.json"></x-import>
+ *   <social-feed data-config="social/feed.json"></social-feed>
+ *   <script src="social-feed.js" defer></script>
  */
 (() => {
   if (customElements.get('social-feed')) return;
