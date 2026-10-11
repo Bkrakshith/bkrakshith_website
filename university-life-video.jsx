@@ -3,12 +3,12 @@
 const { SceneStage, useScene, Easing } = window;
 
 const C = {
-  bg: '#f2f2f3', surface: '#e9e9ea', ink: '#1d1f20',
-  steel: '#5980a6', steel700: '#416180', steel900: '#1d2d3d',
-  line: 'rgba(29,31,32,0.16)', faint: 'rgba(29,31,32,0.55)', hair: 'rgba(29,31,32,0.08)'
+  bg: '#ffffff', surface: '#f4f4f4', ink: '#0e0e0e',
+  steel: '#7a7a7a', steel700: '#3a3a3a', steel900: '#0e0e0e',
+  line: 'rgba(14,14,14,0.16)', faint: 'rgba(14,14,14,0.55)', hair: 'rgba(14,14,14,0.08)'
 };
-const HEAD = "'Barlow Condensed', system-ui, sans-serif";
-const BODY = "'Barlow', system-ui, sans-serif";
+const HEAD = "'Archivo', 'Helvetica Neue', Arial, sans-serif";
+const BODY = "'Newsreader', Georgia, serif";
 const clamp01 = (v) => Math.max(0, Math.min(1, v));
 
 // ── the only three motion helpers in the piece ──

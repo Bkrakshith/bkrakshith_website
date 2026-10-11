@@ -3,15 +3,15 @@ layout: site
 ---
 {%- assign words = content | strip_html | number_of_words -%}
 {%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
-<article class="article">
-  <a href="{{ '/articles/' | relative_url }}" class="back-link">← All articles</a>
+<article class="wrap narrow article">
+  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/articles/' | relative_url }}">Articles</a></nav>
 
   <header class="article-head">
-    <div class="eyebrow">
+    <div class="label label-muted">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
       &nbsp;·&nbsp; {{ minutes }} min read
     </div>
-    <h1>{{ page.title }}</h1>
+    <h1 class="h1">{{ page.title }}</h1>
     {%- if page.description %}
     <p class="standfirst">{{ page.description }}</p>
     {%- endif %}
@@ -35,9 +35,9 @@ layout: site
         <div class="byline-role">Robotics engineer · Host of <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics</a></div>
       </div>
     </div>
-    <div class="article-actions">
-      <a class="pill" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener">Share on LinkedIn&nbsp;↗</a>
-      <a class="pill pill-solid" href="{{ '/#contact' | relative_url }}">Get in touch&nbsp;→</a>
+    <div class="actions" style="margin-top:0;">
+      <a class="button" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener">Share on LinkedIn&nbsp;↗</a>
+      <a class="button button-dark" href="{{ '/contact.html' | relative_url }}">Contact&nbsp;→</a>
     </div>
   </footer>
 

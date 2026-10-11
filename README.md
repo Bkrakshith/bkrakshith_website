@@ -1,54 +1,52 @@
-# bkrakshith.com — static export
+# bkrakshith.com
 
-Ready to host as-is: no build step, everything is static HTML/CSS/JS.
+Personal website of Rakshith Bangalore. Hosted on GitHub Pages, which builds it with Jekyll on every push to `main` (no local build step needed).
 
-## Deploy on GitHub Pages
-1. Create a new repo on github.com (or open an existing one).
-2. On the repo page, click "Add file → Upload files", then drag every file and folder from this export in — keep the folder structure (`_ds/` and `assets/` must stay alongside the `.html` files).
-3. Commit to the default branch.
-4. Repo Settings → Pages → Source → "Deploy from a branch" → pick that branch, `/ (root)`. Save.
-5. Your site is live at `https://<username>.github.io/<repo>/` within a minute or two.
-
-## Custom domain (bkrakshith.com)
-Add a file named `CNAME` (no extension) containing just:
-```
-bkrakshith.com
-```
-then point your domain's DNS at GitHub Pages per GitHub's "Managing a custom domain" docs.
+## Custom domain
+`CNAME` contains `bkrakshith.com`. DNS points at GitHub Pages per GitHub's "Managing a custom domain" docs.
 
 ## Design
-Editorial, black-and-white theme (October 2026): Archivo (expanded) for headlines and labels, Newsreader for reading text, hairline rules, greyscale photography.
-- Homepage styles live in the `<style>` block in `index.html`.
-- Inner pages get the theme from the "Editorial theme" block at the end of `_ds/…/styles.css`; delete that block to revert them.
-- Articles use `assets/articles.css`.
+Editorial, black-and-white theme: Archivo (expanded) for headlines and labels, Newsreader for reading text, hairline rules and greyscale photography.
+- `assets/site.css` — the only stylesheet. Every page uses it.
+- `assets/site.js` — today's date in the masthead, the mobile menu, the photo lightbox and the email link. Pages work without it.
 
 ## Structure
-- `index.html` — homepage (was `bkrakshith-studio.dc.html`; renamed so it serves at the site root)
-- `projects.dc.html`, `projects-archive.dc.html`, `project-*.dc.html`, `university-life.dc.html` — the rest of the site
-- `_ds/` — design-system stylesheet + component bundle, required by every page
-- `assets/` — photos currently in use
-- `support.js`, `image-slot.js`, `tweaks-panel.jsx`, `animations-v2.jsx`, `university-life-video.jsx` — runtime the pages load
-- `GoBox.png`, `podcut.png` — the PodCut/GoBox photos, referenced directly from their project pages
-- `project-wardzero.dc.html` + `assets/wardzero/` — the WardZero project page, its film (`wardzero-film.mp4`, H.264), stills and diagrams. Copied from the WardZero repository; the page links only to the WardZero website.
-- `_config.yml` — GitHub Pages (Jekyll) settings. Its `include: [_ds]` line is required: without it Jekyll silently drops the `_ds/` folder and every project page loses its stylesheet.
-- `robots.txt`, `sitemap.xml`, `llms.txt` — SEO/GEO files. `sitemap.xml` adds published articles automatically.
+- `_layouts/site.html` — the shared shell: page head and SEO tags, masthead, menu and footer. Change the menu or footer here, once, for every page.
+- `_layouts/article.html` — the article template (inside `site.html`).
+- `_includes/record.html` — the project list on the homepage.
+- `index.html` — homepage.
+- `about.html` — profile, career history and capabilities.
+- `contact.html` — booking, email, podcast guests and social links.
+- `projects.dc.html` — featured projects; `projects-archive.dc.html` — the full index.
+- `project-*.dc.html` — one page per project: `wardzero`, `humanoid`, `manipulator`, `laparoscopic`, `cabin-lab`, `ai-software`, `portable-podcasting`.
+- `university-life.dc.html` — the University Life page. Its animated film is `university-life-film.html`, shown in an iframe and rendered by `support.js` with `animations-v2.jsx`, `tweaks-panel.jsx` and `university-life-video.jsx`.
+- `assets/` — photographs, the WardZero film, stills and diagrams.
+- `robots.txt`, `sitemap.xml`, `llms.txt` — SEO and AI-search files. Add new pages to `sitemap.xml` and `llms.txt`.
+
+Each page starts with front matter (`layout`, `nav`, `title`, `description`, `image`). `nav` marks the current menu item: `home`, `about`, `projects`, `latest`, `articles` or `contact`. Quote `title` and `description` if they contain a colon.
+
+The `.dc.html` file names are kept from the earlier design-tool export so that existing links keep working.
+
+## Writing style
+All text is in the third person ("Rakshith …"), short sentences, professional tone. Avoid pronouns; use the name or restructure the sentence.
 
 ## Articles
 Written and managed in Pages CMS at https://app.pagescms.org (log in with GitHub).
 - `_posts/` — one Markdown file per article. `published: false` = draft, not on the site.
-- `_layouts/site.html`, `_layouts/article.html`, `articles/index.html`, `assets/articles.css` — the Articles templates and styling.
+- `articles/index.html` — the Articles page.
 - `assets/uploads/` — images uploaded from the CMS.
 - `.pages.yml` — defines the CMS editor fields.
 - `/articles/feed.xml` — RSS feed, generated automatically.
 - `.github/workflows/change-alert.yml` — opens a GitHub issue (and emails you) whenever anything on the site changes.
 
 ## Social section (homepage)
-- `social-feed.js` — draws the Instagram carousel and LinkedIn cards; hooked into `index.html` by one `<x-import … social-feed …>` line above the contact section.
+- `social-feed.js` — draws the Instagram carousel and LinkedIn cards as a `<social-feed>` element.
 - `_linkedin/` — curated LinkedIn posts (Pages CMS → LinkedIn posts).
 - `_data/social.yml` — Behold feed URL and other settings (Pages CMS → Social settings).
-- `social/feed.json` — generated by Jekyll from the two above; the component reads it.
+- `social/feed.json` — generated by Jekyll from the two above; the element reads it. The section hides itself when there is nothing to show.
 
-When re-exporting from the design tool, don't delete the files above. Add the "Articles" nav link and the `social-feed` x-import line to the pages in the design tool too, or the next export will drop them.
-
-## After you add more photos or videos
-Come back to the design tool and re-export, rather than hand-editing here, so the "under construction" notes clear correctly as each project fills in.
+## Preview locally
+```bash
+gem install jekyll jekyll-feed
+jekyll serve        # then open http://localhost:4000
+```

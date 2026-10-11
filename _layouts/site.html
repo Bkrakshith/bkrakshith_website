@@ -12,11 +12,11 @@
 {%- assign meta_image = page.image | default: site.default_image | absolute_url -%}
 <title>{{ meta_title | escape }}</title>
 <meta name="description" content="{{ meta_desc | escape }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="canonical" href="{{ page.url | absolute_url | replace: '/index.html', '/' }}">
 <meta property="og:site_name" content="{{ site.title | escape }}">
-<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:title" content="{{ meta_title | escape }}">
 <meta property="og:description" content="{{ meta_desc | escape }}">
-<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:url" content="{{ page.url | absolute_url | replace: '/index.html', '/' }}">
 <meta property="og:image" content="{{ meta_image }}">
 {%- if page.layout == "article" %}
 <meta property="og:type" content="article">
@@ -29,45 +29,87 @@
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Articles" href="{{ '/articles/feed.xml' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ '/assets/articles.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+{%- if page.person_schema %}
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://bkrakshith.com/#person","name":"Rakshith Bangalore","alternateName":"Rakshith Bangalore Kumaraswamy","url":"https://bkrakshith.com/","image":"https://bkrakshith.com/assets/raks-profile.png","jobTitle":"Robotics Engineer and Entrepreneur","description":{{ site.description | strip | jsonify }},"alumniOf":{"@type":"CollegeOrUniversity","name":"Nottingham Trent University"},"knowsAbout":["Robotics engineering","Humanoid robots","Legged locomotion","Neural control policies","Sim-to-real transfer","Actuator identification","Robot simulation","Mobile manipulation","Industry 4.0 automation","Medical robotics","Software project management","Hardware product management"],"sameAs":["https://www.linkedin.com/in/rakshithbangalore","https://www.instagram.com/mr.rakshith/","https://unfilteredrobotics.com","https://topmate.io/rakshith_bangalore"],"workLocation":[{"@type":"Place","name":"United Kingdom"},{"@type":"Place","name":"Singapore"}]},{"@type":"WebSite","@id":"https://bkrakshith.com/#website","url":"https://bkrakshith.com/","name":"Rakshith Bangalore","publisher":{"@id":"https://bkrakshith.com/#person"}}]}</script>
+{%- endif %}
 {%- if page.layout == "article" %}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ meta_desc | jsonify }},"image":{{ meta_image | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"author":{"@id":"https://bkrakshith.com/#person","@type":"Person","name":"Rakshith Bangalore","url":"https://bkrakshith.com/"}}</script>
 {%- endif %}
 </head>
 <body>
+{%- assign nav = page.nav | default: "" -%}
+{%- if page.url contains '/articles/' -%}{%- assign nav = "articles" -%}{%- endif -%}
+{%- assign topmate = "https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&utm_campaign=rakshith_bangalore" -%}
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <nav class="site-nav">
-    <a href="{{ '/' | relative_url }}" class="brand" aria-label="Home">Rakshith Bangalore</a>
-    <div class="nav-links">
-      <a href="{{ '/projects.dc.html' | relative_url }}">Projects</a>
-      <a href="{{ '/articles/' | relative_url }}"{% if page.url contains '/articles/' %} aria-current="page"{% endif %}>Articles</a>
-      <a href="{{ '/#about' | relative_url }}" class="hide-narrow">About</a>
-      <a href="{{ '/#contact' | relative_url }}" class="nav-cta">Get in touch</a>
+<div class="wrap">
+  <div class="strip label label-muted">
+    <span class="hide-sm">United Kingdom &amp; Singapore</span>
+    <span data-today>Robotics · AI · Hardware</span>
+    <span class="hide-sm">Robotics · AI · Hardware</span>
+  </div>
+</div>
+
+<header class="mast">
+  <nav class="wrap mast-row" aria-label="Main">
+    <a href="{{ '/' | relative_url }}" class="brand"{% if nav == "home" %} aria-current="page"{% endif %}>Rakshith Bangalore</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links"><span>Menu</span></button>
+    <div class="menu-links" id="menu-links">
+      <a href="{{ '/about.html' | relative_url }}"{% if nav == "about" %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/projects.dc.html' | relative_url }}"{% if nav == "projects" %} aria-current="page"{% endif %}>Projects</a>
+      <a href="{{ '/project-wardzero.dc.html' | relative_url }}"{% if nav == "latest" %} aria-current="page"{% endif %}>Latest</a>
+      <a href="{{ '/articles/' | relative_url }}"{% if nav == "articles" %} aria-current="page"{% endif %}>Articles</a>
+      <a href="{{ '/contact.html' | relative_url }}"{% if nav == "contact" %} aria-current="page"{% endif %}>Contact</a>
+      <a class="menu-cta" href="{{ topmate }}" target="_blank" rel="noopener">Let's Connect&nbsp;↗</a>
     </div>
   </nav>
 </header>
 
-<main>
+<main id="main">
 {{ content }}
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-name">Rakshith Bangalore<span>.</span></div>
-      <p>Robotics engineer building intelligence into machines.</p>
-    </div>
-    <div class="footer-links">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/articles/feed.xml' | relative_url }}">RSS feed</a>
-      <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics&nbsp;↗</a>
+<footer class="foot">
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp; From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp;&nbsp;</span>
+      <span>From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp; From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp;&nbsp;</span>
     </div>
   </div>
-  <div class="footer-base">© {{ site.time | date: "%Y" }} Rakshith Bangalore</div>
+  <div class="wrap sec-tight">
+    <div class="foot-top">
+      <div class="foot-name">Rakshith Bangalore</div>
+      <div class="foot-li">Robotics engineer · Entrepreneur</div>
+    </div>
+    <div class="foot-row">
+      <div class="label">Pages</div>
+      <div class="foot-li"><a href="{{ '/' | relative_url }}">Home</a><br><a href="{{ '/about.html' | relative_url }}">About</a></div>
+      <div class="foot-li"><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><br><a href="{{ '/projects-archive.dc.html' | relative_url }}">Full index</a></div>
+      <div class="foot-li"><a href="{{ '/articles/' | relative_url }}">Articles</a><br><a href="{{ '/contact.html' | relative_url }}">Contact</a></div>
+    </div>
+    <div class="foot-row">
+      <div class="label">Follow</div>
+      <div class="foot-li"><a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn&nbsp;↗</a></div>
+      <div class="foot-li"><a href="https://www.instagram.com/mr.rakshith/" target="_blank" rel="noopener">Instagram&nbsp;↗</a></div>
+      <div class="foot-li"><a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics&nbsp;↗</a></div>
+    </div>
+    <div class="foot-row">
+      <div class="label">Contact</div>
+      <div class="foot-li"><a href="{{ '/contact.html' | relative_url }}" data-email data-email-text style="text-transform:none;letter-spacing:.04em;">Email</a></div>
+      <div class="foot-li"><a href="{{ topmate }}" target="_blank" rel="noopener">Book a call&nbsp;↗</a></div>
+      <div class="foot-li"><a href="{{ '/articles/feed.xml' | relative_url }}">RSS feed</a></div>
+    </div>
+    <div class="foot-row foot-base">
+      <div>© {{ site.time | date: "%Y" }}</div>
+      <div>Rakshith Bangalore</div>
+      <div>United Kingdom &amp; Singapore</div>
+      <div><a href="#main">Back to top&nbsp;↑</a></div>
+    </div>
+  </div>
 </footer>
 
+<script src="{{ '/assets/site.js' | relative_url }}" defer></script>
 </body>
 </html>

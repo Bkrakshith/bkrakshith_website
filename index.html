@@ -1,443 +1,140 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
-
-<title>Rakshith Bangalore — Robotics Engineer & Entrepreneur | Humanoid Robots, AI Products</title>
-<meta name="description" content="Robotics engineer and entrepreneur across the UK and Singapore: humanoid robots (Unitree H1-2 & G1), Industry 4.0 mobile manipulation, and project management of AI software and hardware products. Host of the Unfiltered Robotics podcast.">
-<link rel="canonical" href="https://bkrakshith.com/">
-<meta property="og:site_name" content="Rakshith Bangalore">
-<meta property="og:title" content="Rakshith Bangalore — Robotics Engineer & Entrepreneur | Humanoid Robots, AI Products">
-<meta property="og:description" content="Robotics engineer and entrepreneur across the UK and Singapore: humanoid robots (Unitree H1-2 & G1), Industry 4.0 mobile manipulation, and project management of AI software and hardware products. Host of the Unfiltered Robotics podcast.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://bkrakshith.com/">
-<meta property="og:image" content="https://bkrakshith.com/assets/raks-profile.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="keywords" content="robotics engineer, humanoid robots, Unitree H1-2, entrepreneur, software project management, hardware product management, Unfiltered Robotics">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://bkrakshith.com/#person","name":"Rakshith Bangalore","alternateName":"Rakshith Bangalore Kumaraswamy","url":"https://bkrakshith.com/","image":"https://bkrakshith.com/assets/raks-profile.png","jobTitle":"Robotics Engineer & Product Manager","description":"Robotics engineer and entrepreneur across the UK and Singapore: humanoid robots (Unitree H1-2 & G1), Industry 4.0 mobile manipulation, and project management of AI software and hardware products. Host of the Unfiltered Robotics podcast.","alumniOf":{"@type":"CollegeOrUniversity","name":"Nottingham Trent University"},"knowsAbout":["Robotics engineering","Humanoid robots","Legged locomotion","Neural control policies","Sim-to-real transfer","Actuator identification","Mobile manipulation","Industry 4.0 automation","Medical robotics","Software project management","Hardware product management","Entrepreneurship"],"sameAs":["https://www.linkedin.com/in/rakshithbangalore","https://www.instagram.com/mr.rakshith/","https://unfilteredrobotics.com","https://topmate.io/rakshith_bangalore"],"workLocation":[{"@type":"Place","name":"United Kingdom"},{"@type":"Place","name":"Singapore"}]},{"@type":"WebSite","@id":"https://bkrakshith.com/#website","url":"https://bkrakshith.com/","name":"Rakshith Bangalore","publisher":{"@id":"https://bkrakshith.com/#person"}}]}</script>
-<style>
-  :root {
-    --paper: #ffffff; --ink: #0e0e0e; --muted: #555555; --faint: #8f8f8f; --line: #dcdcdc;
-    --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-    --gutter: clamp(18px, 4.5vw, 56px);
-  }
-  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-  body { margin: 0; background: var(--paper); }
-  ::selection { background: var(--ink); color: var(--paper); }
-  image-slot { display: block; width: 100%; height: 100%; }
-
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); box-sizing: border-box; }
-  .x { font-family: var(--display); font-stretch: 125%; text-transform: uppercase; }
-  .label { font-family: var(--display); font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; }
-  .serif { font-family: var(--serif); }
-  .bw { filter: grayscale(1) contrast(1.06); }
-  .rule { border: 0; border-top: 1px solid var(--ink); margin: 0; }
-  .rule-2 { border: 0; border-top: 3px double var(--ink); margin: 0; }
-  a { color: inherit; }
-
-  /* masthead */
-  .strip { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; color: var(--muted); }
-  .nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--ink); }
-  .nav-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 58px; gap: 16px; }
-  .brand { font-family: var(--display); font-stretch: 125%; font-weight: 600; font-size: 15px; letter-spacing: 0.02em; text-decoration: none; text-transform: uppercase; }
-  .links { display: flex; gap: clamp(14px, 2.4vw, 34px); }
-  .links a, .cta-link { font-family: var(--display); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
-  .links a:hover, .cta-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-  .cta-link { justify-self: end; white-space: nowrap; display: inline-flex; gap: 8px; align-items: center; }
-
-  /* hero */
-  .wordmark { font-family: var(--display); font-stretch: 125%; font-weight: 500; text-transform: uppercase; font-size: clamp(54px, 13.6vw, 172px); line-height: 0.86; letter-spacing: -0.035em; margin: clamp(14px, 2vw, 26px) 0 0; text-align: center; white-space: nowrap; position: relative; z-index: 1; }
-  .hero-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 6fr) minmax(0, 3fr); gap: clamp(18px, 2.5vw, 36px); align-items: start; }
-  .portrait { position: relative; z-index: 2; margin-top: clamp(-118px, -9.2vw, -36px); -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 98%); mask-image: linear-gradient(to bottom, #000 62%, transparent 98%); }
-  .portrait img { display: block; width: 100%; height: auto; }
-  .side-l { padding-top: clamp(40px, 9vw, 140px); }
-  .side-r { padding-top: clamp(30px, 6vw, 96px); }
-  .h-sm { font-family: var(--display); font-stretch: 125%; font-weight: 500; text-transform: uppercase; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.12; letter-spacing: -0.005em; margin: 0 0 12px; }
-  .body { font-family: var(--serif); font-size: 16.5px; line-height: 1.58; color: #2a2a2a; margin: 0; text-wrap: pretty; }
-  .body-sm { font-family: var(--serif); font-size: 15px; line-height: 1.55; color: #333; margin: 0; text-wrap: pretty; }
-  .cap { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
-  .btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 13px 18px; border: 1px solid var(--ink); }
-  .btn-dark { background: var(--ink); color: var(--paper); }
-  .btn-dark:hover { background: var(--paper); color: var(--ink); }
-  .btn-line:hover { background: var(--ink); color: var(--paper); }
-
-  /* sections */
-  .sec { padding-top: clamp(56px, 8vw, 112px); padding-bottom: clamp(56px, 8vw, 112px); }
-  .sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); margin-bottom: clamp(28px, 4vw, 48px); }
-  .h-lg { font-family: var(--display); font-stretch: 125%; font-weight: 500; text-transform: uppercase; font-size: clamp(28px, 4.4vw, 58px); line-height: 0.98; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
-  .h-xl { font-family: var(--display); font-stretch: 125%; font-weight: 500; text-transform: uppercase; font-size: clamp(30px, 5.4vw, 74px); line-height: 0.95; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
-  .cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .cols-3 > * { padding: 0 clamp(16px, 2.2vw, 30px); border-left: 1px solid var(--line); }
-  .cols-3 > *:first-child { padding-left: 0; border-left: 0; }
-  .cols-3 > *:last-child { padding-right: 0; }
-  .dropcap::first-letter { font-family: var(--display); font-stretch: 125%; font-weight: 500; float: left; font-size: 4.1em; line-height: 0.82; padding: 6px 10px 0 0; }
-
-  /* engineer collage */
-  .collage { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); align-items: start; position: relative; }
-  .overlay-title { position: absolute; left: 22%; bottom: 9%; z-index: 3; margin: 0; background: var(--paper); color: var(--ink); padding: 14px 22px 12px 0; pointer-events: none; }
-
-  /* front-page story */
-  .story { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 3.5vw, 52px); align-items: start; }
-  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin: 26px 0; }
-  .stats > div { padding: 14px 12px 14px 0; }
-  .stats > div + div { border-left: 1px solid var(--line); padding-left: 14px; }
-  .num { font-family: var(--display); font-stretch: 125%; font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1; letter-spacing: -0.02em; }
-  .twocol { columns: 2; column-gap: 28px; column-rule: 1px solid var(--line); }
-
-  /* record (timeline) */
-  .record a.row { display: grid; grid-template-columns: 150px minmax(0, 1.25fr) 108px minmax(0, 1fr) 24px; gap: clamp(14px, 2vw, 28px); align-items: center; padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none; transition: background 0.2s ease, padding 0.2s ease; }
-  .record a.row:last-child { border-bottom: 1px solid var(--ink); }
-  .record a.row:first-child { border-top: 1px solid var(--ink); }
-  .record a.row:hover { background: #f4f4f4; padding-left: 10px; padding-right: 10px; }
-  .record .thumb { width: 108px; aspect-ratio: 4/3; overflow: hidden; background: #eee; }
-  .record .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .record .title { font-family: var(--display); font-stretch: 125%; font-weight: 500; text-transform: uppercase; font-size: clamp(17px, 1.9vw, 24px); line-height: 1.05; letter-spacing: -0.01em; }
-  .record .era { font-family: var(--display); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-  .record .desc { font-family: var(--serif); font-size: 14.5px; line-height: 1.45; color: #3a3a3a; }
-
-  /* ticker */
-  .ticker { background: var(--ink); color: var(--paper); overflow: hidden; border-top: 1px solid var(--ink); }
-  .ticker-track { display: flex; width: max-content; animation: tick 48s linear infinite; }
-  .ticker-track span { font-family: var(--display); font-stretch: 125%; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 15px 0; white-space: nowrap; }
-  @keyframes tick { to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
-
-  /* closing */
-  .closing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr) minmax(0, 1fr); align-items: end; gap: 20px; }
-  .big-link { white-space: nowrap; font-family: var(--display); font-stretch: 125%; font-weight: 500; text-transform: uppercase; font-size: clamp(24px, 3.5vw, 46px); letter-spacing: -0.025em; line-height: 0.95; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3em; }
-  .big-link:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
-
-  /* footer */
-  .foot { background: var(--ink); color: #cfcfcf; }
-  .foot-row { display: grid; grid-template-columns: 180px 1fr 1fr; gap: 20px; padding: 18px 0; border-top: 1px solid #2c2c2c; }
-  .foot a { color: #e9e9e9; text-decoration: none; }
-  .foot a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
-  .foot .label { color: #fff; }
-  .foot .li { font-family: var(--display); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; line-height: 2.1; }
-
-  /* responsive */
-  @media (max-width: 900px) {
-    .links { display: none; }
-    .nav-row { grid-template-columns: 1fr auto; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .side-l, .side-r { padding-top: 0; }
-    .side-l { order: 3; display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start; }
-    .side-r { order: 2; }
-    .portrait { order: 1; max-width: 520px; margin-left: auto; margin-right: auto; width: 100%; }
-    .cols-3 { grid-template-columns: 1fr; row-gap: 28px; }
-    .cols-3 > * { padding: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 18px; }
-    .cols-3 > *:first-child { border-top: 0; padding-top: 0; }
-    .story { grid-template-columns: 1fr; }
-    .twocol { columns: 1; }
-    .collage > * { grid-column: span 12 !important; margin-top: 0 !important; }
-    .collage .hide-sm { display: none; }
-    .overlay-title { position: static; padding: 0; order: -1; }
-    .record .thumb { width: 88px; }
-    .record .arrow { display: none; }
-    .closing { grid-template-columns: 1fr; text-align: center; }
-    .closing .fig { display: none; }
-    .foot-row { grid-template-columns: 1fr; gap: 8px; }
-    .strip .hide-sm { display: none; }
-    .strip { font-size: 9.5px; letter-spacing: 0.12em; }
-    .brand { font-size: 13px; }
-    .record a.row { grid-template-columns: 88px minmax(0, 1fr); column-gap: 16px; row-gap: 4px; align-items: start; }
-    .record .thumb { grid-column: 1; grid-row: 1 / 4; }
-    .record .era { grid-column: 2; grid-row: 1; }
-    .record .title { grid-column: 2; grid-row: 2; }
-    .record .desc { grid-column: 2; grid-row: 3; font-size: 14px; }
-  }
-</style>
-</helmet>
-
-<div style="{{ shell }}">
-
-  <!-- ===================== MASTHEAD ===================== -->
-  <div class="wrap">
-    <div class="strip label">
-      <span class="hide-sm">United Kingdom &amp; Singapore</span>
-      <span>{{ today }}</span>
-      <span class="hide-sm">Robotics · AI · Hardware</span>
+---
+layout: site
+nav: home
+person_schema: true
+title: "Rakshith Bangalore — Robotics Engineer and Entrepreneur | Humanoid Robots, AI Products"
+description: "Rakshith Bangalore is a robotics engineer and entrepreneur in the United Kingdom and Singapore. The work covers humanoid robots, robot simulation, Industry 4.0 mobile manipulation and the delivery of AI software and hardware products."
+image: /assets/raks-profile.png
+---
+<!-- ===================== HERO ===================== -->
+<section class="wrap" style="padding-bottom:clamp(30px,5vw,64px);" aria-labelledby="hero-name">
+  <h1 class="wordmark" id="hero-name"><span class="visually-hidden">Rakshith Bangalore — </span>Rakshith</h1>
+  <div class="hero-grid">
+    <figure class="side-l">
+      <div class="photo r-4x5"><img src="assets/humanoid-01-gantry.png" alt="Rakshith Bangalore with the Unitree H1-2 humanoid robot on its gantry" style="object-position:center 30%;" width="1130" height="1406"></div>
+      <figcaption class="cap">Fig. 1 — With the Unitree H1-2 humanoid on its gantry.</figcaption>
+    </figure>
+    <div class="portrait">
+      <img class="bw" src="assets/raks-profile.png" alt="Portrait of Rakshith Bangalore" width="2000" height="2000" fetchpriority="high">
+    </div>
+    <div class="side-r">
+      <div class="label label-muted" style="margin-bottom:14px;">Robotics engineer · Entrepreneur</div>
+      <h2 class="h3" style="margin-bottom:12px;">Robots, and the intelligence that makes them work.</h2>
+      <p class="small">Rakshith Bangalore is a robotics engineer and entrepreneur in the United Kingdom and Singapore. The work covers humanoid robots, robot simulation, mobile manipulators and AI products. One principle connects all of it: a model must work in the real system, not only in simulation.</p>
+      <div class="actions">
+        <a class="button button-dark" href="projects.dc.html">View the projects&nbsp;→</a>
+        <a class="button" href="about.html">About Rakshith</a>
+      </div>
     </div>
   </div>
-  <header class="nav">
-    <nav class="wrap nav-row" aria-label="Main">
-      <a href="#top" class="brand">Rakshith&nbsp;Bangalore</a>
-      <div class="links">
-        <a href="#latest">Latest</a>
-        <a href="#about">About</a>
-        <a href="#record">Work</a>
-        <a href="projects.dc.html">Projects</a>
-        <a href="articles/">Articles</a>
-      </div>
-      <a class="cta-link" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect <span aria-hidden="true">→</span></a>
-    </nav>
-  </header>
+</section>
 
-  <main id="top">
-
-  <!-- ===================== HERO ===================== -->
-  <section data-screen-label="Hero" class="wrap" style="padding-bottom:clamp(30px,5vw,64px);">
-    <h1 class="wordmark">Rakshith</h1>
-    <div class="hero-grid">
-      <div class="side-l">
-        <img class="bw" src="assets/humanoid-01-gantry.png" alt="Rakshith with the Unitree H1-2 humanoid on its gantry" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;" />
-        <div class="cap">Fig. 1 — With the Unitree H1-2 on its gantry.</div>
+<!-- ===================== LATEST ===================== -->
+<section class="wrap sec" style="padding-top:clamp(16px,3vw,36px);" aria-labelledby="latest-title">
+  <div class="sec-head">
+    <span class="label">Latest project</span>
+    <span class="label label-muted">Open source · In development · Simulation only</span>
+  </div>
+  <div class="split">
+    <figure>
+      <a href="project-wardzero.dc.html" class="photo r-16x10" style="display:block;" tabindex="-1" aria-hidden="true"><img src="assets/wardzero/hospital-wing.jpg" alt="" loading="lazy" width="1920" height="1080"></a>
+      <figcaption class="cap">The operating theatre in the WardZero surgical wing. Isaac Sim 6.0, path traced.</figcaption>
+    </figure>
+    <div>
+      <div class="label" style="margin-bottom:14px;">WardZero</div>
+      <h2 class="h2" id="latest-title" style="font-size:clamp(26px,3.1vw,42px);">The simulated hospital where robots train before they meet patients.</h2>
+      <p class="body dropcap" style="margin-top:22px;">WardZero is an open platform, created by Rakshith, to develop and test robot solutions for hospitals. It provides a full simulated hospital with a surgical wing, two simulators, a safety layer and navigation. The reference robot is a Unitree G1 humanoid with two BrainCo Revo2 hands.</p>
+      <div class="stats stats-3" style="margin:24px 0;">
+        <div><div class="num">99.6%</div><div class="label">Map wall accuracy</div></div>
+        <div><div class="num">0.97</div><div class="label">Stand survival</div></div>
+        <div><div class="num">2048</div><div class="label">Robots per GPU</div></div>
       </div>
-      <div class="portrait">
-        <img id="hero-portrait" class="bw" src="assets/raks-profile.png" alt="Rakshith Bangalore" />
+      <div class="actions" style="margin-top:0;">
+        <a class="button button-dark" href="project-wardzero.dc.html">Read the project&nbsp;→</a>
+        <a class="button" href="https://bkrakshith.github.io/wardzero/" target="_blank" rel="noopener">WardZero website&nbsp;↗</a>
       </div>
-      <div class="side-r">
-        <div class="label" style="color:var(--muted);margin-bottom:14px;">Robotics engineer · Entrepreneur</div>
-        <h2 class="h-sm">I design robots, and the intelligence that makes them work.</h2>
-        <p class="body-sm">I build intelligence into machines, from humanoid robots and mobile manipulators to production AI products. My focus is the same in each project: models must work in real systems, not only in simulation.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;">
-          <a class="btn btn-dark" href="#record">See the work <span aria-hidden="true">↓</span></a>
-          <a class="btn btn-line" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== LATEST: FRONT-PAGE STORY ===================== -->
-  <section id="latest" data-screen-label="Latest project" class="wrap sec" style="padding-top:clamp(20px,3vw,40px);">
-    <div class="sec-head">
-      <span class="label">Latest project · Front page</span>
-      <span class="label" style="color:var(--muted);">Open source · in development · simulation only</span>
-    </div>
-    <div class="story">
-      <div>
-        <a href="project-wardzero.dc.html" aria-label="Open the WardZero project" style="display:block;">
-          <img class="bw" src="assets/wardzero/hospital-wing.jpg" alt="WardZero: operating theatre in the simulated surgical wing, Isaac Sim" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;" />
-        </a>
-        <div class="cap">The operating theatre in the WardZero surgical wing. Isaac Sim 6.0, path traced.</div>
-      </div>
-      <div>
-        <div class="label" style="margin-bottom:14px;">WardZero</div>
-        <h2 class="h-lg" style="font-size:clamp(26px,3.1vw,42px);line-height:1.02;">The simulated hospital where robots train before they meet patients.</h2>
-        <p class="body dropcap" style="margin-top:22px;">WardZero is an open platform to develop and test robot solutions for hospitals. It gives a full simulated hospital with a surgical wing, two simulators (Isaac Sim and MuJoCo), a safety layer and navigation. The reference robot is a Unitree G1 humanoid with two BrainCo Revo2 hands.</p>
-        <p class="body" style="margin-top:12px;">All parts use the low-level interface of the real robot. Thus, the same software runs in simulation and on the robot.</p>
-        <div class="stats">
-          <div><div class="num">99.6%</div><div class="label" style="color:var(--muted);margin-top:8px;line-height:1.5;">Map wall accuracy</div></div>
-          <div><div class="num">0.97</div><div class="label" style="color:var(--muted);margin-top:8px;line-height:1.5;">Stand survival</div></div>
-          <div><div class="num">2048</div><div class="label" style="color:var(--muted);margin-top:8px;line-height:1.5;">Robots per GPU</div></div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <a class="btn btn-dark" href="project-wardzero.dc.html">Read the story <span aria-hidden="true">→</span></a>
-          <a class="btn btn-line" href="https://bkrakshith.github.io/wardzero/" target="_blank" rel="noopener">WardZero website <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== THE ENGINEER ===================== -->
-  <section id="about" data-screen-label="About" class="wrap sec" style="padding-top:0;">
-    <div class="sec-head">
-      <span class="label">The engineer</span>
-      <span class="label" style="color:var(--muted);">Profile · Approach · Background</span>
-    </div>
-    <div class="collage">
-      <div style="grid-column:span 3;">
-        <img class="bw" src="assets/humanoid-03-case-grip.jpg" alt="Humanoid end effector taking a packed case" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;" />
-      </div>
-      <div class="hide-sm" style="grid-column:span 3;margin-top:clamp(40px,7vw,96px);">
-        <img class="bw" src="assets/humanoid-05-lab.jpg" alt="The robotics lab after hours" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover;" />
-      </div>
-      <div style="grid-column:span 6;">
-        <img class="bw" src="assets/humanoid-04-palletising.jpg" alt="Humanoid palletising trials on the lab floor" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;" />
-        <div class="cap">Fig. 2 — Palletising trials with a humanoid robot, PepsiCo programme.</div>
-      </div>
-      <h2 class="h-xl overlay-title">Intelligence<br>into machines</h2>
-    </div>
-    <div class="cols-3" style="margin-top:clamp(36px,5vw,60px);">
-      <div>
-        <h3 class="h-sm">Profile</h3>
-        <p class="body-sm">I am a robotics engineer. I work on humanoid R&amp;D, mobile manipulation and manufacturing automation. I am now the project manager for <a href="https://podcut.com" target="_blank" rel="noopener">PodCut</a> and <a href="https://goboxstudio.com" target="_blank" rel="noopener">GoBox</a>. I work between the United Kingdom and Singapore.</p>
-      </div>
-      <div>
-        <h3 class="h-sm">Approach</h3>
-        <p class="body-sm">The model is rarely the cause when a system fails. The parts around it are the cause. A controller can work in simulation and fail on a real actuator. An AI feature can work in a demo and fail on the fifth job of the day. Thus, I identify the system before I trust it.</p>
-      </div>
-      <div>
-        <h3 class="h-sm">Background</h3>
-        <ul style="list-style:none;margin:0;padding:0;">
-          <li class="body-sm" style="padding:8px 0;border-bottom:1px solid var(--line);">MEng, robotics &amp; automation, Nottingham Trent University</li>
-          <li class="body-sm" style="padding:8px 0;border-bottom:1px solid var(--line);">Humanoid R&amp;D — Unitree H1-2 &amp; G1</li>
-          <li class="body-sm" style="padding:8px 0;border-bottom:1px solid var(--line);">Host, <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics</a></li>
-          <li class="body-sm" style="padding:8px 0;">Project manager, PodCut &amp; GoBox</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CAPABILITIES TICKER ===================== -->
-  <div class="ticker" aria-label="Capabilities">
-    <div class="ticker-track" aria-hidden="true">
-      <span>Legged control &nbsp;✳&nbsp; Neural policies &nbsp;✳&nbsp; Sim-to-real &nbsp;✳&nbsp; Actuator identification &nbsp;✳&nbsp; Mobile manipulation &nbsp;✳&nbsp; Robot simulation &nbsp;✳&nbsp; ROS 2 &nbsp;✳&nbsp; Systems integration &nbsp;✳&nbsp; Force feedback &nbsp;✳&nbsp; Autonomous navigation &nbsp;✳&nbsp; Production AI &nbsp;✳&nbsp; From the United Kingdom to Singapore &nbsp;✳&nbsp;&nbsp;</span>
-      <span>Legged control &nbsp;✳&nbsp; Neural policies &nbsp;✳&nbsp; Sim-to-real &nbsp;✳&nbsp; Actuator identification &nbsp;✳&nbsp; Mobile manipulation &nbsp;✳&nbsp; Robot simulation &nbsp;✳&nbsp; ROS 2 &nbsp;✳&nbsp; Systems integration &nbsp;✳&nbsp; Force feedback &nbsp;✳&nbsp; Autonomous navigation &nbsp;✳&nbsp; Production AI &nbsp;✳&nbsp; From the United Kingdom to Singapore &nbsp;✳&nbsp;&nbsp;</span>
     </div>
   </div>
+</section>
 
-  <!-- ===================== THE RECORD ===================== -->
-  <section id="record" data-screen-label="Selected work" class="wrap sec">
-    <div style="text-align:center;margin-bottom:clamp(30px,4.5vw,56px);">
-      <div class="label" style="color:var(--muted);margin-bottom:14px;">Selected work</div>
-      <h2 class="h-xl">The record</h2>
+<!-- ===================== THE ENGINEER ===================== -->
+<section class="wrap sec" style="padding-top:0;" aria-labelledby="engineer-title">
+  <div class="sec-head">
+    <span class="label">The engineer</span>
+    <a class="label label-muted" href="about.html" style="text-decoration:none;">Full profile and career history&nbsp;→</a>
+  </div>
+  <div class="collage">
+    <div class="photo r-4x5" style="grid-column:span 3;"><img src="assets/humanoid-03-case-grip.jpg" alt="Humanoid end effector taking a packed case" loading="lazy" width="1024" height="576"></div>
+    <div class="photo r-3x4 hide-sm" style="grid-column:span 3;margin-top:clamp(40px,7vw,96px);"><img src="assets/humanoid-05-lab.jpg" alt="The robotics laboratory after hours" loading="lazy" width="4032" height="2268"></div>
+    <figure style="grid-column:span 6;">
+      <div class="photo r-1x1"><img src="assets/humanoid-04-palletising.jpg" alt="Humanoid robot palletising trials on the laboratory floor" loading="lazy" width="1024" height="576"></div>
+      <figcaption class="cap">Fig. 2 — Palletising trials with a humanoid robot, PepsiCo programme.</figcaption>
+    </figure>
+    <h2 class="h1 overlay-title" id="engineer-title">Intelligence<br>into machines</h2>
+  </div>
+  <div class="cols-3" style="margin-top:clamp(36px,5vw,60px);">
+    <div>
+      <h3 class="h3" style="margin-bottom:12px;">Profile</h3>
+      <p class="small">Rakshith is a robotics engineer with experience in humanoid robot R&amp;D, mobile manipulation and manufacturing automation. Rakshith now manages the delivery of an AI-enabled full-stack software product and a portable podcasting solution.</p>
     </div>
-    <div class="record">
-      <a class="row" href="project-wardzero.dc.html">
-        <span class="era">Now</span>
-        <span class="title">WardZero</span>
-        <span class="thumb"><img class="bw" src="assets/wardzero/hospital-wing.jpg" alt="" /></span>
-        <span class="desc">An open platform to develop and test hospital robots in simulation.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="row" href="project-podcut.dc.html">
-        <span class="era">Current</span>
-        <span class="title">PodCut</span>
-        <span class="thumb"><img class="bw" src="podcut.png" alt="" style="object-position:left top;" /></span>
-        <span class="desc">AI post-production SaaS. Post-production time decreased from four days to four hours.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="row" href="project-gobox.dc.html">
-        <span class="era">Current</span>
-        <span class="title">GoBox</span>
-        <span class="thumb"><img class="bw" src="GoBox.png" alt="" /></span>
-        <span class="desc">A portable recording studio, from working prototype to its first production run.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="row" href="project-humanoid.dc.html">
-        <span class="era">Professional</span>
-        <span class="title">Humanoid robotics</span>
-        <span class="thumb"><img class="bw" src="assets/humanoid-01-gantry.png" alt="" style="object-position:center 30%;" /></span>
-        <span class="desc">Industrial use cases on Unitree H1-2 and G1 humanoid robots for PepsiCo.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="row" href="project-manipulator.dc.html">
-        <span class="era">MEng · Award</span>
-        <span class="title">Industry 4.0 mobile manipulator</span>
-        <span class="thumb" style="display:grid;place-items:center;"><span class="label" style="color:var(--muted);">UR-10</span></span>
-        <span class="desc">A UR-10 arm on an Omron LD250 mobile base with a SmartShift tool changer.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="row" href="project-laparoscopic.dc.html">
-        <span class="era">University</span>
-        <span class="title">Laparoscopic surgery trainer</span>
-        <span class="thumb" style="display:grid;place-items:center;"><span class="label" style="color:var(--muted);">NHS</span></span>
-        <span class="desc">A compliant robotic mechanism that gives surgeons realistic force feedback.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="row" href="project-cabin-lab.dc.html">
-        <span class="era">University</span>
-        <span class="title">Aircraft cabin lab</span>
-        <span class="thumb" style="display:grid;place-items:center;"><span class="label" style="color:var(--muted);">ERJ 145</span></span>
-        <span class="desc">An Embraer ERJ 145 changed into a flight-comfort research laboratory.</span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
+    <div>
+      <h3 class="h3" style="margin-bottom:12px;">Approach</h3>
+      <p class="small">A system rarely fails because of the model. It fails because of the parts around the model. Rakshith identifies the system before trusting it, on a humanoid actuator and in an AI product alike.</p>
     </div>
-    <div style="display:flex;justify-content:center;margin-top:clamp(30px,4vw,48px);">
-      <a class="btn btn-line" href="projects-archive.dc.html">View the full index <span aria-hidden="true">→</span></a>
+    <div>
+      <h3 class="h3" style="margin-bottom:12px;">At a glance</h3>
+      <ul class="points" style="margin-top:4px;">
+        <li data-n="01" class="small">MEng, Nottingham Trent University</li>
+        <li data-n="02" class="small">Humanoid R&amp;D on Unitree H1-2 and G1</li>
+        <li data-n="03" class="small">Host of Unfiltered Robotics</li>
+      </ul>
     </div>
-  </section>
+  </div>
+  <div class="actions" style="margin-top:clamp(28px,4vw,40px);">
+    <a class="button" href="about.html">Read the career history&nbsp;→</a>
+  </div>
+</section>
 
-  <!-- ===================== SOCIAL (Instagram carousel + LinkedIn cards) =====================
-       Self-contained: everything is drawn by social-feed.js from social/feed.json,
-       which is edited in Pages CMS. Hidden automatically when there is nothing to show. -->
-  <x-import component-from-global-scope="social-feed" from="./social-feed.js" data-config="social/feed.json"></x-import>
-
-  <!-- ===================== CLOSING CTA ===================== -->
-  <section id="contact" data-screen-label="Get in touch" style="border-top:1px solid var(--ink);overflow:hidden;">
-    <div class="wrap closing" style="padding-top:clamp(40px,6vw,80px);">
-      <div class="fig"><img class="bw" src="assets/humanoid-figure.jpg" alt="" style="display:block;height:clamp(260px,30vw,400px);width:auto;margin-right:auto;" /></div>
-      <div style="text-align:center;padding-bottom:clamp(40px,6vw,90px);">
-        <div class="label" style="color:var(--muted);margin-bottom:18px;">Get in touch</div>
-        <a class="big-link" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect <span aria-hidden="true">→</span></a>
-        <p class="body" style="max-width:46ch;margin:20px auto 0;">Do you build hardware or put AI into production? Do you work in robotics and want to record an episode of Unfiltered Robotics? Book a call, or send an email.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px;">
-          <a class="btn btn-dark" href="{{ mailtoPlain }}">Say hello <span aria-hidden="true">→</span></a>
-          <a class="btn btn-line" href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="fig"><img class="bw" src="assets/humanoid-figure.jpg" alt="" style="display:block;height:clamp(260px,30vw,400px);width:auto;margin-left:auto;transform:scaleX(-1);" /></div>
-    </div>
-  </section>
-
-  </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="foot">
-    <div class="ticker" style="border-top:1px solid #2c2c2c;border-bottom:1px solid #2c2c2c;">
-      <div class="ticker-track" aria-hidden="true" style="animation-duration:60s;">
-        <span>From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp; From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp;&nbsp;</span>
-        <span>From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp; From the United Kingdom to Singapore &nbsp;✳&nbsp; Robots that work in the real world &nbsp;✳&nbsp;&nbsp;</span>
-      </div>
-    </div>
-    <div class="wrap" style="padding-top:clamp(30px,4vw,48px);padding-bottom:clamp(30px,4vw,48px);">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px;">
-        <div class="x" style="font-size:clamp(22px,3vw,34px);font-weight:500;color:#fff;letter-spacing:-0.01em;">Rakshith Bangalore</div>
-        <div class="li">Robotics engineer · Entrepreneur</div>
-      </div>
-      <div class="foot-row">
-        <div class="label">Where</div>
-        <div class="li">United Kingdom</div>
-        <div class="li">Singapore</div>
-      </div>
-      <div class="foot-row">
-        <div class="label">Follow</div>
-        <div class="li"><a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn</a><br><a href="https://www.instagram.com/mr.rakshith/" target="_blank" rel="noopener">Instagram</a></div>
-        <div class="li"><a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics ↗</a><br><a href="articles/">Articles</a></div>
-      </div>
-      <div class="foot-row">
-        <div class="label">Contact</div>
-        <div class="li"><a href="{{ mailtoPlain }}" style="text-transform:none;letter-spacing:0.04em;">{{ email }}</a></div>
-        <div class="li"><a href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect · Topmate ↗</a></div>
-      </div>
-      <div class="foot-row" style="font-family:var(--display);font-size:11px;letter-spacing:0.08em;color:#8a8a8a;">
-        <div>© 2026</div>
-        <div>Rakshith Bangalore</div>
-        <div>Updated October 2026</div>
-      </div>
-    </div>
-  </footer>
-
+<!-- ===================== CAPABILITIES ===================== -->
+<div class="ticker" role="marquee" aria-label="Capabilities: legged control, neural policies, sim-to-real transfer, actuator identification, mobile manipulation, robot simulation, ROS 2, systems integration, force feedback, autonomous navigation, production AI">
+  <div class="ticker-track" aria-hidden="true">
+    <span>Legged control &nbsp;✳&nbsp; Neural policies &nbsp;✳&nbsp; Sim-to-real &nbsp;✳&nbsp; Actuator identification &nbsp;✳&nbsp; Mobile manipulation &nbsp;✳&nbsp; Robot simulation &nbsp;✳&nbsp; ROS 2 &nbsp;✳&nbsp; Systems integration &nbsp;✳&nbsp; Force feedback &nbsp;✳&nbsp; Autonomous navigation &nbsp;✳&nbsp; Production AI &nbsp;✳&nbsp;&nbsp;</span>
+    <span>Legged control &nbsp;✳&nbsp; Neural policies &nbsp;✳&nbsp; Sim-to-real &nbsp;✳&nbsp; Actuator identification &nbsp;✳&nbsp; Mobile manipulation &nbsp;✳&nbsp; Robot simulation &nbsp;✳&nbsp; ROS 2 &nbsp;✳&nbsp; Systems integration &nbsp;✳&nbsp; Force feedback &nbsp;✳&nbsp; Autonomous navigation &nbsp;✳&nbsp; Production AI &nbsp;✳&nbsp;&nbsp;</span>
+  </div>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
-class Component extends DCLogic {
-  renderVals() {
-    // Palette shared with social-feed.js (it reads these custom properties).
-    const shell = {
-      '--bg': '#ffffff',
-      '--bg2': '#f4f4f4',
-      '--ink': '#0e0e0e',
-      '--muted': '#555555',
-      '--faint': '#8f8f8f',
-      '--line': '#dcdcdc',
-      '--accent': '#0e0e0e',
-      minHeight: '100vh',
-      background: '#ffffff',
-      color: '#0e0e0e',
-      fontFamily: "'Archivo', 'Helvetica Neue', Arial, sans-serif"
-    };
-    const email = 'rakshith' + '@' + 'bkrakshith' + '.com';
-    const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-    return {
-      shell,
-      email,
-      today,
-      mailtoPlain: 'mailto:' + email
-    };
-  }
-}
-</script>
-</body>
-</html>
+
+<!-- ===================== THE RECORD ===================== -->
+<section class="wrap sec" aria-labelledby="record-title">
+  <div class="center" style="margin-bottom:clamp(30px,4.5vw,56px);">
+    <div class="label label-muted" style="margin-bottom:14px;">Selected work</div>
+    <h2 class="h1" id="record-title">The record</h2>
+  </div>
+  {% include record.html %}
+  <div class="actions" style="justify-content:center;margin-top:clamp(30px,4vw,48px);">
+    <a class="button button-dark" href="projects.dc.html">Featured projects&nbsp;→</a>
+    <a class="button" href="projects-archive.dc.html">Full index</a>
+  </div>
+</section>
+
+<!-- ===================== SOCIAL =====================
+     Drawn by social-feed.js from social/feed.json (edited in Pages CMS).
+     Hidden automatically when there is nothing to show. -->
+<social-feed data-config="social/feed.json"></social-feed>
+<script src="social-feed.js" defer></script>
+
+<!-- ===================== CLOSING ===================== -->
+<section style="border-top:1px solid var(--ink);overflow:hidden;" aria-labelledby="connect-title">
+  <div class="wrap closing" style="padding-top:clamp(40px,6vw,80px);">
+    <div class="fig"><img class="bw" src="assets/humanoid-figure.jpg" alt="" loading="lazy" style="height:clamp(260px,30vw,400px);width:auto;margin-right:auto;"></div>
+    <div class="center" style="padding-bottom:clamp(40px,6vw,90px);">
+      <div class="label label-muted" style="margin-bottom:18px;">Get in touch</div>
+      <h2 id="connect-title" style="margin:0;"><a class="big-link" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect&nbsp;<span aria-hidden="true">→</span></a></h2>
+      <p class="body" style="max-width:48ch;margin:20px auto 0;">Rakshith welcomes conversations about hardware, AI in production and robotics. Podcast guests for Unfiltered Robotics are also welcome. Book a call, or send an email.</p>
+      <div class="actions" style="justify-content:center;">
+        <a class="button button-dark" href="contact.html">Contact page&nbsp;→</a>
+        <a class="button" href="contact.html" data-email>Send an email</a>
+      </div>
+    </div>
+    <div class="fig"><img class="bw" src="assets/humanoid-figure.jpg" alt="" loading="lazy" style="height:clamp(260px,30vw,400px);width:auto;margin-left:auto;transform:scaleX(-1);"></div>
+  </div>
+</section>

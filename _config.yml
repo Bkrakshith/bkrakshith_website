@@ -18,8 +18,8 @@ collections:
   linkedin:
     output: false
 
-# Articles live in _posts/ and are served at /articles/<slug>/
-permalink: /articles/:title/
+# Articles live in _posts/ and are served at /articles/<slug>/ (set in
+# defaults below, so the other pages keep their .html addresses).
 
 markdown: kramdown
 kramdown:
@@ -32,11 +32,6 @@ plugins:
 feed:
   path: articles/feed.xml
 
-# Jekyll skips folders starting with "_" unless listed here. The design
-# system in _ds/ is required by every project page — do not remove.
-include:
-  - _ds
-
 exclude:
   - README.md
   - LICENSE
@@ -47,3 +42,4 @@ defaults:
       type: posts
     values:
       layout: article
+      permalink: /articles/:title/
