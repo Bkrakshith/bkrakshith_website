@@ -4,14 +4,15 @@
 
 title: Rakshith Bangalore
 description: >-
-  Robotics engineer and entrepreneur across the UK and Singapore: humanoid
-  robots, mobile manipulation, and AI software and hardware products.
+  Rakshith Bangalore is a robotics solutions architect and hands-on robotics
+  generalist in the United Kingdom and Singapore, helping startups and
+  businesses start robotics programmes, across robot hardware and software.
 url: https://bkrakshith.com
 baseurl: ""
 lang: en-GB
 timezone: Europe/London
 author: Rakshith Bangalore
-default_image: /assets/raks-profile.png
+default_image: /assets/og-default.jpg
 
 # Curated LinkedIn posts for the homepage "Latest" section (data only).
 collections:
