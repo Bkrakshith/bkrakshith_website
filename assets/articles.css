@@ -1,14 +1,14 @@
-/* Articles section — matches the homepage (index.html) palette and type. */
+/* Articles section — matches the homepage (index.html) palette and type (editorial, October 2026). */
 :root {
-  --bg: #FBFAF7;
-  --bg2: #F4EFE5;
-  --ink: #181712;
-  --muted: #6B665B;
-  --faint: #A39C8E;
-  --line: #E7E1D5;
-  --accent: #5B53C9;
-  --serif: 'Instrument Serif', Georgia, serif;
-  --sans: 'Hanken Grotesk', system-ui, sans-serif;
+  --bg: #ffffff;
+  --bg2: #f4f4f4;
+  --ink: #0e0e0e;
+  --muted: #555555;
+  --faint: #8f8f8f;
+  --line: #dcdcdc;
+  --accent: #0e0e0e;
+  --serif: 'Newsreader', Georgia, serif;
+  --sans: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'Spline Sans Mono', ui-monospace, monospace;
   --gutter: clamp(20px, 5vw, 52px);
 }
@@ -22,7 +22,7 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: #ECE6DC; color: var(--ink); }
+::selection { background: var(--ink); color: var(--bg); }
 a { color: inherit; }
 img { max-width: 100%; height: auto; }
 
@@ -183,3 +183,9 @@ img { max-width: 100%; height: auto; }
   max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter) clamp(28px, 4vw, 44px);
   font-size: 12.5px; color: #6F6B60;
 }
+
+/* ── Editorial theme (October 2026): headlines match the homepage ── */
+.brand { font-family: var(--sans); font-stretch: 125%; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; }
+h1 { font-family: var(--sans) !important; font-stretch: 125%; font-weight: 500 !important; text-transform: uppercase; letter-spacing: -0.025em !important; line-height: 0.98 !important; }
+.site-header { border-bottom-color: var(--ink); }
+img { filter: grayscale(1) contrast(1.06); }

@@ -16,6 +16,12 @@ bkrakshith.com
 ```
 then point your domain's DNS at GitHub Pages per GitHub's "Managing a custom domain" docs.
 
+## Design
+Editorial, black-and-white theme (October 2026): Archivo (expanded) for headlines and labels, Newsreader for reading text, hairline rules, greyscale photography.
+- Homepage styles live in the `<style>` block in `index.html`.
+- Inner pages get the theme from the "Editorial theme" block at the end of `_ds/…/styles.css`; delete that block to revert them.
+- Articles use `assets/articles.css`.
+
 ## Structure
 - `index.html` — homepage (was `bkrakshith-studio.dc.html`; renamed so it serves at the site root)
 - `projects.dc.html`, `projects-archive.dc.html`, `project-*.dc.html`, `university-life.dc.html` — the rest of the site

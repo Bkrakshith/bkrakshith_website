@@ -28,11 +28,11 @@
     .wrap { box-sizing: content-box; max-width: 1200px; margin: 0 auto; padding: clamp(54px,7vw,100px) clamp(20px,5vw,52px); }
     .eyebrow { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: .18em;
       text-transform: uppercase; color: var(--accent, #5B53C9); margin-bottom: 14px; }
-    h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; margin: 0;
+    h2 { font-family: 'Newsreader', Georgia, serif; font-weight: 400; margin: 0;
       font-size: clamp(2.1rem,4.4vw,3.6rem); line-height: 1; letter-spacing: -.01em; color: var(--ink, #181712); }
     .block { margin-top: clamp(36px,5vw,56px); }
     .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
-    .who { display: flex; align-items: center; gap: 10px; font-family: 'Hanken Grotesk', sans-serif;
+    .who { display: flex; align-items: center; gap: 10px; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
       font-size: 15px; font-weight: 600; color: var(--ink, #181712); text-decoration: none; }
     .who:hover { opacity: .65; }
     .who span { font-weight: 400; color: var(--muted, #6B665B); }
@@ -70,19 +70,19 @@
       display: grid; place-items: center; }
     .ig-kind svg { width: 14px; height: 14px; fill: #fff; }
     .ig-cap { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1;
-      font-family: 'Hanken Grotesk', sans-serif; font-size: 13px; line-height: 1.35;
+      font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 13px; line-height: 1.35;
       display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
       text-shadow: 0 1px 2px rgba(0,0,0,.35); }
     .ig-more { width: clamp(168px, 44vw, 236px); aspect-ratio: 9 / 16; border-radius: 14px;
       border: 1px dashed var(--line, #D8D1C2); display: flex; flex-direction: column; gap: 12px;
       align-items: center; justify-content: center; text-align: center; padding: 20px; text-decoration: none;
-      font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink, #181712); }
+      font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; font-weight: 600; color: var(--ink, #181712); }
     .ig-more:hover { border-color: var(--ink, #181712); }
 
     /* LinkedIn cards */
     .li-card { width: min(372px, 84vw); background: #fff; border: 1px solid var(--line, #E7E1D5); border-radius: 12px;
       padding: 20px 20px 18px; display: flex; flex-direction: column; text-decoration: none; color: var(--ink, #181712);
-      font-family: 'Hanken Grotesk', sans-serif; transition: border-color .15s, box-shadow .2s; }
+      font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; transition: border-color .15s, box-shadow .2s; }
     .li-card:hover { border-color: #CFC7B6; box-shadow: 0 10px 30px -14px rgba(24,23,18,.22); }
     .li-head { display: flex; align-items: center; gap: 11px; }
     .li-head img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: top;
