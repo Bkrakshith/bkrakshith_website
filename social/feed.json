@@ -11,7 +11,7 @@ layout: null
   "name": {{ site.title | jsonify }},
   "headline": {{ s.headline | jsonify }},
   "heading": {{ s.heading | jsonify }},
-  "avatar": {{ "/assets/raks-profile.png" | relative_url | jsonify }},
+  "avatar": {{ "/assets/raks-profile.webp" | relative_url | jsonify }},
   "linkedin": [
     {%- assign first = true -%}
     {%- for p in posts -%}

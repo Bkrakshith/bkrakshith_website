@@ -1,32 +1,47 @@
 # Rakshith Bangalore
 
-> Rakshith Bangalore is a robotics engineer and entrepreneur in the United Kingdom and Singapore. The work covers humanoid robots (Unitree H1-2 and G1 on a PepsiCo programme), robot simulation (WardZero), Industry 4.0 mobile manipulation, medical robotics, and the delivery of AI software and hardware products (software project management with JIRA, Confluence and Miro; hardware product management with BOM, DFM and US market entry). Rakshith hosts Unfiltered Robotics, a podcast on legged robots and hardware development.
+> Rakshith Bangalore (full name Rakshith Bangalore Kumaraswamy) is a robotics solutions architect and hands-on robotics generalist based in the United Kingdom and Singapore. Rakshith built a robotics programme at Nottingham Trent University from the ground up and helps startups and businesses start robotics programmes: use-case selection, solution architecture, simulation, pilots and deployment. The experience covers both robot hardware (mechanical design, integration, BOM, DFM, manufacturing) and robot software (ROS 2, Isaac Sim, MuJoCo, reinforcement learning, sim-to-real transfer). Note: "Bangalore" is part of the name; Rakshith is not based in Bangalore, India.
 
-Facts:
-- Latest project: WardZero, an open platform to develop and test hospital robots in simulation. It has a simulated hospital with a surgical wing, Isaac Sim and MuJoCo, a safety layer and ROS 2 navigation. The reference robot is a Unitree G1 humanoid with BrainCo Revo2 hands. All tests used simulation only.
-- Professional humanoid R&D: neural policies for legged control, sim-to-real transfer and actuator identification on Unitree H1-2 and G1.
-- Industry 4.0 mobile manipulator (award-winning MEng capstone): UR-10 arm on an Omron LD250 base with SmartShift tool changing, scoped with Walkers around a live factory workflow.
-- Laparoscopic surgery trainer: compliant force-feedback mechanism, an eight-month project with an NHS Trust.
-- Aircraft cabin lab: a decommissioned Embraer ERJ 145 converted into a flight-comfort research platform (EU Clean Sky 2, Comfdemo).
+## Positioning
+- Robotics solutions architect for startups and businesses.
+- High-velocity robotics generalist: mechanical design, electronics integration, control, simulation, machine learning and product delivery.
+- Builder of robotics programmes: built a robotics programme at Nottingham Trent University from the ground up; founded the university's robotics club and drone society.
+
+## Services
+- Robotics programme set-up: first use case, platform choice, laboratory and team set-up, partners, first-year roadmap.
+- Solution architecture and feasibility studies: requirements, system architecture, make-or-buy, safety concept.
+- Pilot to deployment: one scoped, instrumented pilot with a measurable end state, and a plan from pilot to production.
+- Simulation and sim-to-real: digital twins in Isaac Sim and MuJoCo, reinforcement learning, transfer to real robots.
+- Hardware to market: BOM, DFM, supplier timelines, first production run.
+- Fractional robotics lead: part-time technical leadership for robotics teams.
+
+## Facts
+- Humanoid robotics: two years of industrial use cases on Unitree H1-2 and G1 humanoid robots for a PepsiCo programme; neural policies for legged control, sim-to-real transfer, actuator identification.
+- WardZero (2026): open platform to develop and test hospital robots in simulation; simulated hospital with a surgical wing, Isaac Sim and MuJoCo, a safety layer with seven modes, ROS 2 navigation (99.6% map wall accuracy); reference robot Unitree G1 with BrainCo Revo2 hands. Simulation only so far.
+- Industry 4.0 mobile manipulator (award-winning MEng capstone): UR-10 arm on an Omron LD250 mobile base with a SmartShift tool changer, scoped with Walkers around a live factory workflow.
+- Laparoscopic surgery trainer: project manager of an eight-person team with an NHS Trust; compliant force-feedback mechanism.
+- Aircraft cabin lab: decommissioned Embraer ERJ 145 converted into a flight-comfort research laboratory for EU Clean Sky 2 (Comfdemo).
 - Product delivery: an AI-enabled full-stack post-production software platform (pilot post-production reduced from 4 days to 4 hours) and a portable podcasting solution moving to its first production run.
 - Education: MEng, Nottingham Trent University.
 
 ## Pages
-- [Home](https://bkrakshith.com/): overview and latest project
-- [About](https://bkrakshith.com/about.html): profile, career history and capabilities
-- [Featured projects](https://bkrakshith.com/projects.dc.html): WardZero, humanoid robotics, mobile manipulator, surgery trainer
-- [WardZero](https://bkrakshith.com/project-wardzero.dc.html): simulated hospital for robot training (Isaac Sim, MuJoCo, ROS 2)
+- [Home](https://bkrakshith.com/): overview, services and latest project
+- [Services](https://bkrakshith.com/robotics-consulting.html): robotics consulting for startups and businesses, how a robotics programme starts, FAQ
+- [About](https://bkrakshith.com/about.html): profile, strengths, career history and capabilities
+- [Featured projects](https://bkrakshith.com/projects.dc.html)
+- [WardZero](https://bkrakshith.com/project-wardzero.dc.html): simulated hospital for robot training
 - [Humanoid robotics](https://bkrakshith.com/project-humanoid.dc.html): Unitree H1-2 and G1 for PepsiCo
 - [Mobile manipulator](https://bkrakshith.com/project-manipulator.dc.html): UR-10 and Omron LD250, tool changing
 - [Surgery trainer](https://bkrakshith.com/project-laparoscopic.dc.html): force-feedback medical robotics
 - [Aircraft cabin lab](https://bkrakshith.com/project-cabin-lab.dc.html): ERJ 145 research platform
-- [AI-enabled full-stack software](https://bkrakshith.com/project-ai-software.dc.html): software project management
+- [AI-enabled full-stack software](https://bkrakshith.com/project-ai-software.dc.html): software delivery
 - [Portable podcasting solution](https://bkrakshith.com/project-portable-podcasting.dc.html): hardware product management
 - [Full index](https://bkrakshith.com/projects-archive.dc.html): all projects
-- [Articles](https://bkrakshith.com/articles/): writing on robotics, sim-to-real and AI and hardware products
-- [Contact](https://bkrakshith.com/contact.html): book a call or send an email
+- [Articles](https://bkrakshith.com/articles/)
+- [Contact](https://bkrakshith.com/contact.html)
 
 ## Contact
 - Book a call: https://topmate.io/rakshith_bangalore
 - LinkedIn: https://www.linkedin.com/in/rakshithbangalore
+- GitHub: https://github.com/Bkrakshith
 - Podcast: https://unfilteredrobotics.com

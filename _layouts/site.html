@@ -25,14 +25,29 @@
 {%- else %}
 <meta property="og:type" content="website">
 {%- endif %}
+<meta property="og:image:alt" content="Rakshith Bangalore, robotics solutions architect">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Rakshith Bangalore">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Articles" href="{{ '/articles/feed.xml' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+{%- capture person -%}{"@type":"Person","@id":"https://bkrakshith.com/#person","name":"Rakshith Bangalore","alternateName":["Rakshith Bangalore Kumaraswamy","Rakshith B K"],"url":"https://bkrakshith.com/","image":"https://bkrakshith.com/assets/raks-profile.png","jobTitle":"Robotics Solutions Architect","description":{{ site.description | strip | jsonify }},"alumniOf":{"@type":"CollegeOrUniversity","name":"Nottingham Trent University","sameAs":"https://www.ntu.ac.uk/"},"knowsAbout":["Robotics solution architecture","Robotics programme development","Robotics consulting for startups","Hardware and software integration","Humanoid robots","Legged locomotion","Sim-to-real transfer","Reinforcement learning for robotics","Robot simulation","NVIDIA Isaac Sim","MuJoCo","ROS 2","Mobile manipulation","Industry 4.0 automation","Medical robotics","Design for manufacture","Hardware product management","Software project management"],"sameAs":["https://www.linkedin.com/in/rakshithbangalore","https://github.com/Bkrakshith","https://www.instagram.com/mr.rakshith/","https://unfilteredrobotics.com","https://topmate.io/rakshith_bangalore"],"workLocation":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Singapore"}]}{%- endcapture -%}
 {%- if page.person_schema %}
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://bkrakshith.com/#person","name":"Rakshith Bangalore","alternateName":"Rakshith Bangalore Kumaraswamy","url":"https://bkrakshith.com/","image":"https://bkrakshith.com/assets/raks-profile.png","jobTitle":"Robotics Engineer and Entrepreneur","description":{{ site.description | strip | jsonify }},"alumniOf":{"@type":"CollegeOrUniversity","name":"Nottingham Trent University"},"knowsAbout":["Robotics engineering","Humanoid robots","Legged locomotion","Neural control policies","Sim-to-real transfer","Actuator identification","Robot simulation","Mobile manipulation","Industry 4.0 automation","Medical robotics","Software project management","Hardware product management"],"sameAs":["https://www.linkedin.com/in/rakshithbangalore","https://www.instagram.com/mr.rakshith/","https://unfilteredrobotics.com","https://topmate.io/rakshith_bangalore"],"workLocation":[{"@type":"Place","name":"United Kingdom"},{"@type":"Place","name":"Singapore"}]},{"@type":"WebSite","@id":"https://bkrakshith.com/#website","url":"https://bkrakshith.com/","name":"Rakshith Bangalore","publisher":{"@id":"https://bkrakshith.com/#person"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{{ person }},{"@type":"WebSite","@id":"https://bkrakshith.com/#website","url":"https://bkrakshith.com/","name":"Rakshith Bangalore — Robotics Solutions Architect","inLanguage":"en-GB","publisher":{"@id":"https://bkrakshith.com/#person"}}]}</script>
+{%- elsif page.nav == "about" and page.url == "/about.html" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","url":"https://bkrakshith.com/about.html","name":{{ meta_title | jsonify }},"mainEntity":{{ person }}}</script>
+{%- endif %}
+{%- assign crumb_name = page.title | split: " | " | first -%}
+{%- if page.url != "/" and page.url != "/index.html" and page.layout != "article" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bkrakshith.com/"}{% if page.project %},{"@type":"ListItem","position":2,"name":"Projects","item":"https://bkrakshith.com/projects.dc.html"},{"@type":"ListItem","position":3,"name":{{ crumb_name | jsonify }},"item":{{ page.url | absolute_url | jsonify }}}{% else %},{"@type":"ListItem","position":2,"name":{{ crumb_name | jsonify }},"item":{{ page.url | absolute_url | jsonify }}}{% endif %}]}</script>
+{%- endif %}
+{%- if page.project %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":{{ crumb_name | jsonify }},"description":{{ page.description | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"image":{{ meta_image | jsonify }},"creator":{"@id":"https://bkrakshith.com/#person","@type":"Person","name":"Rakshith Bangalore","url":"https://bkrakshith.com/"},"keywords":{{ page.keywords | default: "robotics" | jsonify }}}</script>
+{%- endif %}
+{%- if page.faq %}
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://bkrakshith.com/robotics-consulting.html#service","name":"Robotics solution architecture and programme set-up","url":"https://bkrakshith.com/robotics-consulting.html","description":{{ page.description | jsonify }},"provider":{"@id":"https://bkrakshith.com/#person"},"founder":{{ person }},"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Singapore"},{"@type":"Place","name":"Worldwide (remote)"}],"serviceType":["Robotics consulting","Robotics solution architecture","Robotics programme set-up","Robot pilot and deployment","Simulation and sim-to-real","Hardware product development","Fractional robotics leadership"],"audience":{"@type":"Audience","audienceType":"Startups and businesses starting a robotics programme"}},{"@type":"FAQPage","mainEntity":[{%- for q in site.data.faq -%}{"@type":"Question","name":{{ q.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ q.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{%- endfor -%}]}]}</script>
 {%- endif %}
 {%- if page.layout == "article" %}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ meta_desc | jsonify }},"image":{{ meta_image | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"author":{"@id":"https://bkrakshith.com/#person","@type":"Person","name":"Rakshith Bangalore","url":"https://bkrakshith.com/"}}</script>
@@ -47,8 +62,8 @@
 <div class="wrap">
   <div class="strip label label-muted">
     <span class="hide-sm">United Kingdom &amp; Singapore</span>
-    <span data-today>Robotics · AI · Hardware</span>
-    <span class="hide-sm">Robotics · AI · Hardware</span>
+    <span data-today></span>
+    <span class="hide-sm">Robotics solutions architect</span>
   </div>
 </div>
 
@@ -58,6 +73,7 @@
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-links"><span>Menu</span></button>
     <div class="menu-links" id="menu-links">
       <a href="{{ '/about.html' | relative_url }}"{% if nav == "about" %} aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/robotics-consulting.html' | relative_url }}"{% if nav == "services" %} aria-current="page"{% endif %}>Services</a>
       <a href="{{ '/projects.dc.html' | relative_url }}"{% if nav == "projects" %} aria-current="page"{% endif %}>Projects</a>
       <a href="{{ '/project-wardzero.dc.html' | relative_url }}"{% if nav == "latest" %} aria-current="page"{% endif %}>Latest</a>
       <a href="{{ '/articles/' | relative_url }}"{% if nav == "articles" %} aria-current="page"{% endif %}>Articles</a>
@@ -69,6 +85,20 @@
 
 <main id="main">
 {{ content }}
+{%- if page.nav == "projects" or page.nav == "latest" or page.nav == "about" %}
+<aside class="wrap" aria-label="Work with Rakshith" style="padding-bottom:clamp(48px,6vw,88px);">
+  <div class="cta-band">
+    <div>
+      <span class="label label-muted">Work with Rakshith</span>
+      <p class="h3" style="margin-top:10px;">Starting a robotics programme? Rakshith helps startups and businesses go from first use case to deployment, across hardware and software.</p>
+    </div>
+    <div class="actions" style="margin-top:0;">
+      <a class="button button-dark" href="{{ '/robotics-consulting.html' | relative_url }}">Robotics services&nbsp;→</a>
+      <a class="button" href="{{ topmate }}" target="_blank" rel="noopener">Book a call&nbsp;↗</a>
+    </div>
+  </div>
+</aside>
+{%- endif %}
 </main>
 
 <footer class="foot">
@@ -81,17 +111,17 @@
   <div class="wrap sec-tight">
     <div class="foot-top">
       <div class="foot-name">Rakshith Bangalore</div>
-      <div class="foot-li">Robotics engineer · Entrepreneur</div>
+      <div class="foot-li">Robotics solutions architect · Hardware + software</div>
     </div>
     <div class="foot-row">
       <div class="label">Pages</div>
-      <div class="foot-li"><a href="{{ '/' | relative_url }}">Home</a><br><a href="{{ '/about.html' | relative_url }}">About</a></div>
+      <div class="foot-li"><a href="{{ '/' | relative_url }}">Home</a><br><a href="{{ '/about.html' | relative_url }}">About</a><br><a href="{{ '/robotics-consulting.html' | relative_url }}">Services</a></div>
       <div class="foot-li"><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><br><a href="{{ '/projects-archive.dc.html' | relative_url }}">Full index</a></div>
       <div class="foot-li"><a href="{{ '/articles/' | relative_url }}">Articles</a><br><a href="{{ '/contact.html' | relative_url }}">Contact</a></div>
     </div>
     <div class="foot-row">
       <div class="label">Follow</div>
-      <div class="foot-li"><a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn&nbsp;↗</a></div>
+      <div class="foot-li"><a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn&nbsp;↗</a><br><a href="https://github.com/Bkrakshith" target="_blank" rel="noopener">GitHub&nbsp;↗</a></div>
       <div class="foot-li"><a href="https://www.instagram.com/mr.rakshith/" target="_blank" rel="noopener">Instagram&nbsp;↗</a></div>
       <div class="foot-li"><a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics&nbsp;↗</a></div>
     </div>
