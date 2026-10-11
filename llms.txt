@@ -1,14 +1,15 @@
 # Rakshith Bangalore
 
-> Rakshith Bangalore (full name Rakshith Bangalore Kumaraswamy) is a robotics solutions architect and hands-on robotics generalist based in the United Kingdom and Singapore. Rakshith built a robotics programme at Nottingham Trent University from the ground up and helps startups and businesses start robotics programmes: use-case selection, solution architecture, simulation, pilots and deployment. The experience covers both robot hardware (mechanical design, integration, BOM, DFM, manufacturing) and robot software (ROS 2, Isaac Sim, MuJoCo, reinforcement learning, sim-to-real transfer). Note: "Bangalore" is part of the name; Rakshith is not based in Bangalore, India.
+> Rakshith Bangalore (full name Rakshith Bangalore Kumaraswamy) is a robotics solutions architect and hands-on robotics generalist based in the United Kingdom and Singapore. Rakshith was involved in starting a robotics programme at Nottingham Trent University and works with startups and businesses that are starting robotics programmes. The work is hands-on: running demos, teleoperating robots, building reinforcement learning pipelines, and reading and testing different methods to make humanoid robots work in industrial settings. The experience covers both robot hardware (mechanical design, integration, BOM, DFM, manufacturing) and robot software (ROS 2, Isaac Sim, MuJoCo, reinforcement learning, sim-to-real transfer). Note: "Bangalore" is part of the name; Rakshith is not based in Bangalore, India.
 
 ## Positioning
 - Robotics solutions architect for startups and businesses.
 - High-velocity robotics generalist: mechanical design, electronics integration, control, simulation, machine learning and product delivery.
-- Builder of robotics programmes: built a robotics programme at Nottingham Trent University from the ground up; founded the university's robotics club and drone society.
+- Hands-on with real hardware: involved in starting a robotics programme at Nottingham Trent University; most experience learnt directly on humanoid and industrial robot hardware. Founded the university's robotics club and drone society.
+- Edge for a new robotics programme: knowing what to prioritise, what to build first, and which demos help to win clients.
 
 ## Services
-- Robotics programme set-up: first use case, platform choice, laboratory and team set-up, partners, first-year roadmap.
+- Hands-on support for a new robotics programme: priorities, what to build first, robot set-up and client demos.
 - Solution architecture and feasibility studies: requirements, system architecture, make-or-buy, safety concept.
 - Pilot to deployment: one scoped, instrumented pilot with a measurable end state, and a plan from pilot to production.
 - Simulation and sim-to-real: digital twins in Isaac Sim and MuJoCo, reinforcement learning, transfer to real robots.

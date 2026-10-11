@@ -1,17 +1,17 @@
 # Questions and answers on the Services page (robotics-consulting.html).
 # The same entries feed the FAQPage structured data in _layouts/site.html,
 # so edit them here only. Third person, short sentences.
-- q: What does a robotics solutions architect do?
-  a: A robotics solutions architect turns a business problem into a working robot system. The work covers the use case, the requirements, the system architecture, the choice of robot and software, the safety concept, the pilot and the plan for deployment. Rakshith Bangalore does this work for startups and businesses, with hands-on experience in both robot hardware and robot software.
-- q: How does a startup or a business start a robotics programme?
-  a: Start with one task that has a measurable end state, not the hardest task. Design the system and the acceptance criteria, prove the concept in simulation, then run one instrumented pilot next to normal operations. Plan the move from pilot to production before the pilot starts, so the programme does not stall. Rakshith built a robotics programme at Nottingham Trent University from the ground up and uses the same method with companies.
-- q: What is a high-velocity robotics generalist?
-  a: A robotics generalist works across mechanical design, electronics integration, control, simulation, machine learning and product delivery, instead of one discipline. High velocity means taking an idea through architecture, prototype and pilot quickly, and knowing when a specialist is needed. Rakshith Bangalore works this way, from humanoid robot controllers to bills of materials.
-- q: Why does a robotics programme need both hardware and software experience?
-  a: Most robotics failures happen between disciplines. A controller that works in simulation can fail on a real actuator, and a design that works as a prototype can be too expensive to manufacture. A lead who understands both sides finds these problems early, when they are cheap to fix.
-- q: Which robots and tools does Rakshith work with?
-  a: Unitree H1-2 and G1 humanoid robots, Universal Robots UR-10 arms, Omron LD250 mobile bases and SmartShift tool changers. Software includes ROS 2, Nav2, Isaac Sim, MuJoCo and MuJoCo MJX, reinforcement learning with PPO, ONNX, MATLAB and CUDA. Design and delivery tools include Fusion 360, Ansys, JIRA, Confluence and Miro.
-- q: Where does Rakshith Bangalore work?
-  a: Rakshith Bangalore is based in the United Kingdom and Singapore and works with startups and businesses remotely worldwide.
-- q: How can a team work with Rakshith?
-  a: Book a call through the Let's Connect link on bkrakshith.com, or send an email from the contact page. Engagements include robotics programme set-up, solution architecture and feasibility studies, pilot to deployment, simulation and sim-to-real, hardware to market, and fractional robotics leadership.
+- q: "What does a robotics solutions architect do?"
+  a: "A robotics solutions architect turns a business problem into a working robot system. The work covers the use case, the requirements, the system architecture, the choice of robot and software, the safety concept, the pilot and the plan for deployment. Rakshith Bangalore does this work for startups and businesses, with hands-on experience in both robot hardware and robot software."
+- q: "How does a startup or a business start a robotics programme?"
+  a: "Start with one task that has a measurable end state, not the hardest task. Design the system and the acceptance criteria, prove the concept in simulation, then run one instrumented pilot next to normal operations. Plan the move from pilot to production before the pilot starts, so the programme does not stall. Rakshith was involved in starting a robotics programme at Nottingham Trent University and brings the same priorities to companies: what to build first, and which demos help to win clients."
+- q: "What is a high-velocity robotics generalist?"
+  a: "A robotics generalist works across mechanical design, electronics integration, control, simulation, machine learning and product delivery, instead of one discipline. High velocity means taking an idea through architecture, prototype and pilot quickly, and knowing when a specialist is needed. Rakshith works across these areas and learnt most of them hands-on with real hardware, from humanoid robot controllers to bills of materials."
+- q: "Why does a robotics programme need both hardware and software experience?"
+  a: "Most robotics failures happen between disciplines. A controller that works in simulation can fail on a real actuator, and a design that works as a prototype can be too expensive to manufacture. A lead who understands both sides finds these problems early, when they are cheap to fix."
+- q: "Which robots and tools does Rakshith work with?"
+  a: "Unitree H1-2 and G1 humanoid robots, Universal Robots UR-10 arms, Omron LD250 mobile bases and SmartShift tool changers. Software includes ROS 2, Nav2, Isaac Sim, MuJoCo and MuJoCo MJX, reinforcement learning with PPO, ONNX, MATLAB and CUDA. Design and delivery tools include Fusion 360, Ansys, JIRA, Confluence and Miro."
+- q: "Where does Rakshith Bangalore work?"
+  a: "Rakshith Bangalore is based in the United Kingdom and Singapore and works with startups and businesses remotely worldwide."
+- q: "How can a team work with Rakshith?"
+  a: "Book a call through the Let's Connect link on bkrakshith.com, or send an email from the contact page. Engagements include robotics programme set-up, solution architecture and feasibility studies, pilot to deployment, simulation and sim-to-real, hardware to market, and fractional robotics leadership."
