@@ -29,7 +29,7 @@
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Articles" href="{{ '/articles/feed.xml' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/articles.css' | relative_url }}">
 {%- if page.layout == "article" %}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"description":{{ meta_desc | jsonify }},"image":{{ meta_image | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"author":{"@id":"https://bkrakshith.com/#person","@type":"Person","name":"Rakshith Bangalore","url":"https://bkrakshith.com/"}}</script>
@@ -39,7 +39,7 @@
 
 <header class="site-header">
   <nav class="site-nav">
-    <a href="{{ '/' | relative_url }}" class="brand" aria-label="Home">R<span>B</span><span>.</span></a>
+    <a href="{{ '/' | relative_url }}" class="brand" aria-label="Home">Rakshith Bangalore</a>
     <div class="nav-links">
       <a href="{{ '/projects.dc.html' | relative_url }}">Projects</a>
       <a href="{{ '/articles/' | relative_url }}"{% if page.url contains '/articles/' %} aria-current="page"{% endif %}>Articles</a>

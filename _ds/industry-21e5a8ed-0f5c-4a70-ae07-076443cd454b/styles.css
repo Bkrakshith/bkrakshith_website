@@ -1,5 +1,5 @@
 /* Industry — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap');
 
 :root {
   --color-bg: #f2f2f3;
@@ -284,3 +284,79 @@ textarea.input { min-height: 90px; resize: vertical; }
 .btn-primary { border-color: var(--color-accent); }
 .btn-ghost { border-color: transparent; }
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Editorial theme (October 2026). Black-and-white, newspaper-style retune of
+   the system above: expanded grotesk headlines (Archivo), serif reading text
+   (Newsreader), hairline rules, square controls and greyscale photography.
+   It matches the homepage (index.html). Remove this block to revert.
+   ══════════════════════════════════════════════════════════════════════ */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f4f4f4;
+  --color-text: #0e0e0e;
+  --color-accent: #0e0e0e;
+  --color-accent-2: #3a3a3a;
+  --color-divider: #d6d6d6;
+  --color-accent-100: #f2f2f2; --color-accent-200: #e4e4e4; --color-accent-300: #cfcfcf;
+  --color-accent-400: #a8a8a8; --color-accent-500: #7a7a7a; --color-accent-600: #3a3a3a;
+  --color-accent-700: #0e0e0e; --color-accent-800: #0e0e0e; --color-accent-900: #000000;
+  --color-neutral-100: #f4f4f4; --color-neutral-800: #2a2a2a;
+  --font-heading: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-heading-weight: 500;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 0;
+}
+body { -webkit-font-smoothing: antialiased; }
+::selection { background: #0e0e0e; color: #ffffff; }
+
+/* headlines: expanded, uppercase, tight */
+h1, h2, h3, h4 { font-stretch: 125%; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.98; }
+h1 { letter-spacing: -0.03em; }
+h6 { font-family: var(--font-heading); font-weight: 600; font-size: 10.5px; letter-spacing: 0.16em; color: var(--color-text) !important; }
+
+/* reading text in serif, a little larger for the narrower letterforms */
+p { font-family: var(--font-serif); font-size: max(1em, 16px); line-height: 1.6; }
+p strong { font-family: var(--font-heading); font-size: 0.85em; letter-spacing: 0.08em; text-transform: uppercase; }
+code { font-size: 0.86em; }
+a { color: inherit; text-decoration-thickness: 1px; }
+
+/* frames become newspaper rules: no registration marks */
+.blueprint { border-color: var(--color-divider); }
+.blueprint > .corner { display: none; }
+
+/* controls: square, uppercase, black */
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 11px !important; letter-spacing: 0.14em; text-transform: uppercase; border-color: #0e0e0e; }
+.btn-primary { background: #0e0e0e; color: #ffffff; }
+.btn-primary:hover { background: #ffffff; color: #0e0e0e; }
+.btn-secondary:hover { background: #0e0e0e; color: #ffffff; }
+.btn-ghost { color: #0e0e0e; padding-inline: 0; }
+.btn-ghost:hover { background: transparent; text-decoration: underline; text-underline-offset: 4px; }
+.tag { font-family: var(--font-heading); font-size: 9.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 9px; border: 1px solid #0e0e0e; background: transparent; color: #0e0e0e; }
+.tag-accent { background: #0e0e0e; color: #ffffff; }
+.tag-neutral { background: transparent; color: #0e0e0e; border-color: #bdbdbd; }
+.tag-outline { border-color: #0e0e0e; color: #0e0e0e; }
+
+/* navigation: masthead style */
+.nav { min-height: 58px; }
+.nav-brand { font-stretch: 125%; font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 0.02em; }
+.nav a:not(.nav-brand) { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav a:hover, .nav a[aria-current='page'] { color: inherit; text-decoration: underline; text-underline-offset: 5px; }
+header:has(> div > .nav) { border-bottom-color: #0e0e0e !important; }
+footer { border-top-color: #0e0e0e !important; }
+
+/* tables: ledger style */
+.table th { color: #0e0e0e; border-bottom: 1px solid #0e0e0e; font-family: var(--font-heading); font-weight: 600; font-size: 10px; letter-spacing: 0.16em; }
+.table td { font-size: 14px; }
+.table tbody tr:hover { background: #f4f4f4; }
+
+/* photography in greyscale; diagrams (SVG) keep their colour */
+img:not([src$=".svg"]), [role="img"], video { filter: grayscale(1) contrast(1.06); }
+.btn-ghost { border-color: transparent; }
+@media (max-width: 640px) {
+  h1 { font-size: clamp(26px, 8.4vw, 40px) !important; overflow-wrap: break-word; hyphens: auto; }
+  .nav { row-gap: 2px; padding-block: 8px; }
+  .nav-brand { flex-basis: 100%; font-size: 14px; }
+  .nav a:not(.nav-brand) { font-size: 10px; letter-spacing: 0.1em; }
+}
