@@ -23,6 +23,7 @@ then point your domain's DNS at GitHub Pages per GitHub's "Managing a custom dom
 - `assets/` — photos currently in use
 - `support.js`, `image-slot.js`, `tweaks-panel.jsx`, `animations-v2.jsx`, `university-life-video.jsx` — runtime the pages load
 - `GoBox.png`, `podcut.png` — the PodCut/GoBox photos, referenced directly from their project pages
+- `project-wardzero.dc.html` + `assets/wardzero/` — the WardZero project page, its film (`wardzero-film.mp4`, H.264), stills and diagrams. Copied from the WardZero repository; the page links only to the WardZero website.
 - `_config.yml` — GitHub Pages (Jekyll) settings. Its `include: [_ds]` line is required: without it Jekyll silently drops the `_ds/` folder and every project page loses its stylesheet.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO/GEO files. `sitemap.xml` adds published articles automatically.
 
