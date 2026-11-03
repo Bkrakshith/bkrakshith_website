@@ -9,7 +9,7 @@
   {%- assign meta_title = page.title | default: site.title -%}
 {%- endif -%}
 {%- assign meta_desc = page.description | default: site.description | strip_html | strip_newlines | truncate: 200 -%}
-{%- assign meta_image = page.image | default: site.default_image | absolute_url -%}
+{%- assign meta_image = page.social_image | default: page.image | default: site.default_image | absolute_url -%}
 <title>{{ meta_title | escape }}</title>
 <meta name="description" content="{{ meta_desc | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url | replace: '/index.html', '/' }}">

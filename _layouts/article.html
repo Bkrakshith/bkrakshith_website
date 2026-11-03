@@ -19,7 +19,7 @@ layout: site
 
   {%- if page.image %}
   <figure class="cover">
-    <img src="{{ page.image | relative_url }}" alt="">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}">
   </figure>
   {%- endif %}
 

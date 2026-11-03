@@ -34,7 +34,11 @@ content:
           format: yyyy-MM-dd
       - name: image
         label: Cover image
-        description: Optional. Also used as the LinkedIn preview image. Landscape works best (about 1200×630).
+        description: Optional. Shown at the top of the article. Portrait or landscape both work.
+        type: image
+      - name: social_image
+        label: Social image (LinkedIn preview)
+        description: Optional. The picture LinkedIn, WhatsApp and Google show when the link is shared. Use a landscape image of 1200×630. If empty, the cover image is used.
         type: image
       - name: published
         label: Published

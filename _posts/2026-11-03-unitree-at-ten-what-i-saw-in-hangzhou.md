@@ -5,11 +5,10 @@ description: I spent 22 October at Unitree's World Physical AI Conference in
   Unitree launched a $10 million competition, and the conversation I'll remember
   was with its engineers, who build their whole RL pipeline themselves.
 date: 2026-11-03
-image: /assets/uploads/WhatsApp Image 2026-11-03 at 17.03.52.jpeg
+image: /assets/uploads/unitree-hangzhou-2026.jpg
+social_image: /assets/uploads/unitree-hangzhou-2026-social.jpg
 published: true
 ---
-# Unitree at ten: what I saw in Hangzhou
-
 On the morning of 22 October, Unitree showed the H2-X to the public for the first time, with a row of them waving people through the doors in Hangzhou. By the afternoon, an H2-X had snapped a leg halfway through a stunt in front of a crowd.
 
 Strangely, that's the moment that made me respect Unitree more.
@@ -52,7 +51,7 @@ I slipped out during a conversation between Unitree's leadership and Yao Ming ab
 
 G1s were climbing onto tall boxes and jumping back down. Then the H2-X went for its stunt and the leg went. Nobody wants that at their own anniversary. But the tech is early, everyone in that crowd knew it, and plenty of companies would only ever show you the edited video. Unitree brought the robots out live and let them fail in public.
 
-The second hall was more fun. A G1 played table tennis against a person. Another sat in a go-kart and raced a human driver. Two G1s played tennis against each other, all autonomous. IMA Create had a full G1 band playing guitar, keyboard and Drums live, and Yijing Technology had built an expressive face you can mount on any G1 so it feels a bit more human to talk to.
+The second hall was more fun. A G1 played table tennis against a person. Another sat in a go-kart and raced a human driver. Two G1s played tennis against each other, all autonomous. IMA Create had a full G1 band playing guitar, keyboard and drums live, and Yijing Technology had built an expressive face you can mount on any G1 so it feels a bit more human to talk to.
 
 Lunch meant queuing with a coupon in a hall where, of course, another G1 swarm was dancing to Western pop. Afterwards I sat in on the embodied intelligence VC forum for a while and watched startups pitch. A few sub-forums, including the international partner session, were closed to people like me.
 
