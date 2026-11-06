@@ -28,6 +28,7 @@ kramdown:
 
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 # RSS feed (for Medium import, email newsletters, LinkedIn schedulers)
 feed:
