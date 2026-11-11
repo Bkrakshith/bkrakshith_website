@@ -18,6 +18,7 @@
 
 ## Facts
 - Humanoid robotics: two years of industrial use cases on Unitree H1-2 and G1 humanoid robots for a PepsiCo programme; neural policies for legged control, sim-to-real transfer, actuator identification.
+- Fragrance Castle (2026, Kyne Robotics case study): two AgiBot G2 humanoids (one with Shadow five-finger hands, one with a suction tool) and an AMR run a perfume warehouse, online-order packing line and luxury boutique in Isaac Sim 6.0.1; site designed to Singapore building rules; 120 s film in which all 16 shots passed a per-frame collision and motion check; 314 automated tests. Simulation only.
 - WardZero (2026): open platform to develop and test hospital robots in simulation; simulated hospital with a surgical wing, Isaac Sim and MuJoCo, a safety layer with seven modes, ROS 2 navigation (99.6% map wall accuracy); reference robot Unitree G1 with BrainCo Revo2 hands. Simulation only so far.
 - Industry 4.0 mobile manipulator (award-winning MEng capstone): UR-10 arm on an Omron LD250 mobile base with a SmartShift tool changer, scoped with Walkers around a live factory workflow.
 - Laparoscopic surgery trainer: project manager of an eight-person team with an NHS Trust; compliant force-feedback mechanism.
@@ -30,6 +31,7 @@
 - [Services](https://bkrakshith.com/robotics-consulting.html): robotics consulting for startups and businesses, how a robotics programme starts, FAQ
 - [About](https://bkrakshith.com/about.html): profile, strengths, career history and capabilities
 - [Featured projects](https://bkrakshith.com/projects.dc.html)
+- [Fragrance Castle](https://bkrakshith.com/project-fragrance-castle.dc.html): humanoid robots in a perfume warehouse and boutique, Kyne Robotics case study
 - [WardZero](https://bkrakshith.com/project-wardzero.dc.html): simulated hospital for robot training
 - [Humanoid robotics](https://bkrakshith.com/project-humanoid.dc.html): Unitree H1-2 and G1 for PepsiCo
 - [Mobile manipulator](https://bkrakshith.com/project-manipulator.dc.html): UR-10 and Omron LD250, tool changing

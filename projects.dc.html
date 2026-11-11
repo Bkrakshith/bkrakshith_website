@@ -2,23 +2,38 @@
 layout: site
 nav: projects
 title: "Robotics Projects | Rakshith Bangalore"
-description: "Featured robotics projects by Rakshith Bangalore: WardZero hospital simulation, humanoid robots for PepsiCo, a mobile manipulator and a surgery trainer."
-image: /assets/wardzero/hospital-wing.jpg
+description: "Featured robotics projects by Rakshith Bangalore: Fragrance Castle humanoid operations, WardZero hospital simulation, humanoid robots for PepsiCo, a mobile manipulator and a surgery trainer."
+image: /assets/fragrance-castle/og.jpg
 ---
 <header class="wrap page-head">
   <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Projects</span></nav>
   <div class="label label-muted" style="margin-bottom:16px;">Projects · Featured</div>
-  <h1 class="h1">Four projects, end to end</h1>
-  <p class="deck">WardZero is Rakshith's latest project, an open simulation platform for hospital robots. The humanoid work is Rakshith's main professional programme. The other two are university projects with partners from industry and healthcare.</p>
+  <h1 class="h1">Five projects, end to end</h1>
+  <p class="deck">Fragrance Castle is Rakshith's latest project, a Kyne Robotics case study with two humanoid robots in a perfume business. WardZero is an open simulation platform for hospital robots. The humanoid work is Rakshith's main professional programme. The other two are university projects with partners from industry and healthcare.</p>
   <div class="actions"><a class="button" href="{{ '/projects-archive.dc.html' | relative_url }}">View the full index&nbsp;→</a></div>
 </header>
 
 <section class="wrap" aria-label="Featured projects" style="padding-bottom:clamp(52px,7.5vw,104px);">
 
   <article class="plate">
+    <a href="{{ '/project-fragrance-castle.dc.html' | relative_url }}" class="photo r-4x3" style="display:block;aspect-ratio:4/3;" tabindex="-1" aria-hidden="true"><img src="{{ '/assets/fragrance-castle/boutique.jpg' | relative_url }}" alt="" loading="lazy"></a>
+    <div class="plate-text">
+      <div class="kicker"><span class="no">K·1</span><span class="label">Latest · Kyne Robotics · Retail and logistics</span></div>
+      <h2 class="h2"><a href="{{ '/project-fragrance-castle.dc.html' | relative_url }}">Fragrance Castle</a></h2>
+      <p class="body" style="margin-top:14px;">Two AgiBot G2 humanoids and an AMR run a perfume business in simulation: they restock a warehouse, pack online orders and refill a luxury boutique. Rakshith designed the site to Singapore building rules, built the robots and assets, and rendered a 120 s film in which every frame passed a collision check.</p>
+      <dl class="facts">
+        <div><dt>Robots</dt><dd>2 × AgiBot G2 (five-finger hands · suction) · AMR with tray trolley</dd></div>
+        <div><dt>Simulator</dt><dd>Isaac Sim 6.0.1 · RTX real-time path tracing</dd></div>
+        <div><dt>Stack</dt><dd>Python · OpenUSD · NumPy · pytest · Docker · ffmpeg</dd></div>
+      </dl>
+      <div class="actions"><a class="button button-dark" href="{{ '/project-fragrance-castle.dc.html' | relative_url }}">Open the project&nbsp;→</a></div>
+    </div>
+  </article>
+
+  <article class="plate">
     <a href="{{ '/project-wardzero.dc.html' | relative_url }}" class="photo r-4x3" style="display:block;aspect-ratio:4/3;" tabindex="-1" aria-hidden="true"><img src="{{ '/assets/wardzero/hospital-wing.jpg' | relative_url }}" alt="" loading="lazy"></a>
     <div class="plate-text">
-      <div class="kicker"><span class="no">R·1</span><span class="label">Latest · Independent research · Open source</span></div>
+      <div class="kicker"><span class="no">R·1</span><span class="label">Independent research · Open source</span></div>
       <h2 class="h2"><a href="{{ '/project-wardzero.dc.html' | relative_url }}">WardZero</a></h2>
       <p class="body" style="margin-top:14px;">An open platform to develop and test robot solutions for hospitals. It provides a full simulated hospital with a surgical wing, two simulators, a safety layer and navigation. The same software runs in MuJoCo, in Isaac Sim and on the real robot.</p>
       <dl class="facts">

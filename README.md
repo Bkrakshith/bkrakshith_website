@@ -18,9 +18,9 @@ Editorial, black-and-white theme: Archivo (expanded) for headlines and labels, N
 - `about.html` — profile, career history and capabilities.
 - `contact.html` — booking, email, podcast guests and social links.
 - `projects.dc.html` — featured projects; `projects-archive.dc.html` — the full index.
-- `project-*.dc.html` — one page per project: `wardzero`, `humanoid`, `manipulator`, `laparoscopic`, `cabin-lab`, `ai-software`, `portable-podcasting`.
+- `project-*.dc.html` — one page per project: `fragrance-castle`, `wardzero`, `humanoid`, `manipulator`, `laparoscopic`, `cabin-lab`, `ai-software`, `portable-podcasting`.
 - `university-life.dc.html` — the University Life page. Its animated film is `university-life-film.html`, shown in an iframe and rendered by `support.js` with `animations-v2.jsx`, `tweaks-panel.jsx` and `university-life-video.jsx`.
-- `assets/` — photographs, the WardZero film, stills and diagrams.
+- `assets/` — photographs, the WardZero and Fragrance Castle films, stills and diagrams.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO and AI-search files. Add new pages to `sitemap.xml` and `llms.txt`.
 
 Each page starts with front matter (`layout`, `nav`, `title`, `description`, `image`). `nav` marks the current menu item: `home`, `about`, `projects`, `latest`, `articles` or `contact`. Quote `title` and `description` if they contain a colon.

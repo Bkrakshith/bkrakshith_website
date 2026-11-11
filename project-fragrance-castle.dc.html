@@ -1,0 +1,178 @@
+---
+layout: site
+nav: latest
+title: "Fragrance Castle: Humanoid Robot Operations | Rakshith Bangalore"
+description: "A Kyne Robotics case study by Rakshith Bangalore: two AgiBot G2 humanoids and an AMR run a perfume warehouse, online orders and a boutique, in Isaac Sim."
+image: /assets/fragrance-castle/og.jpg
+project: true
+keywords: "humanoid robots, AgiBot G2, Isaac Sim, OpenUSD, warehouse automation, order fulfilment, retail robots, robot simulation, Shadow Hand, systems engineering"
+---
+<header class="wrap page-head">
+  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">Fragrance Castle</span></nav>
+  <div class="kicker"><span class="no">K·1</span><span class="label">Latest · Kyne Robotics · Retail and logistics</span></div>
+  <h1 class="h1">Fragrance Castle: humanoid robots in a perfume business</h1>
+  <p class="deck">A Kyne Robotics case study for Fragrance Castle, a perfume business. Two AgiBot G2 humanoids and an autonomous mobile robot restock a warehouse, pack online orders and refill a luxury boutique. Rakshith designed the site, built the assets and robots, and rendered the 120&nbsp;s film in Isaac Sim.</p>
+  <div class="chips"><span class="chip chip-dark">Robot simulation</span><span class="chip">Isaac Sim 6.0.1</span><span class="chip">AgiBot G2</span><span class="chip">OpenUSD</span><span class="chip">Systems engineering</span></div>
+</header>
+
+<section class="wrap sec-tight" aria-labelledby="film-title">
+  <h2 class="label" id="film-title" style="margin-bottom:12px;">Film</h2>
+  <div class="film">
+    <video src="{{ '/assets/fragrance-castle/fragrance-castle-film.mp4' | relative_url }}" poster="{{ '/assets/fragrance-castle/boutique.jpg' | relative_url }}" controls preload="metadata" playsinline title="Fragrance Castle operations film: warehouse, packing line and boutique in Isaac Sim"></video>
+  </div>
+  <p class="cap">The 120 s film, 16 shots. Isaac Sim 6.0.1, RTX real-time path tracing at 1080p. The robot motion is staged and checked frame by frame. It is not a trained policy.</p>
+</section>
+
+<section class="wrap sec-tight" aria-labelledby="results-title">
+  <h2 class="label" id="results-title" style="margin-bottom:12px;">Results in simulation</h2>
+  <div class="stats">
+    <div><div class="num">16 / 16</div><div class="label">Shots passed</div><p class="small">The collision and motion gate, with zero exemptions</p></div>
+    <div><div class="num">314</div><div class="label">Automated tests</div><p class="small">Site layout, assets, scene assembly and the validator</p></div>
+    <div><div class="num">≤ 0.8 mm</div><div class="label">Grasp contact gap</div><p class="small">13 solved five-finger grasps, 0.71 to 0.80 mm, no penetration</p></div>
+    <div><div class="num">31,200</div><div class="label">Stock boxes</div><p class="small">Instanced on the racks, 1.46 s per frame on one RTX 3070</p></div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="split">
+    <div>
+      <div class="block">
+        <h2 class="label">What</h2>
+        <p class="body">Fragrance Castle sells perfume online and in a boutique. The film shows a full working site for that business: a 50 × 30 m warehouse hall with eight rack aisles and a 10 m clear height, a packing line, a mezzanine office with a glass view of the floor, and a covered linkway to a 20 × 15 m luxury boutique.</p>
+        <p class="body">Three robots do the work. G2-H is an AgiBot G2 with five-finger hands. It moves and opens master cartons, packs orders and restocks the boutique. G2-S is an AgiBot G2 with a suction tool. It unloads perfume boxes, shelves them and picks orders. An AMR carries a tray trolley between the racks, the packing line and the boutique.</p>
+      </div>
+      <div class="block">
+        <h2 class="label">How</h2>
+        <p class="body">Rakshith ran the project as a systems engineering V-model. Stakeholder needs became requirements. The requirements became a site layout and a list of robot subtasks. Five feasibility studies tested the risky parts before the build. Each phase passed a gate, checked from evidence, before the next phase started.</p>
+        <p class="body">The build was split into four parallel work packages: the building shell and office, the warehouse and packing line, the boutique, and the robots with their props. One OpenUSD stage assembles all of them.</p>
+      </div>
+      <div class="block">
+        <h2 class="label">Results</h2>
+        <p class="body">The film is complete: 120 s, 16 shots and 2,880 frames at 1080p. Every shot passed the collision and motion gate before it was rendered. The delivery also included stills, a title card and LinkedIn banners. All work is in simulation. No real robot did these tasks.</p>
+      </div>
+    </div>
+    <aside aria-label="Project facts">
+      <dl class="facts">
+        <div><dt>Client</dt><dd>Fragrance Castle</dd></div>
+        <div><dt>Delivered by</dt><dd><a href="https://kynerobotics.com/work-fragrance-castle.html" target="_blank" rel="noopener">Kyne Robotics case study&nbsp;↗</a></dd></div>
+        <div><dt>Role</dt><dd>Systems design, asset build, animation and render</dd></div>
+        <div><dt>Robots</dt><dd>2 × AgiBot G2 (Shadow Hand E3M5 · suction tool) · 1 × AMR with tray trolley</dd></div>
+        <div><dt>Simulator</dt><dd>NVIDIA Isaac Sim 6.0.1, standalone · RTX real-time path tracing</dd></div>
+        <div><dt>Stack</dt><dd>Python · OpenUSD · NumPy · pytest · Docker · ffmpeg</dd></div>
+        <div><dt>Hardware</dt><dd>One RTX 3070, 8 GB</dd></div>
+        <div><dt>Status</dt><dd>Film delivered · simulation only</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="arch-title">
+  <div class="sec-head"><h2 class="label" id="arch-title">System architecture</h2><span class="label label-muted">Select the diagram to enlarge it</span></div>
+  <figure><a class="zoom diagram" href="{{ '/assets/fragrance-castle/architecture.svg' | relative_url }}"><img src="{{ '/assets/fragrance-castle/architecture.svg' | relative_url }}" alt="Fragrance Castle pipeline: design inputs feed four asset work packages and one USD stage; each shot is baked, checked by a validator on every frame, and rendered in Isaac Sim only after it passes; a failed shot goes back to the bake" loading="lazy"></a><figcaption class="visually-hidden">Fragrance Castle build and render pipeline</figcaption></figure>
+  <div class="cols-3" style="margin-top:clamp(26px,3.5vw,40px);">
+    <div><h3 class="h3" style="margin-bottom:10px;">One layout file</h3><p class="small">One Python file sets the position and size of every zone, rack, door and station. The drawings, the USD scene and the tests all read it, so a moved rack is a one-line change that every check sees.</p></div>
+    <div><h3 class="h3" style="margin-bottom:10px;">One world state</h3><p class="small">The story state passes from shot to shot: robot poses, joint values, and the position of every box, carton and tester. A box that G2-S shelves in shot 7 is on that shelf in shot 9.</p></div>
+    <div><h3 class="h3" style="margin-bottom:10px;">One hard gate</h3><p class="small">A shot renders only when the validator passes every frame and the bake hash matches. A shot that cannot pass is simplified or removed. It is never rendered with a defect.</p></div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="split">
+    <div>
+      <div class="block">
+        <h2 class="label">The site</h2>
+        <p class="body">The site follows Singapore building rules. The hall has eight exits and the boutique has three. The longest travel distance to an exit is 17.4 m in the hall, against a two-way limit of 40 m, and 16.4 m in the boutique, against a one-way limit of 16.7 m. The mezzanine is larger than 60 m², so it has two stairs. The boutique entrance has a 1:12 ramp.</p>
+        <p class="body">The warehouse floor is for robots only during operations. People use a walkway with barriers to the office stairs. The plan is design intent only. A Qualified Person has not reviewed it.</p>
+      </div>
+      <div class="block">
+        <h2 class="label">The story</h2>
+        <p class="body">The film follows three scenarios. Inbound: G2-H lifts a master carton off a pallet and opens it, G2-S unloads the 12 perfumes and shelves them, and G2-H flattens the empty carton into the recycling cage. Online order: G2-S picks the order into a trolley tray, the AMR takes it to the packing line, and G2-H packs it into a shipping box that goes through the tape sealer. Boutique: the AMR and G2-H go through the linkway, and G2-H restocks the display.</p>
+      </div>
+    </div>
+    <figure><a class="zoom diagram" href="{{ '/assets/fragrance-castle/site_plan.jpg' | relative_url }}"><img src="{{ '/assets/fragrance-castle/site_plan.jpg' | relative_url }}" alt="Site plan: warehouse hall with inbound dock, eight rack aisles, packing zone and outbound area, mezzanine office above, covered linkway and the boutique as a separate building, with robot routes, stations, exits and travel distances" loading="lazy"></a><figcaption class="cap">Site plan, generated from the layout file. Robot routes, the 11 stations, the exits and the worst-case travel distances.</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
+  <div class="split">
+    <div>
+      <div class="block">
+        <h2 class="label">Robots within real limits</h2>
+        <p class="body">Every lift stays inside the G2 specification: 10 kg with two arms and 5 kg with one. A master carton is 32 × 32 × 42 cm and holds 12 perfumes, about 8 kg. An earlier carton size held 18 perfumes and broke the limit, so it was changed. Reach was measured on the simulated G2 before the shelf heights were frozen: 0.30 to 1.60 m in the warehouse and 0.40 to 1.45 m in the boutique. The first trolley design had three levels that the robot could not serve from above, so the trolley now has one tray deck at 0.80 m.</p>
+        <p class="body">G2-H uses two Shadow Hand E3M5 hands from MuJoCo Menagerie, on wrist adapters. Each grasp is solved for its prop, with all fingertip contacts at 0.71 to 0.80 mm and no penetration. G2-S has a suction tool with a bellows cup and a valve block. Its attachment holds with a drift below 10<sup>−9</sup> m.</p>
+      </div>
+      <div class="block">
+        <h2 class="label">Motion and checks</h2>
+        <p class="body">The first rough cut passed the automatic checks, but a review found four defects: arms that passed through each other, a board pushed through the mesh of the recycling cage, a wrist flip, and time jumps in one camera angle. The validator could not see thin parts such as cardboard and wire mesh.</p>
+        <p class="body">Rakshith rebuilt the validator. Regression tests now reproduce the four defects and must fail. An exact crossing test checks thin geometry. The validator also fails a shot for an IK error above 10 mm, a joint flip, or a cut that splices two times of the same camera angle. All motion follows a slow profile: at most 40% of joint speed, 0.25 m/s in transit and 0.05 m/s for the last 6 cm. Every placement goes up over the rim, aligns, descends vertically, rests and retreats.</p>
+      </div>
+      <div class="block">
+        <h2 class="label">Rendering</h2>
+        <p class="body">Isaac Sim renders each shot with RTX real-time path tracing at 32 subframes, in 2.6 to 3.3 s per frame. The boutique shots take 6.6 s per frame, because glass, coloured liquid and brass need 12 light bounces to look correct. The full film rendered overnight on one RTX 3070. A watchdog on the render jobs stops a job that hangs on the GPU.</p>
+      </div>
+    </div>
+    <div>
+      <figure><a class="zoom" href="{{ '/assets/fragrance-castle/carton_open.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/carton_open.jpg' | relative_url }}" alt="Close-up over the shoulder of G2-H as its five-finger hands open a master carton" loading="lazy"></div></a><figcaption class="cap">G2-H opens a master carton with its five-finger hands.</figcaption></figure>
+      <h2 class="label" style="margin:28px 0 10px;">The story · 16 shots</h2>
+      <div class="status modes">
+        <div><span class="label">1</span><span class="small">Aerial over the site at dawn</span></div>
+        <div><span class="label">2–6</span><span class="small">Inbound: carton lift, opening, unloading, cardboard to recycling</span></div>
+        <div><span class="label">7</span><span class="small">G2-S shelves perfumes from 0.30 m to 1.60 m</span></div>
+        <div><span class="label">8–9</span><span class="small">A new online order; G2-S picks it into a tray</span></div>
+        <div><span class="label">10–13</span><span class="small">Packing line: box, pack, seal, outbound</span></div>
+        <div><span class="label">14</span><span class="small">AMR and G2-H take the linkway to the boutique</span></div>
+        <div><span class="label">15–16</span><span class="small">Tester aside, boxes behind, tester back; wide of the boutique</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="status-title">
+  <div class="cols-2">
+    <div>
+      <h2 class="label" id="status-title" style="margin-bottom:12px;">Status and next steps</h2>
+      <div class="status">
+        <div><span class="chip chip-dark">Done</span><span class="small">Warehouse, packing line, office, linkway and boutique, built and tested from one layout</span></div>
+        <div><span class="chip chip-dark">Done</span><span class="small">G2-H with five-finger hands, G2-S with suction, AMR with tray trolley</span></div>
+        <div><span class="chip chip-dark">Done</span><span class="small">All 16 shots through the gate; 120 s film, stills and banners delivered</span></div>
+        <div><span class="chip">Partial</span><span class="small">Shot 11: the hand releases a box 16.5 cm above its rest position, because of finger clearance at the carton wall. A suction placement by G2-S would bring this to about 1 cm</span></div>
+        <div><span class="chip">Next</span><span class="small">Independent review of the film against needs N1–N6 and requirements R1–R8</span></div>
+      </div>
+    </div>
+    <div>
+      <h2 class="label" style="margin-bottom:12px;">Components</h2>
+      <dl class="facts">
+        <div><dt>site/</dt><dd>Layout file and shot list: every position and dimension</dd></div>
+        <div><dt>plans/</dt><dd>Site plan, mezzanine section and camera storyboard, generated</dd></div>
+        <div><dt>assets/</dt><dd>Work packages C1 to C4, each with tests and QA stills</dd></div>
+        <div><dt>scenes/</dt><dd>USD assembly, shot lighting and the assembly tests</dd></div>
+        <div><dt>anim/</dt><dd>Timeline, bake, posture IK, validator, render gate and edit</dd></div>
+        <div><dt>lib/</dt><dd>Film rig, URDF and MJCF to USD conversion, render helpers</dd></div>
+        <div><dt>spikes/</dt><dd>The five feasibility studies, with evidence and recipes</dd></div>
+        <div><dt>tools/</dt><dd>Containerised Isaac Sim runner with GPU lock and watchdog</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" aria-labelledby="stills-title">
+  <div class="sec-head"><h2 class="label" id="stills-title">Stills</h2><span class="label label-muted">Select a still to enlarge it</span></div>
+  <div class="figs">
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/carton_lift.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/carton_lift.jpg' | relative_url }}" alt="G2-H lifts a master carton off a pallet with two hands" loading="lazy"></div></a><figcaption class="cap">Inbound: G2-H lifts a master carton, about 8 kg, with two hands.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/suction_unload.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/suction_unload.jpg' | relative_url }}" alt="Top view of G2-S unloading perfume boxes from the open carton with its suction tool" loading="lazy"></div></a><figcaption class="cap">G2-S unloads the perfumes with its suction tool.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/aisle_pick.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/aisle_pick.jpg' | relative_url }}" alt="G2-S picks perfume boxes from the racks next to the AMR tray trolley" loading="lazy"></div></a><figcaption class="cap">Online order: G2-S picks into the AMR trolley in aisle A4.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/order_pack.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/order_pack.jpg' | relative_url }}" alt="G2-H packs perfume boxes from a tray into a shipping box on the packing conveyor" loading="lazy"></div></a><figcaption class="cap">G2-H packs the order into a shipping box on the packing line.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/packing_line.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/packing_line.jpg' | relative_url }}" alt="The packing line: the shipping box moves along the roller conveyor toward the tape sealer" loading="lazy"></div></a><figcaption class="cap">The packing line, from the case erector to the tape sealer.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/linkway.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/linkway.jpg' | relative_url }}" alt="G2-H follows the AMR and its trolley along the open-sided covered linkway outside" loading="lazy"></div></a><figcaption class="cap">G2-H follows the AMR along the covered linkway to the boutique.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/tester.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/tester.jpg' | relative_url }}" alt="Close-up of the robot hand returning a perfume tester bottle to the boutique display" loading="lazy"></div></a><figcaption class="cap">Boutique: the hand puts the tester back in front of the new stock.</figcaption></figure>
+    <figure><a class="zoom" href="{{ '/assets/fragrance-castle/boutique.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/fragrance-castle/boutique.jpg' | relative_url }}" alt="Wide view of the luxury boutique with G2-H and the AMR trolley at the lit wall cabinets" loading="lazy"></div></a><figcaption class="cap">The boutique, with G2-H and the AMR at the wall cabinets.</figcaption></figure>
+  </div>
+  <div style="border-top:1px solid var(--line);margin-top:clamp(30px,4vw,48px);padding-top:18px;">
+    <p class="small" style="color:var(--muted);"><strong class="label">Disclaimer.</strong> This is a simulation showcase. All robot motion is staged in simulation and checked against the G2 limits. No real robot did these tasks, and the site plan has not had a professional building review. The Fragrance Castle name and logo belong to Fragrance Castle.</p>
+    <p class="small" style="color:var(--muted);margin-top:8px;"><strong class="label">Assets.</strong> Robot: AgiBot G2 model from Genie Sim (CC BY-NC-SA 4.0). Hands: Shadow Hand E3M5 from MuJoCo Menagerie (Apache 2.0). Parked robots: Unitree H2 and R1 descriptions (BSD 3-Clause). Office staff: NVIDIA Isaac Sim character assets. Sky and marble: Poly Haven and ambientCG (CC0). Renderer: NVIDIA Isaac Sim.</p>
+  </div>
+  <nav class="prevnext" aria-label="More projects">
+    <a href="{{ '/projects.dc.html' | relative_url }}"><span class="label label-muted">← Back to</span><div class="h3">Featured projects</div></a>
+    <a href="{{ '/project-wardzero.dc.html' | relative_url }}"><span class="label label-muted">Next →</span><div class="h3">WardZero</div></a>
+  </nav>
+</section>
