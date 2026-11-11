@@ -2,7 +2,7 @@
 layout: site
 nav: latest
 title: "Fragrance Castle: Humanoid Robot Operations | Rakshith Bangalore"
-description: "A Kyne Robotics case study by Rakshith Bangalore: two AgiBot G2 humanoids and an AMR run a perfume warehouse, online orders and a boutique, in Isaac Sim."
+description: "A Kyne Robotics case study: two AgiBot G2 humanoids and an AMR run a perfume warehouse, online orders and a boutique, in Isaac Sim."
 image: /assets/fragrance-castle/og.jpg
 project: true
 keywords: "humanoid robots, AgiBot G2, Isaac Sim, OpenUSD, warehouse automation, order fulfilment, retail robots, robot simulation, Shadow Hand, systems engineering"
@@ -11,7 +11,7 @@ keywords: "humanoid robots, AgiBot G2, Isaac Sim, OpenUSD, warehouse automation,
   <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">Fragrance Castle</span></nav>
   <div class="kicker"><span class="no">K·1</span><span class="label">Latest · Kyne Robotics · Retail and logistics</span></div>
   <h1 class="h1">Fragrance Castle: humanoid robots in a perfume business</h1>
-  <p class="deck">A Kyne Robotics case study for Fragrance Castle, a perfume business. Two AgiBot G2 humanoids and an autonomous mobile robot restock a warehouse, pack online orders and refill a luxury boutique. Rakshith designed the site, built the assets and robots, and rendered the 120&nbsp;s film in Isaac Sim.</p>
+  <p class="deck">A Kyne Robotics case study for Fragrance Castle, a perfume business. Two AgiBot G2 humanoids and an autonomous mobile robot restock a warehouse, pack online orders and refill a luxury boutique. The project covered the site design, the build of the assets and robots, and a 120&nbsp;s film rendered in Isaac Sim.</p>
   <div class="chips"><span class="chip chip-dark">Robot simulation</span><span class="chip">Isaac Sim 6.0.1</span><span class="chip">AgiBot G2</span><span class="chip">OpenUSD</span><span class="chip">Systems engineering</span></div>
 </header>
 
@@ -43,7 +43,7 @@ keywords: "humanoid robots, AgiBot G2, Isaac Sim, OpenUSD, warehouse automation,
       </div>
       <div class="block">
         <h2 class="label">How</h2>
-        <p class="body">Rakshith ran the project as a systems engineering V-model. Stakeholder needs became requirements. The requirements became a site layout and a list of robot subtasks. Five feasibility studies tested the risky parts before the build. Each phase passed a gate, checked from evidence, before the next phase started.</p>
+        <p class="body">The project ran as a systems engineering V-model. Stakeholder needs became requirements. The requirements became a site layout and a list of robot subtasks. Five feasibility studies tested the risky parts before the build. Each phase passed a gate, checked from evidence, before the next phase started.</p>
         <p class="body">The build was split into four parallel work packages: the building shell and office, the warehouse and packing line, the boutique, and the robots with their props. One OpenUSD stage assembles all of them.</p>
       </div>
       <div class="block">
@@ -55,7 +55,7 @@ keywords: "humanoid robots, AgiBot G2, Isaac Sim, OpenUSD, warehouse automation,
       <dl class="facts">
         <div><dt>Client</dt><dd>Fragrance Castle</dd></div>
         <div><dt>Delivered by</dt><dd><a href="https://kynerobotics.com/work-fragrance-castle.html" target="_blank" rel="noopener">Kyne Robotics case study&nbsp;↗</a></dd></div>
-        <div><dt>Role</dt><dd>Systems design, asset build, animation and render</dd></div>
+        <div><dt>Scope</dt><dd>Systems design, asset build, animation and render</dd></div>
         <div><dt>Robots</dt><dd>2 × AgiBot G2 (Shadow Hand E3M5 · suction tool) · 1 × AMR with tray trolley</dd></div>
         <div><dt>Simulator</dt><dd>NVIDIA Isaac Sim 6.0.1, standalone · RTX real-time path tracing</dd></div>
         <div><dt>Stack</dt><dd>Python · OpenUSD · NumPy · pytest · Docker · ffmpeg</dd></div>
@@ -104,7 +104,7 @@ keywords: "humanoid robots, AgiBot G2, Isaac Sim, OpenUSD, warehouse automation,
       <div class="block">
         <h2 class="label">Motion and checks</h2>
         <p class="body">The first rough cut passed the automatic checks, but a review found four defects: arms that passed through each other, a board pushed through the mesh of the recycling cage, a wrist flip, and time jumps in one camera angle. The validator could not see thin parts such as cardboard and wire mesh.</p>
-        <p class="body">Rakshith rebuilt the validator. Regression tests now reproduce the four defects and must fail. An exact crossing test checks thin geometry. The validator also fails a shot for an IK error above 10 mm, a joint flip, or a cut that splices two times of the same camera angle. All motion follows a slow profile: at most 40% of joint speed, 0.25 m/s in transit and 0.05 m/s for the last 6 cm. Every placement goes up over the rim, aligns, descends vertically, rests and retreats.</p>
+        <p class="body">The validator was then rebuilt. Regression tests now reproduce the four defects and must fail. An exact crossing test checks thin geometry. The validator also fails a shot for an IK error above 10 mm, a joint flip, or a cut that splices two times of the same camera angle. All motion follows a slow profile: at most 40% of joint speed, 0.25 m/s in transit and 0.05 m/s for the last 6 cm. Every placement goes up over the rim, aligns, descends vertically, rests and retreats.</p>
       </div>
       <div class="block">
         <h2 class="label">Rendering</h2>
