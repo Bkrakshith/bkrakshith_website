@@ -27,6 +27,7 @@ Animation hooks you can add to any element:
 - `projects.dc.html` — all project cards with filters; `projects-archive.dc.html` — the full index of 20 projects.
 - `project-*.dc.html` — one page per project: `fragrance-castle`, `wardzero`, `humanoid`, `manipulator`, `laparoscopic`, `cabin-lab`, `ai-software`, `portable-podcasting`.
 - `university-life.dc.html` — the University Life page. Its animated film is `university-life-film.html`, shown in an iframe and rendered by `support.js` with `animations-v2.jsx`, `tweaks-panel.jsx` and `university-life-video.jsx`.
+- `favicon.ico`, `apple-touch-icon.png`, `assets/favicon-32.png`, `assets/favicon-192.png` — the round robot-head site icon.
 - `assets/` — photographs, the WardZero and Fragrance Castle films, stills and diagrams.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO and AI-search files. Add new pages to `sitemap.xml` and `llms.txt`.
 
