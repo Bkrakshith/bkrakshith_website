@@ -6,29 +6,38 @@ Personal website of Rakshith Bangalore. Hosted on GitHub Pages, which builds it 
 `CNAME` contains `bkrakshith.com`. DNS points at GitHub Pages per GitHub's "Managing a custom domain" docs.
 
 ## Design
-Editorial, black-and-white theme: Archivo (expanded) for headlines and labels, Newsreader for reading text, hairline rules and greyscale photography.
-- `assets/site.css` — the only stylesheet. Every page uses it.
-- `assets/site.js` — today's date in the masthead, the mobile menu, the photo lightbox and the email link. Pages work without it.
+Clean, white and animated: Antonio (tall, uppercase) for headlines, Inter for text, one accent colour (#5E67E6), rounded cards and pill buttons.
+- `assets/site.css` — the only stylesheet. Colours and sizes are variables at the top.
+- `assets/site.js` — the pill menu, the email link, the lightbox and the animations: headings that rise letter by letter, sections that fade in on scroll, count-up numbers, accordions, the tilting hero card, stacked project cards and the project filters. All motion stops when the visitor asks for reduced motion, and every page still reads correctly without the script.
+
+Animation hooks you can add to any element:
+- `data-reveal` — fades and slides in when it scrolls into view. Put `data-stagger` on the parent to reveal its children one after another.
+- `data-split` — on a headline: the letters rise into place.
+- `data-scale` — on an image or card: grows into place.
+- `data-count="99.6" data-suffix="%"` — counts up from 0. Keep the final value as the element's text.
 
 ## Structure
-- `_layouts/site.html` — the shared shell: page head and SEO tags, masthead, menu and footer. Change the menu or footer here, once, for every page.
-- `_layouts/article.html` — the article template (inside `site.html`).
-- `_includes/record.html` — the project list on the homepage.
-- `index.html` — homepage.
-- `about.html` — profile, career history and capabilities.
-- `contact.html` — booking, email, podcast guests and social links.
-- `projects.dc.html` — featured projects; `projects-archive.dc.html` — the full index.
+- `_layouts/site.html` — the shared shell: page head and SEO tags, the pill menu, the "Let's work together" block and the footer. Add `no_cta: true` to a page to hide the block, or `cta_image:` to change its photo.
+- `_layouts/project.html` — the project page template. A project page is front matter only: `heading`, `lede`, `links`, `video` + `poster` or `hero_image`, `caption`, `stats`, `blocks` (Brief, Build, Result), `facts`, `gallery` and `note`.
+- `_layouts/article.html` — the article template.
+- `_data/projects.yml` — the list of projects: order, title, tag, one-line summary and card image (or colour and mark). The homepage, the Projects page and the "Next project" links all read it.
+- `_data/faq.yml` — questions on the homepage and the Services page, and the FAQ structured data.
+- `_includes/` — `pcard.html` (project card), `acard.html` (article card), `cta.html`, `socials.html`, `icon.html` (inline icons).
+- `index.html` — homepage. `about.html` — profile and career. `robotics-consulting.html` — services. `contact.html` — contact.
+- `projects.dc.html` — all project cards with filters; `projects-archive.dc.html` — the full index of 20 projects.
 - `project-*.dc.html` — one page per project: `fragrance-castle`, `wardzero`, `humanoid`, `manipulator`, `laparoscopic`, `cabin-lab`, `ai-software`, `portable-podcasting`.
 - `university-life.dc.html` — the University Life page. Its animated film is `university-life-film.html`, shown in an iframe and rendered by `support.js` with `animations-v2.jsx`, `tweaks-panel.jsx` and `university-life-video.jsx`.
 - `assets/` — photographs, the WardZero and Fragrance Castle films, stills and diagrams.
 - `robots.txt`, `sitemap.xml`, `llms.txt` — SEO and AI-search files. Add new pages to `sitemap.xml` and `llms.txt`.
 
-Each page starts with front matter (`layout`, `nav`, `title`, `description`, `image`). `nav` marks the current menu item: `home`, `about`, `projects`, `latest`, `articles` or `contact`. Quote `title` and `description` if they contain a colon.
+To add a project: add it to `_data/projects.yml`, copy a `project-*.dc.html` file and change its front matter, then add it to `sitemap.xml`, `llms.txt` and the list in `projects-archive.dc.html`.
+
+Each page starts with front matter (`layout`, `nav`, `title`, `description`, `image`). `nav` marks the current menu item: `home`, `about`, `services`, `projects`, `latest`, `articles` or `contact`. Quote `title` and `description` if they contain a colon.
 
 The `.dc.html` file names are kept from the earlier design-tool export so that existing links keep working.
 
 ## Writing style
-All text is in the third person ("Rakshith …"), short sentences, professional tone. Avoid pronouns; use the name or restructure the sentence.
+All text is in the third person ("Rakshith …"), short sentences, professional tone. Avoid pronouns; use the name or restructure the sentence. Keep it brief: one line where one line will do.
 
 ## Articles
 Written and managed in Pages CMS at https://app.pagescms.org (log in with GitHub).
@@ -39,7 +48,7 @@ Written and managed in Pages CMS at https://app.pagescms.org (log in with GitHub
 - `/articles/feed.xml` — RSS feed, generated automatically.
 - `.github/workflows/change-alert.yml` — opens a GitHub issue (and emails you) whenever anything on the site changes.
 
-## Social section (homepage)
+## Social section (homepage, bottom)
 - `social-feed.js` — draws the Instagram carousel and LinkedIn cards as a `<social-feed>` element.
 - `_linkedin/` — curated LinkedIn posts (Pages CMS → LinkedIn posts).
 - `_data/social.yml` — Behold feed URL and other settings (Pages CMS → Social settings).
@@ -47,6 +56,6 @@ Written and managed in Pages CMS at https://app.pagescms.org (log in with GitHub
 
 ## Preview locally
 ```bash
-gem install jekyll jekyll-feed
+gem install jekyll jekyll-feed jekyll-redirect-from
 jekyll serve        # then open http://localhost:4000
 ```

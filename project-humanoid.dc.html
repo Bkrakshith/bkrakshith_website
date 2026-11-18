@@ -1,64 +1,36 @@
 ---
-layout: site
+layout: project
 nav: projects
+slug: humanoid
 title: "Humanoid Robots for PepsiCo | Rakshith Bangalore"
 description: "Industrial use cases on Unitree H1-2 and G1 humanoid robots for PepsiCo: neural policies for legged control, sim-to-real transfer and actuator identification."
 image: /assets/humanoid-01-gantry.jpg
 project: true
 keywords: "humanoid robots, Unitree H1-2, Unitree G1, legged control, neural policies, sim-to-real transfer, actuator identification, PepsiCo"
+heading: "Humanoid robotics"
+lede: "Two years of industrial use cases on Unitree H1-2 and G1 humanoid robots, for a PepsiCo programme."
+hero_image: /assets/humanoid-04-palletising.jpg
+hero_alt: "Palletising trials with a humanoid robot on the laboratory floor"
+stats:
+  - { v: "2", count: 2, l: "Years" }
+  - { v: "2", count: 2, l: "Humanoid platforms" }
+blocks:
+  - h: "Brief"
+    p: "Put real industrial tasks, such as case handling and palletising, on legged robots."
+  - h: "Build"
+    p: "Neural policies for legged control, trained in simulation and moved to the real robots. Actuator identification showed where the hardware differs from the model."
+  - h: "Result"
+    p: "Use cases delivered on both robots, and a method used on every project since: identify the system before trusting it."
+facts:
+  - { k: "Programme", v: "PepsiCo" }
+  - { k: "Role", v: "Robotics engineer" }
+  - { k: "Platforms", v: "Unitree H1-2 · Unitree G1" }
+  - { k: "Focus", v: "Sim-to-real · actuator identification" }
+gallery:
+  - { src: /assets/humanoid-01-gantry.jpg, alt: "Hands on with the humanoid, on its gantry" }
+  - { src: /assets/humanoid-02-render.png, alt: "The H1-2 in programme livery", contain: true }
+  - { src: /assets/humanoid-03-case-grip.jpg, alt: "The end effector takes a packed case" }
+  - { src: /assets/humanoid-05-lab.jpg, alt: "The robotics laboratory after hours" }
+  - { src: /assets/humanoid-figure.jpg, alt: "Unitree H1-2 humanoid robot", contain: true }
+  - { src: /assets/humanoid-04-palletising.jpg, alt: "Palletising trials on the laboratory floor" }
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">Humanoid robotics</span></nav>
-  <div class="kicker"><span class="no">01</span><span class="label">Professional R&amp;D · PepsiCo programme</span></div>
-  <h1 class="h1">Humanoid robotics</h1>
-  <p class="deck">For two years, Rakshith programmed industrial use cases on Unitree H1-2 and G1 humanoid robots for a PepsiCo programme. Each use case put a real industrial task on a legged robot.</p>
-  <div class="chips"><span class="chip chip-dark">Legged control</span><span class="chip">Neural policies</span><span class="chip">Sim-to-real</span><span class="chip">Actuator identification</span></div>
-</header>
-
-<section class="wrap sec">
-  <div class="split">
-    <div>
-      <div class="block">
-        <h2 class="label">What</h2>
-        <p class="body">The programme put defined industrial tasks, such as case handling and palletising, on Unitree H1-2 and G1 humanoid robots. Learned neural policies controlled the locomotion. The gait was not scripted.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">How</h2>
-        <p class="body">Rakshith trained the policies for legged control in simulation, then transferred them to the real robots. System identification on the actuators showed where the real torque response and compliance differ from the simulation model.</p>
-        <p class="body">Rakshith also added instrumentation to record the failure modes that occur only on hardware. A controller that works in simulation can fail on a real actuator. For this reason, the actuator is identified before the controller is trusted.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Results</h2>
-        <p class="body">The programme delivered use cases on both robots. It also produced a transfer method, "identify the system before trusting it", which Rakshith has used on every project since.</p>
-      </div>
-    </div>
-    <aside aria-label="Project facts">
-      <dl class="facts">
-        <div><dt>Programme</dt><dd>PepsiCo · use-case programming</dd></div>
-        <div><dt>Role</dt><dd>Robotics engineer</dd></div>
-        <div><dt>Duration</dt><dd>Two years</dd></div>
-        <div><dt>Platforms</dt><dd>Unitree H1-2 · Unitree G1</dd></div>
-        <div><dt>Stack</dt><dd>Neural policies for legged control</dd></div>
-        <div><dt>Focus</dt><dd>Sim-to-real transfer · actuator identification · failure modes on real hardware</dd></div>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<section class="wrap" aria-labelledby="stills-title">
-  <div class="sec-head"><h2 class="label" id="stills-title">Photographs</h2><span class="label label-muted">Select a photograph to enlarge it</span></div>
-  <div class="figs">
-    <figure><a class="zoom" href="{{ '/assets/humanoid-01-gantry.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/humanoid-01-gantry.jpg' | relative_url }}" alt="Rakshith with the humanoid robot on its gantry" loading="lazy" style="object-position:center 30%;"></div></a><figcaption class="cap">Hands on with the humanoid, on its gantry.</figcaption></figure>
-    <figure><a class="zoom" href="{{ '/assets/humanoid-02-render.png' | relative_url }}"><div class="photo" style="background:#fff;"><img src="{{ '/assets/humanoid-02-render.png' | relative_url }}" alt="Render of the H1-2 humanoid in programme livery" loading="lazy" style="object-fit:contain;"></div></a><figcaption class="cap">The H1-2 in programme livery.</figcaption></figure>
-    <figure><a class="zoom" href="{{ '/assets/humanoid-03-case-grip.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/humanoid-03-case-grip.jpg' | relative_url }}" alt="End effector taking a packed case" loading="lazy"></div></a><figcaption class="cap">The end effector takes a packed case.</figcaption></figure>
-    <figure><a class="zoom" href="{{ '/assets/humanoid-04-palletising.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/humanoid-04-palletising.jpg' | relative_url }}" alt="Palletising trials on the laboratory floor" loading="lazy"></div></a><figcaption class="cap">Palletising trials on the laboratory floor.</figcaption></figure>
-    <figure><a class="zoom" href="{{ '/assets/humanoid-05-lab.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/humanoid-05-lab.jpg' | relative_url }}" alt="The robotics laboratory after hours" loading="lazy"></div></a><figcaption class="cap">The robotics laboratory after hours.</figcaption></figure>
-  </div>
-</section>
-
-<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
-  <nav class="prevnext" aria-label="More projects">
-    <a href="{{ '/project-wardzero.dc.html' | relative_url }}"><span class="label label-muted">← Previous</span><div class="h3">WardZero</div></a>
-    <a href="{{ '/project-manipulator.dc.html' | relative_url }}"><span class="label label-muted">Next →</span><div class="h3">Industry 4.0 mobile manipulator</div></a>
-  </nav>
-</section>

@@ -1,0 +1,90 @@
+---
+layout: site
+---
+{%- comment -%}
+  Project page template. Everything comes from the page's front matter:
+  heading, lede, links, video/poster or hero_image, caption, stats, blocks,
+  facts, gallery and note. Tag, colour card and "next project" come from
+  _data/projects.yml (matched by `slug`).
+{%- endcomment -%}
+{%- assign me = site.data.projects | where: "slug", page.slug | first -%}
+{%- assign idx = 0 -%}
+{%- for p in site.data.projects -%}{%- if p.slug == page.slug -%}{%- assign idx = forloop.index -%}{%- endif -%}{%- endfor -%}
+{%- assign nxt = site.data.projects[idx] | default: site.data.projects[0] -%}
+<article>
+<section class="page-hero" aria-labelledby="p-h1">
+  <div class="wrap">
+    <a class="back" href="{{ '/projects.dc.html' | relative_url }}">← Projects</a><br>
+    <span class="kicker" data-reveal>{{ me.tag }}</span>
+    <h1 class="h-xl" id="p-h1" data-split>{{ page.heading }}</h1>
+    <p class="lede" data-reveal>{{ page.lede }}</p>
+    {%- if page.links %}
+    <div class="actions" data-reveal>
+      {%- for l in page.links %}
+      <a class="btn{% if forloop.first %} btn-solid{% endif %}" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} {% include icon.html name="arrow" %}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    {%- if page.video %}
+    <figure class="media" data-scale>
+      <video src="{{ page.video | relative_url }}" poster="{{ page.poster | relative_url }}" controls preload="metadata" playsinline title="{{ page.heading }} film"></video>
+    </figure>
+    {%- elsif page.hero_image %}
+    <figure class="media media-photo" data-scale>
+      <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | escape }}" fetchpriority="high">
+    </figure>
+    {%- else %}
+    <div class="media media-mark tone-{{ me.tone | default: 'dark' }}" data-scale aria-hidden="true"><span>{{ me.mark }}</span></div>
+    {%- endif %}
+    {%- if page.caption %}<p class="cap">{{ page.caption }}</p>{% endif %}
+  </div>
+</section>
+
+{%- if page.stats %}
+<section class="sec-sm" aria-label="Key numbers">
+  <div class="wrap">
+    <div class="stats pstats" data-stagger>
+      {%- for s in page.stats %}
+      <div data-reveal><div class="stat-num">{% if s.count %}<span data-count="{{ s.count }}"{% if s.pre %} data-prefix="{{ s.pre }}"{% endif %}{% if s.suf %} data-suffix="{{ s.suf }}"{% endif %}>{{ s.v }}</span>{% else %}{{ s.v }}{% endif %}</div><div class="stat-label">{{ s.l }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="sec" aria-label="The project">
+  <div class="wrap">
+    <div class="trio" data-stagger>
+      {%- for b in page.blocks %}
+      <div data-reveal><h2>{{ b.h }}</h2><p>{{ b.p }}</p></div>
+      {%- endfor %}
+    </div>
+    {{ content }}
+    {%- if page.facts %}
+    <dl class="facts" data-reveal>
+      {%- for f in page.facts %}
+      <div><dt>{{ f.k }}</dt><dd>{% if f.url %}<a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.v }} ↗</a>{% else %}{{ f.v }}{% endif %}</dd></div>
+      {%- endfor %}
+    </dl>
+    {%- endif %}
+  </div>
+</section>
+
+{%- if page.gallery %}
+<section class="sec" aria-labelledby="gal-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="gal-title" data-split>Gallery</h2>
+    <div class="gallery" data-stagger=".05">
+      {%- for g in page.gallery %}
+      <a class="zoom{% if g.contain %} contain{% endif %}" href="{{ g.src | relative_url }}" data-caption="{{ g.alt | escape }}" data-reveal><img src="{{ g.src | relative_url }}" alt="{{ g.alt | escape }}" loading="lazy"></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<div class="wrap">
+  {%- if page.note %}<p class="note">{{ page.note }}</p>{% endif %}
+  <a class="next" href="{{ nxt.url | relative_url }}" data-reveal><small>Next project</small><span class="h-xl">{{ nxt.title }} {% include icon.html name="arrow" %}</span></a>
+</div>
+</article>

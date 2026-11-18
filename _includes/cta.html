@@ -1,0 +1,17 @@
+{%- assign topmate = "https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&utm_campaign=rakshith_bangalore" -%}
+<section class="sec cta" aria-labelledby="cta-title">
+  <div class="wrap cta-grid">
+    <div class="cta-photo" data-reveal>
+      <img src="{{ page.cta_image | default: '/assets/raks-profile.webp' | relative_url }}" alt="Rakshith Bangalore" width="1200" height="1200" loading="lazy">
+      <span class="badge" aria-hidden="true">{% include icon.html name="hand" %}</span>
+    </div>
+    <div>
+      <h2 class="h-sec" id="cta-title" data-split>Let's work together</h2>
+      <p class="lede" data-reveal>Starting a robotics programme, or need hands-on help with robots? Book a call or send an email.</p>
+      <div class="actions" data-reveal>
+        <a class="btn btn-solid" href="{{ topmate }}" target="_blank" rel="noopener">Book a call {% include icon.html name="arrow" %}</a>
+        <a class="btn" href="{{ '/contact.html' | relative_url }}" data-email>Send an email</a>
+      </div>
+    </div>
+  </div>
+</section>

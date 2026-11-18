@@ -1,32 +1,207 @@
-/* bkrakshith.com — small progressive enhancements. Every page works without it. */
+/* bkrakshith.com — menu, email link, lightbox and the scroll animations.
+   Every page still reads correctly without this file, and all motion
+   is skipped when the visitor asks for reduced motion. */
 (function () {
-  // Today's date in the masthead strip.
-  document.querySelectorAll('[data-today]').forEach(function (el) {
-    el.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-  });
+  window.__siteReady = true;
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ease = 'cubic-bezier(.2,.7,.2,1)';
 
-  // Mobile menu.
-  var mast = document.querySelector('.mast');
-  var toggle = document.querySelector('.menu-toggle');
-  if (mast && toggle) {
-    toggle.addEventListener('click', function () {
-      var open = mast.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.querySelector('span').textContent = open ? 'Close' : 'Menu';
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mast.classList.contains('open')) toggle.click();
-    });
-  }
-
-  // Email address, assembled here so it is not in the HTML for scrapers.
+  // ── Email address, assembled here so it is not in the HTML for scrapers.
   var email = 'rakshith' + '@' + 'bkrakshith' + '.com';
   document.querySelectorAll('[data-email]').forEach(function (a) {
     a.href = 'mailto:' + email;
     if (a.hasAttribute('data-email-text')) a.textContent = email;
   });
 
-  // Lightbox for images marked .zoom.
+  // ── Pill menu: open at the top of the page, collapses on scroll,
+  //    expands on hover (CSS) or on click/tap (here).
+  var pill = document.querySelector('[data-pill]');
+  if (pill) {
+    var btn = pill.querySelector('.pill-toggle');
+    var setOpen = function (open) {
+      pill.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    btn.addEventListener('click', function () { setOpen(!pill.classList.contains('open')); });
+    document.addEventListener('click', function (e) {
+      if (pill.classList.contains('open') && !pill.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && pill.classList.contains('open')) { setOpen(false); btn.focus(); }
+    });
+    var top = function () { pill.classList.toggle('at-top', window.scrollY < 60); };
+    top();
+    window.addEventListener('scroll', top, { passive: true });
+  }
+
+  // ── Split headings into letters that rise into place.
+  function split(el) {
+    if (el.dataset.splitDone) return;
+    el.dataset.splitDone = '1';
+    el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+    var i = 0;
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            var word = document.createElement('span');
+            word.className = 'split-line';
+            word.setAttribute('aria-hidden', 'true');
+            Array.prototype.forEach.call(part, function (c) {
+              var s = document.createElement('span');
+              s.className = 'ch';
+              s.style.setProperty('--i', i++);
+              s.textContent = c;
+              word.appendChild(s);
+            });
+            frag.appendChild(word);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR' && n.tagName !== 'SVG') {
+          walk(n);
+        }
+      });
+    })(el);
+  }
+
+  // ── Count-up numbers: <span data-count="99.6" data-suffix="%">99.6%</span>
+  function countUp(el) {
+    var target = parseFloat(el.dataset.count);
+    if (isNaN(target)) return;
+    var dec = (el.dataset.count.split('.')[1] || '').length;
+    var pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+    var group = el.dataset.group === '1';
+    var t0 = null, dur = 1600;
+    function frame(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var v = target * (1 - Math.pow(1 - p, 3));
+      el.textContent = pre + (group ? v.toLocaleString('en-GB', { minimumFractionDigits: dec, maximumFractionDigits: dec }) : v.toFixed(dec)) + suf;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var reveals = document.querySelectorAll('[data-reveal], [data-split], [data-scale], [data-count]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    document.querySelectorAll('[data-split]').forEach(split);
+    // Stagger siblings that reveal together.
+    document.querySelectorAll('[data-stagger]').forEach(function (group) {
+      var step = parseFloat(group.dataset.stagger) || 0.08;
+      Array.prototype.forEach.call(group.querySelectorAll(':scope > [data-reveal]'), function (el, n) {
+        if (!el.style.getPropertyValue('--d')) el.style.setProperty('--d', (n * step).toFixed(2) + 's');
+      });
+    });
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      if (el.textContent.indexOf(',') > -1) el.dataset.group = '1';
+      el.textContent = (el.dataset.prefix || '') + '0' + (el.dataset.suffix || '');
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        if (e.target.hasAttribute('data-count')) countUp(e.target);
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  // ── Hero: card flips in, then follows the pointer.
+  var hero = document.querySelector('.hero');
+  if (hero) {
+    var go = function () { hero.classList.add('is-in'); };
+    if (reduce) go(); else requestAnimationFrame(function () { requestAnimationFrame(go); });
+    var card = hero.querySelector('.hero-card-inner');
+    if (card && !reduce && window.matchMedia('(hover: hover)').matches) {
+      setTimeout(function () { hero.classList.add('tilt-ready'); }, 1900);
+      hero.addEventListener('pointermove', function (e) {
+        if (!hero.classList.contains('tilt-ready')) return;
+        var r = hero.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = 'rotateY(' + (-22 + x * 26).toFixed(1) + 'deg) rotateX(' + (6 - y * 16).toFixed(1) + 'deg) rotateZ(2deg)';
+      });
+      hero.addEventListener('pointerleave', function () { card.style.transform = ''; });
+    }
+  }
+
+  // ── Accordions with a height animation. One item open at a time.
+  document.querySelectorAll('.acc details').forEach(function (d) {
+    var s = d.querySelector('summary'), body = d.querySelector('.acc-body');
+    if (!s || !body) return;
+    s.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (d.open) { close(d); return; }
+      var acc = d.parentElement;
+      acc.querySelectorAll(':scope > details[open]').forEach(close);
+      d.open = true;
+      var media = acc.dataset.media && document.querySelector(acc.dataset.media);
+      if (media) {
+        var idx = Array.prototype.indexOf.call(acc.querySelectorAll(':scope > details'), d);
+        media.querySelectorAll('img').forEach(function (im, k) { im.classList.toggle('on', k === idx); });
+      }
+      if (!reduce && body.animate) {
+        body.animate([{ height: '0px', opacity: 0 }, { height: body.scrollHeight + 'px', opacity: 1 }], { duration: 450, easing: ease });
+      }
+    });
+  });
+  function close(d) {
+    var body = d.querySelector('.acc-body');
+    if (reduce || !body.animate) { d.open = false; return; }
+    d.classList.add('closing');
+    var a = body.animate([{ height: body.scrollHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 320, easing: ease, fill: 'forwards' });
+    a.onfinish = function () { d.open = false; d.classList.remove('closing'); a.cancel(); };
+  }
+
+  // ── Stacked project cards: each card shrinks as the next one covers it.
+  var stack = Array.prototype.slice.call(document.querySelectorAll('.stack-card'));
+  if (stack.length > 1 && !reduce) {
+    var ticking = false;
+    var paint = function () {
+      ticking = false;
+      var vh = window.innerHeight;
+      for (var i = 0; i < stack.length - 1; i++) {
+        var stick = parseFloat(getComputedStyle(stack[i]).top) || 0;
+        var next = stack[i + 1].getBoundingClientRect().top;
+        var p = Math.max(0, Math.min(1, (vh - next) / Math.max(1, vh - stick)));
+        var inner = stack[i].firstElementChild;
+        inner.style.transform = 'scale(' + (1 - p * 0.07).toFixed(4) + ')';
+        inner.style.filter = 'brightness(' + (1 - p * 0.4).toFixed(3) + ')';
+      }
+    };
+    var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    paint();
+  }
+
+  // ── Project filters on the Projects page.
+  document.querySelectorAll('[data-filters]').forEach(function (bar) {
+    var grid = document.querySelector(bar.dataset.filters);
+    if (!grid) return;
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-filter]');
+      if (!b) return;
+      bar.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var cat = b.dataset.filter;
+      grid.querySelectorAll('[data-cat]').forEach(function (item, n) {
+        var show = cat === 'all' || item.dataset.cat === cat;
+        var was = !item.classList.contains('is-hidden');
+        item.classList.toggle('is-hidden', !show);
+        if (show && !was && !reduce && item.animate) {
+          item.animate([{ opacity: 0, transform: 'translateY(20px)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: n * 40, easing: ease, fill: 'backwards' });
+        }
+      });
+    });
+  });
+
+  // ── Lightbox for images marked .zoom.
   var zooms = document.querySelectorAll('.zoom');
   if (zooms.length && typeof HTMLDialogElement === 'function') {
     var dlg = document.createElement('dialog');
@@ -43,10 +218,11 @@
         var img = z.querySelector('img');
         big.src = z.getAttribute('href') || img.currentSrc || img.src;
         big.alt = img.alt || '';
-        var fc = z.closest('figure') && z.closest('figure').querySelector('figcaption');
-        cap.textContent = fc ? fc.textContent : (img.alt || '');
+        cap.textContent = z.dataset.caption || img.alt || '';
         dlg.showModal();
       });
     });
   }
+
+  root.classList.add('ready');
 })();

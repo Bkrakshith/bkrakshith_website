@@ -1,53 +1,27 @@
 ---
-layout: site
+layout: project
 nav: projects
+slug: laparoscopic
 title: "Force-Feedback Surgery Trainer | Rakshith Bangalore"
 description: "Medical robotics with an NHS Trust: a compliant robotic mechanism that gives surgeons realistic force feedback. Rakshith Bangalore led the eight-person team."
 image: /assets/og-default.jpg
 project: true
 keywords: "medical robotics, laparoscopic surgery trainer, force feedback, compliant mechanism, PID control, NHS"
+heading: "Surgery trainer"
+lede: "A compliant robotic mechanism that gives surgeons realistic force feedback. Built in eight months with an NHS Trust."
+stats:
+  - { v: "8", count: 8, l: "People in the team" }
+  - { v: "8", count: 8, l: "Months" }
+blocks:
+  - h: "Brief"
+    p: "A low-cost laparoscopic trainer with real force feedback, to help with the shortage of trained instructors."
+  - h: "Build"
+    p: "Rakshith managed the team in sub-groups, with gateway reviews at the NHS Trust, and made the CAD model. PID control keeps the mechanism compliant and accurate."
+  - h: "Result"
+    p: "A working demonstrator: modular, low in cost and integrated with VR."
+facts:
+  - { k: "Role", v: "Project manager · team of eight" }
+  - { k: "Partner", v: "NHS Trust" }
+  - { k: "Mechanism", v: "Compliant · PID force feedback" }
+  - { k: "Contribution", v: "Project management · CAD" }
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">Surgery trainer</span></nav>
-  <div class="kicker"><span class="no">03</span><span class="label">University project · NHS Trust collaboration</span></div>
-  <h1 class="h1">Laparoscopic surgery trainer</h1>
-  <p class="deck">Rakshith was the project manager of an eight-person team that worked with an NHS Trust for eight months. The team designed and programmed a compliant robotic mechanism that gives surgeons realistic force feedback during practice.</p>
-  <div class="chips"><span class="chip chip-dark">Medical robotics</span><span class="chip">Force feedback</span><span class="chip">Product design</span><span class="chip">Project management</span></div>
-</header>
-
-<section class="wrap sec">
-  <div class="split">
-    <div>
-      <div class="block">
-        <h2 class="label">What</h2>
-        <p class="body">A new type of laparoscopic surgery trainer, developed in eight months with an NHS Trust. A compliant robotic mechanism gives realistic force feedback at the tool. Connected modules simulate more than one incision, off-the-shelf parts keep the cost low, and a VR system recreates the pressure of a real operating theatre.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">How</h2>
-        <p class="body">Rakshith divided the team into sub-groups with clear responsibilities and held regular gateway reviews with the NHS Trust. The control system was the most difficult part, because the mechanism must stay compliant and still control the tool accurately.</p>
-        <p class="body">A PID controller and servo angle control closed the loop. The team added a soft tool point where the servo torque exceeded the displacement threshold. Rakshith's individual technical contribution was the CAD model.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Results</h2>
-        <p class="body">At the end of the eight months, the team delivered a working demonstrator. It is modular, low in cost and integrated with VR. It addresses two problems in laparoscopic training: the shortage of trained instructors and the lack of a standard qualification route.</p>
-      </div>
-    </div>
-    <aside aria-label="Project facts">
-      <dl class="facts">
-        <div><dt>Role</dt><dd>Project manager · team of eight</dd></div>
-        <div><dt>Duration</dt><dd>Eight months</dd></div>
-        <div><dt>Partner</dt><dd>NHS Trust</dd></div>
-        <div><dt>Mechanism</dt><dd>Compliant · PID-controlled servo force feedback</dd></div>
-        <div><dt>Principles</dt><dd>Modular · low cost · VR integration</dd></div>
-        <div><dt>Contribution</dt><dd>Project management · CAD model</dd></div>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
-  <nav class="prevnext" aria-label="More projects">
-    <a href="{{ '/project-manipulator.dc.html' | relative_url }}"><span class="label label-muted">← Previous</span><div class="h3">Industry 4.0 mobile manipulator</div></a>
-    <a href="{{ '/project-cabin-lab.dc.html' | relative_url }}"><span class="label label-muted">Next →</span><div class="h3">Aircraft cabin lab</div></a>
-  </nav>
-</section>

@@ -1,0 +1,12 @@
+{%- assign post = include.post -%}
+{%- assign mins = post.content | strip_html | number_of_words | divided_by: 220 | at_least: 1 -%}
+<a class="acard" href="{{ post.url | relative_url }}" data-reveal>
+  {%- if post.image %}
+  <div class="img"><img src="{{ post.image | relative_url }}" alt="" loading="lazy"></div>
+  {%- endif %}
+  <div class="acard-meta"><span>{{ mins }} min read</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time></div>
+  <h3>{{ post.title }}</h3>
+  {%- if post.description %}
+  <p>{{ post.description }}</p>
+  {%- endif %}
+</a>

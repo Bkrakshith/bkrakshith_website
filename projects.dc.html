@@ -5,92 +5,22 @@ title: "Robotics Projects | Rakshith Bangalore"
 description: "Featured robotics projects by Rakshith Bangalore: Fragrance Castle humanoid operations, WardZero hospital simulation, humanoid robots for PepsiCo, a mobile manipulator and a surgery trainer."
 image: /assets/fragrance-castle/og.jpg
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Projects</span></nav>
-  <div class="label label-muted" style="margin-bottom:16px;">Projects · Featured</div>
-  <h1 class="h1">Five projects, end to end</h1>
-  <p class="deck">Fragrance Castle is the latest project, a Kyne Robotics case study with two humanoid robots in a perfume business. WardZero is an open simulation platform for hospital robots. The humanoid work is Rakshith's main professional programme. The other two are university projects with partners from industry and healthcare.</p>
-  <div class="actions"><a class="button" href="{{ '/projects-archive.dc.html' | relative_url }}">View the full index&nbsp;→</a></div>
-</header>
-
-<section class="wrap" aria-label="Featured projects" style="padding-bottom:clamp(52px,7.5vw,104px);">
-
-  <article class="plate">
-    <a href="{{ '/project-fragrance-castle.dc.html' | relative_url }}" class="photo r-4x3" style="display:block;aspect-ratio:4/3;" tabindex="-1" aria-hidden="true"><img src="{{ '/assets/fragrance-castle/boutique.jpg' | relative_url }}" alt="" loading="lazy"></a>
-    <div class="plate-text">
-      <div class="kicker"><span class="no">K·1</span><span class="label">Latest · Kyne Robotics · Retail and logistics</span></div>
-      <h2 class="h2"><a href="{{ '/project-fragrance-castle.dc.html' | relative_url }}">Fragrance Castle</a></h2>
-      <p class="body" style="margin-top:14px;">Two AgiBot G2 humanoids and an AMR run a perfume business in simulation: they restock a warehouse, pack online orders and refill a luxury boutique. The site was designed to Singapore building rules, and a 120 s film was rendered in which every frame passed a collision check.</p>
-      <dl class="facts">
-        <div><dt>Robots</dt><dd>2 × AgiBot G2 (five-finger hands · suction) · AMR with tray trolley</dd></div>
-        <div><dt>Simulator</dt><dd>Isaac Sim 6.0.1 · RTX real-time path tracing</dd></div>
-        <div><dt>Stack</dt><dd>Python · OpenUSD · NumPy · pytest · Docker · ffmpeg</dd></div>
-      </dl>
-      <div class="actions"><a class="button button-dark" href="{{ '/project-fragrance-castle.dc.html' | relative_url }}">Open the project&nbsp;→</a></div>
+<section class="page-hero" aria-labelledby="proj-h1">
+  <div class="wrap">
+    <span class="kicker" data-reveal>Projects</span>
+    <h1 class="h-xl" id="proj-h1" data-split>Projects</h1>
+    <p class="lede" data-reveal>Robots, simulation and hardware products. Most recent first.</p>
+    <div class="filters" data-filters="#pgrid" role="group" aria-label="Filter projects" data-reveal>
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="simulation" aria-pressed="false">Simulation</button>
+      <button type="button" data-filter="robots" aria-pressed="false">Robots</button>
+      <button type="button" data-filter="product" aria-pressed="false">Products</button>
     </div>
-  </article>
-
-  <article class="plate">
-    <a href="{{ '/project-wardzero.dc.html' | relative_url }}" class="photo r-4x3" style="display:block;aspect-ratio:4/3;" tabindex="-1" aria-hidden="true"><img src="{{ '/assets/wardzero/hospital-wing.jpg' | relative_url }}" alt="" loading="lazy"></a>
-    <div class="plate-text">
-      <div class="kicker"><span class="no">R·1</span><span class="label">Independent research · Open source</span></div>
-      <h2 class="h2"><a href="{{ '/project-wardzero.dc.html' | relative_url }}">WardZero</a></h2>
-      <p class="body" style="margin-top:14px;">An open platform to develop and test robot solutions for hospitals. It provides a full simulated hospital with a surgical wing, two simulators, a safety layer and navigation. The same software runs in MuJoCo, in Isaac Sim and on the real robot.</p>
-      <dl class="facts">
-        <div><dt>Robot</dt><dd>Unitree G1, 29 DoF · BrainCo Revo2 hands</dd></div>
-        <div><dt>Simulators</dt><dd>Isaac Sim 6.0 · MuJoCo · MuJoCo MJX</dd></div>
-        <div><dt>Stack</dt><dd>ROS 2 Humble · Nav2 · slam_toolbox · PPO · ONNX</dd></div>
-      </dl>
-      <div class="actions"><a class="button button-dark" href="{{ '/project-wardzero.dc.html' | relative_url }}">Open the project&nbsp;→</a></div>
+    <div class="pgrid" id="pgrid" data-stagger=".06">
+      {%- for p in site.data.projects %}
+      <div class="pcard-wrap" data-cat="{{ p.cat }}" data-reveal>{% include pcard.html p=p %}</div>
+      {%- endfor %}
     </div>
-  </article>
-
-  <article class="plate">
-    <a href="{{ '/project-humanoid.dc.html' | relative_url }}" class="photo" style="display:block;aspect-ratio:4/3;" tabindex="-1" aria-hidden="true"><img src="{{ '/assets/humanoid-01-gantry.jpg' | relative_url }}" alt="" loading="lazy" style="object-position:center 30%;"></a>
-    <div class="plate-text">
-      <div class="kicker"><span class="no">01</span><span class="label">Professional R&amp;D · PepsiCo programme</span></div>
-      <h2 class="h2"><a href="{{ '/project-humanoid.dc.html' | relative_url }}">Humanoid robotics</a></h2>
-      <p class="body" style="margin-top:14px;">Rakshith programmed industrial use cases on Unitree H1-2 and G1 humanoid robots. Neural policies control the legs. The work covered sim-to-real transfer, actuator identification and the failure modes that occur only on real hardware.</p>
-      <dl class="facts">
-        <div><dt>Platforms</dt><dd>Unitree H1-2 · Unitree G1</dd></div>
-        <div><dt>Stack</dt><dd>Neural policies for legged control</dd></div>
-        <div><dt>Focus</dt><dd>Sim-to-real transfer · actuator identification</dd></div>
-      </dl>
-      <div class="actions"><a class="button button-dark" href="{{ '/project-humanoid.dc.html' | relative_url }}">Open the project&nbsp;→</a></div>
-    </div>
-  </article>
-
-  <article class="plate">
-    <div class="photo blank" style="aspect-ratio:4/3;" aria-hidden="true"><span class="h2" style="color:#c4c4c4;">UR-10</span></div>
-    <div class="plate-text">
-      <div class="kicker"><span class="no">02</span><span class="label">MEng capstone · Award-winning</span></div>
-      <h2 class="h2"><a href="{{ '/project-manipulator.dc.html' | relative_url }}">Industry 4.0 mobile manipulator</a></h2>
-      <p class="body" style="margin-top:14px;">A UR-10 collaborative arm on an Omron LD250 autonomous mobile base, with a SmartShift tool changer. Rakshith defined the scope with a senior packaging automation director at Walkers, for the crisp factory in Leicester.</p>
-      <dl class="facts">
-        <div><dt>Platform</dt><dd>UR-10 · Omron LD250 · SmartShift tool changer</dd></div>
-        <div><dt>Design</dt><dd>Fusion 360, physically integrated</dd></div>
-        <div><dt>Validation</dt><dd>Pick-and-place on a conveyor rig (low TRL)</dd></div>
-      </dl>
-      <div class="actions"><a class="button button-dark" href="{{ '/project-manipulator.dc.html' | relative_url }}">Open the project&nbsp;→</a></div>
-    </div>
-  </article>
-
-  <article class="plate">
-    <div class="photo blank" style="aspect-ratio:4/3;" aria-hidden="true"><span class="h2" style="color:#c4c4c4;">NHS</span></div>
-    <div class="plate-text">
-      <div class="kicker"><span class="no">03</span><span class="label">University project · NHS Trust collaboration</span></div>
-      <h2 class="h2"><a href="{{ '/project-laparoscopic.dc.html' | relative_url }}">Laparoscopic surgery trainer</a></h2>
-      <p class="body" style="margin-top:14px;">Rakshith was the project manager of an eight-person team. The team designed and programmed a compliant robotic mechanism that gives surgeons realistic force feedback. The trainer is modular, low in cost and integrated with VR.</p>
-      <dl class="facts">
-        <div><dt>Role</dt><dd>Project manager · team of eight</dd></div>
-        <div><dt>Mechanism</dt><dd>Compliant · PID-controlled force feedback</dd></div>
-        <div><dt>Principles</dt><dd>Modular · low cost · VR integration</dd></div>
-      </dl>
-      <div class="actions"><a class="button button-dark" href="{{ '/project-laparoscopic.dc.html' | relative_url }}">Open the project&nbsp;→</a></div>
-    </div>
-  </article>
-
-  <div class="actions" style="justify-content:center;margin-top:clamp(36px,5vw,56px);">
-    <a class="button" href="{{ '/projects-archive.dc.html' | relative_url }}">All projects in the full index&nbsp;→</a>
+    <div class="center-actions" data-reveal><a class="btn" href="{{ '/projects-archive.dc.html' | relative_url }}">Full index of 20 projects</a></div>
   </div>
 </section>
