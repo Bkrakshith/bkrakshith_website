@@ -5,23 +5,16 @@ title: "University Life at Nottingham Trent | Rakshith Bangalore"
 description: "Rakshith Bangalore's four years at Nottingham Trent University: the aircraft cabin lab, a research flight, two societies founded, mentoring and media."
 image: /assets/og-default.jpg
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/about.html' | relative_url }}">About</a><span aria-hidden="true">/</span><span aria-current="page">University life</span></nav>
-  <div class="label label-muted" style="margin-bottom:16px;">The film · Thirty seconds</div>
-  <h1 class="h1">University life</h1>
-  <p class="deck">Rakshith's four years at Nottingham Trent University, beyond the degree: the aircraft cabin laboratory, a research flight to the Netherlands, two societies founded, mentoring, and the media made along the way.</p>
-</header>
-
-<section class="wrap sec-tight" aria-label="University life film">
-  <div style="position:relative;aspect-ratio:16/9;border:1px solid var(--line);background:#fff;">
-    <iframe src="{{ '/university-life-film.html' | relative_url }}" title="University life: the film" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+<section class="page-hero" aria-labelledby="uni-h1">
+  <div class="wrap">
+    <a class="back" href="{{ '/about.html' | relative_url }}">← About</a><br>
+    <span class="kicker" data-reveal>The film · 30 seconds</span>
+    <h1 class="h-xl" id="uni-h1" data-split>University life</h1>
+    <p class="lede" data-reveal>Four years at Nottingham Trent: the aircraft cabin lab, a research flight, two societies founded, and mentoring.</p>
+    <div class="media film" data-scale>
+      <iframe src="{{ '/university-life-film.html' | relative_url }}" title="University life: the film" loading="lazy"></iframe>
+    </div>
+    <p class="cap">The film plays on a loop. <a href="{{ '/university-life-film.html' | relative_url }}" target="_blank" rel="noopener" style="color:var(--accent)">Open it full screen ↗</a></p>
+    <a class="next" href="{{ '/project-cabin-lab.dc.html' | relative_url }}" data-reveal><small>Related project</small><span class="h-xl">Aircraft cabin lab {% include icon.html name="arrow" %}</span></a>
   </div>
-  <p class="cap">The film plays on a loop. <a href="{{ '/university-life-film.html' | relative_url }}" target="_blank" rel="noopener">Open it full screen&nbsp;↗</a></p>
-</section>
-
-<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
-  <nav class="prevnext" aria-label="More">
-    <a href="{{ '/about.html' | relative_url }}"><span class="label label-muted">← Back to</span><div class="h3">About and career history</div></a>
-    <a href="{{ '/project-cabin-lab.dc.html' | relative_url }}"><span class="label label-muted">Related project →</span><div class="h3">Aircraft cabin lab</div></a>
-  </nav>
 </section>

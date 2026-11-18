@@ -3,31 +3,19 @@ layout: site
 title: "Robotics Articles | Rakshith Bangalore"
 description: "Articles by Rakshith Bangalore on starting robotics programmes, sim-to-real transfer, robot simulation and taking hardware products to market."
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Articles</span></nav>
-  <div class="label label-muted" style="margin-bottom:16px;">Articles</div>
-  <h1 class="h1">Notes on robots and the products around them</h1>
-  <p class="deck">Articles by Rakshith Bangalore on the gaps between simulation and hardware, between demo and production, and between prototype and first production run.</p>
-</header>
-
-<section class="wrap sec">
-  <div class="article-list">
-  {%- if site.posts.size > 0 %}
-  {%- for post in site.posts %}
-    <a class="article-row" href="{{ post.url | relative_url }}">
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
-      <div>
-        <h2>{{ post.title }}</h2>
-        {%- if post.description %}
-        <p>{{ post.description }}</p>
-        {%- endif %}
-      </div>
-      <span class="arrow" aria-hidden="true">→</span>
-    </a>
-  {%- endfor %}
-  {%- else %}
-    <p class="empty">The first articles are in preparation. In the meantime, listen to <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics&nbsp;↗</a>.</p>
-  {%- endif %}
+<section class="page-hero" aria-labelledby="art-h1">
+  <div class="wrap">
+    <span class="kicker" data-reveal>Articles</span>
+    <h1 class="h-xl" id="art-h1" data-split>Articles</h1>
+    <p class="lede" data-reveal>Notes from the lab and the field. Follow by <a href="{{ '/articles/feed.xml' | relative_url }}" style="color:var(--accent)">RSS</a> or on <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener" style="color:var(--accent)">LinkedIn</a>.</p>
+    {%- if site.posts.size > 0 %}
+    <div class="alist-articles" data-stagger>
+      {%- for post in site.posts %}
+      {% include acard.html post=post %}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="lede">The first articles are on the way. Meanwhile, listen to <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="color:var(--accent)">Unfiltered Robotics ↗</a>.</p>
+    {%- endif %}
   </div>
-  <p class="small" style="margin-top:22px;color:var(--muted);">Follow new articles by <a href="{{ '/articles/feed.xml' | relative_url }}">RSS</a> or on <a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">LinkedIn</a>.</p>
 </section>

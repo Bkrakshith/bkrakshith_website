@@ -1,52 +1,27 @@
 ---
-layout: site
+layout: project
 nav: projects
+slug: cabin-lab
 title: "Aircraft Cabin Research Lab | Rakshith Bangalore"
 description: "A decommissioned Embraer ERJ 145 converted into a flight-comfort research laboratory with sound, seat vibration and visuals for EU Clean Sky 2 research."
 image: /assets/og-default.jpg
 project: true
 keywords: "aircraft cabin laboratory, Embraer ERJ 145, vibro-acoustics, EU Clean Sky 2, MATLAB, CUDA"
+heading: "Aircraft cabin lab"
+lede: "An Embraer ERJ 145 airframe turned into a flight-comfort laboratory, for EU Clean Sky 2 research."
+stats:
+  - { v: "2", count: 2, l: "Years" }
+  - { v: "3", count: 3, l: "Channels: sound, vibration, visuals" }
+  - { v: "50–200 Hz", l: "Seat vibration" }
+blocks:
+  - h: "Brief"
+    p: "Recreate the sound, seat vibration and visuals of flight inside a real airframe."
+  - h: "Build"
+    p: "Studio speakers, bass shakers under the seats and screens outside the windows. One USB dock lets one student run all three systems."
+  - h: "Result"
+    p: "Used for turboprop comfort research in the Comfdemo project. A later scholarship added a MATLAB audio equaliser with CUDA."
+facts:
+  - { k: "Airframe", v: "Embraer ERJ 145" }
+  - { k: "Programme", v: "EU Clean Sky 2 · Comfdemo" }
+  - { k: "Tools", v: "Ansys · MATLAB · CUDA" }
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects-archive.dc.html' | relative_url }}">Full index</a><span aria-hidden="true">/</span><span aria-current="page">Aircraft cabin lab</span></nav>
-  <div class="kicker"><span class="no">07</span><span class="label">University project · Two years · EU Clean Sky 2</span></div>
-  <h1 class="h1">Aircraft cabin lab</h1>
-  <p class="deck">A multifunctional laboratory that recreates the visuals, sounds and seat vibrations of flight. It uses an Embraer ERJ 145 that flew millions of miles for British Airways and Flybe before Nottingham Trent University moved it into its engineering building in 2021.</p>
-  <div class="chips"><span class="chip chip-dark">Research infrastructure</span><span class="chip">Vibro-acoustics</span><span class="chip">Systems integration</span><span class="chip">Signal processing</span></div>
-</header>
-
-<section class="wrap sec">
-  <div class="split">
-    <div>
-      <div class="block">
-        <h2 class="label">What</h2>
-        <p class="body">A research laboratory inside the airframe of a decommissioned Embraer ERJ 145. Rakshith worked on the project for two years. It was Rakshith's first practical engineering project, and it became an operational research platform.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">How</h2>
-        <p class="body">The team integrated off-the-shelf equipment to an industrial standard. Studio speakers and subwoofers produce the cabin sound. Bass shakers below the seats give vibration from 50 Hz to 200 Hz. Screens on a custom frame outside the windows show the visuals.</p>
-        <p class="body">An acoustic model in Ansys found the resonance behaviour of the cabin. With one USB dock and a user manual, a single student can operate all three industrial systems.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Results</h2>
-        <p class="body">The laboratory supported perceived-comfort research on turboprop aircraft for the EU Clean Sky 2 Comfdemo project. In a later summer research scholarship, Rakshith developed the laboratory's audio equaliser: signal measurement at each seat, then a parametric equaliser in MATLAB with vectorised code and CUDA acceleration, checked against recorded turboprop noise.</p>
-      </div>
-    </div>
-    <aside aria-label="Project facts">
-      <dl class="facts">
-        <div><dt>Airframe</dt><dd>Embraer ERJ 145 · ex British Airways and Flybe</dd></div>
-        <div><dt>Duration</dt><dd>Two years</dd></div>
-        <div><dt>Programme</dt><dd>EU Clean Sky 2 · Comfdemo</dd></div>
-        <div><dt>Channels</dt><dd>Sound · 50–200 Hz seat vibration · visuals</dd></div>
-        <div><dt>Follow-on</dt><dd>MATLAB parametric equaliser · CUDA acceleration</dd></div>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
-  <nav class="prevnext" aria-label="More projects">
-    <a href="{{ '/project-laparoscopic.dc.html' | relative_url }}"><span class="label label-muted">← Previous</span><div class="h3">Laparoscopic surgery trainer</div></a>
-    <a href="{{ '/project-ai-software.dc.html' | relative_url }}"><span class="label label-muted">Next →</span><div class="h3">AI-enabled full-stack software</div></a>
-  </nav>
-</section>

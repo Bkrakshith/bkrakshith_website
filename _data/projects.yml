@@ -1,0 +1,75 @@
+# One list of projects for the homepage, the Projects page and the
+# "next project" links. Order = display order. `image` is optional; projects
+# without one get a coloured text card. `tone`: dark | accent | soft.
+- slug: fragrance-castle
+  title: Fragrance Castle
+  tag: Simulation · Humanoids
+  line: Two AgiBot G2 humanoids and an AMR run a perfume warehouse and boutique, in Isaac Sim.
+  context: Kyne Robotics · 2026
+  cat: simulation
+  url: /project-fragrance-castle.dc.html
+  image: /assets/fragrance-castle/boutique.jpg
+  featured: true
+- slug: wardzero
+  title: WardZero
+  tag: Simulation · Open source
+  line: A simulated hospital where robots train before they meet patients.
+  context: Independent · 2026
+  cat: simulation
+  url: /project-wardzero.dc.html
+  image: /assets/wardzero/hospital-wing.jpg
+  featured: true
+- slug: humanoid
+  title: Humanoid robotics
+  tag: Humanoids · PepsiCo
+  line: Industrial use cases on Unitree H1-2 and G1, from simulation to real hardware.
+  context: PepsiCo programme · 2 years
+  cat: robots
+  url: /project-humanoid.dc.html
+  image: /assets/humanoid-04-palletising.jpg
+  featured: true
+- slug: manipulator
+  title: Mobile manipulator
+  tag: Manufacturing · Award
+  line: A UR-10 arm on an Omron LD250 base with a tool changer, scoped with Walkers.
+  context: MEng capstone
+  cat: robots
+  url: /project-manipulator.dc.html
+  tone: dark
+  mark: UR-10
+- slug: laparoscopic
+  title: Surgery trainer
+  tag: Medical robotics · NHS
+  line: A compliant mechanism that gives surgeons realistic force feedback.
+  context: University · 8 months
+  cat: robots
+  url: /project-laparoscopic.dc.html
+  tone: accent
+  mark: NHS
+- slug: cabin-lab
+  title: Aircraft cabin lab
+  tag: Research · EU Clean Sky 2
+  line: An Embraer ERJ 145 turned into a flight-comfort laboratory.
+  context: University · 2 years
+  cat: robots
+  url: /project-cabin-lab.dc.html
+  tone: soft
+  mark: ERJ 145
+- slug: ai-software
+  title: AI-enabled software
+  tag: Product delivery
+  line: Post-production cut from four days to four hours.
+  context: Current
+  cat: product
+  url: /project-ai-software.dc.html
+  tone: soft
+  mark: 4d → 4h
+- slug: portable-podcasting
+  title: Portable podcasting
+  tag: Hardware product
+  line: A portable studio, from prototype to its first production run.
+  context: Current
+  cat: product
+  url: /project-portable-podcasting.dc.html
+  tone: dark
+  mark: BOM · DFM

@@ -3,52 +3,36 @@ layout: site
 ---
 {%- assign words = content | strip_html | number_of_words -%}
 {%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
-<article class="wrap narrow article">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/articles/' | relative_url }}">Articles</a></nav>
-
-  <header class="article-head">
-    <div class="label label-muted">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
-      &nbsp;·&nbsp; {{ minutes }} min read
-    </div>
-    <h1 class="h1">{{ page.title }}</h1>
+<article class="article">
+  <div class="wrap narrow">
+    <a class="back" href="{{ '/articles/' | relative_url }}">← Articles</a>
+    <div class="acard-meta" data-reveal><span>{{ minutes }} min read</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time></div>
+    <h1 data-split>{{ page.title }}</h1>
     {%- if page.description %}
-    <p class="standfirst">{{ page.description }}</p>
+    <p class="standfirst" data-reveal>{{ page.description }}</p>
     {%- endif %}
-  </header>
-
+  </div>
   {%- if page.image %}
-  <figure class="cover">
+  <figure class="wrap cover" data-scale>
     <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}">
   </figure>
   {%- endif %}
-
-  <div class="prose">
-    {{ content }}
+  <div class="wrap narrow">
+    <div class="prose">
+      {{ content }}
+    </div>
+    <footer class="byline">
+      <img src="{{ '/assets/raks-profile.webp' | relative_url }}" alt="" width="52" height="52">
+      <div><b>Rakshith Bangalore</b><span>Robotics engineer · Host of <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener" style="color:var(--accent)">Unfiltered Robotics</a></span></div>
+    </footer>
+    <div class="actions">
+      <a class="btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener">Share on LinkedIn {% include icon.html name="arrow" %}</a>
+    </div>
+    {%- if page.previous or page.next %}
+    <nav class="more" aria-label="More articles">
+      {%- if page.next %}<a href="{{ page.next.url | relative_url }}"><small>Newer</small><span>{{ page.next.title }}</span></a>{% endif %}
+      {%- if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>Older</small><span>{{ page.previous.title }}</span></a>{% endif %}
+    </nav>
+    {%- endif %}
   </div>
-
-  <footer class="article-foot">
-    <div class="byline">
-      <img src="{{ '/assets/raks-profile.webp' | relative_url }}" alt="" width="56" height="56">
-      <div>
-        <div class="byline-name">Rakshith Bangalore</div>
-        <div class="byline-role">Robotics engineer · Host of <a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics</a></div>
-      </div>
-    </div>
-    <div class="actions" style="margin-top:0;">
-      <a class="button" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" target="_blank" rel="noopener">Share on LinkedIn&nbsp;↗</a>
-      <a class="button button-dark" href="{{ '/contact.html' | relative_url }}">Contact&nbsp;→</a>
-    </div>
-  </footer>
-
-  {%- if page.previous or page.next %}
-  <nav class="more-articles" aria-label="More articles">
-    {%- if page.next %}
-    <a href="{{ page.next.url | relative_url }}"><span>Newer</span>{{ page.next.title }}</a>
-    {%- endif %}
-    {%- if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}"><span>Older</span>{{ page.previous.title }}</a>
-    {%- endif %}
-  </nav>
-  {%- endif %}
 </article>

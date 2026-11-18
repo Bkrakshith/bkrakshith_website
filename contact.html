@@ -1,58 +1,44 @@
 ---
 layout: site
 nav: contact
-title: "Contact Rakshith Bangalore | Robotics Solutions Architect"
-description: "Book a call with Rakshith Bangalore to start a robotics programme or discuss a robot solution, feasibility study or pilot. UK and Singapore, remote worldwide."
+no_cta: true
+title: "Contact Rakshith Bangalore | Robotics Engineer"
+description: "Talk robots with Rakshith Bangalore: speaking invitations, conferences, panels, collaborations and humanoids for business. United Kingdom and Singapore."
 image: /assets/og-default.jpg
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
-  <div class="label label-muted" style="margin-bottom:16px;">Contact</div>
-  <h1 class="h1">Let's connect</h1>
-  <p class="deck">Starting a robotics programme, planning a pilot, or looking for a robotics generalist who works across hardware and software? Choose the option that suits the enquiry.</p>
-</header>
-
-<section class="wrap sec" aria-label="Contact options">
-  <div class="contact-grid">
-    <div>
-      <span class="label label-muted">01 · Recommended</span>
-      <h2 class="h3">Book a call</h2>
-      <p class="small">Reserve a time directly in Rakshith's calendar on Topmate. Use this option for robotics programme set-up, solution architecture, pilots, advice or collaboration.</p>
-      <div class="actions"><a class="button button-dark" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect&nbsp;↗</a></div>
+{%- assign topmate = "https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&utm_campaign=rakshith_bangalore" -%}
+<section class="page-hero sec-last" aria-labelledby="contact-h1">
+  <div class="wrap">
+    <span class="kicker" data-reveal>Contact</span>
+    <h1 class="h-xl" id="contact-h1" data-split>Let's talk robots</h1>
+    <p class="lede" data-reveal>Rakshith likes meeting people in robotics. Say hello, send an invitation or share an idea.</p>
+    <div class="ccards" data-stagger>
+      <div class="ccard tile-accent" data-reveal>
+        <h2>Book a chat</h2>
+        <p>A short call about robots, a project or an idea.</p>
+        <a class="btn btn-light" href="{{ topmate }}" target="_blank" rel="noopener">Book a chat {% include icon.html name="arrow" %}</a>
+      </div>
+      <div class="ccard" data-reveal>
+        <h2>Speaking and events</h2>
+        <p>Invite Rakshith to give a talk, join a panel or attend a conference.</p>
+        <a class="btn" href="#" data-email data-subject="Speaking invitation">Send an invitation</a>
+      </div>
+      <div class="ccard" data-reveal>
+        <h2>Collaborations</h2>
+        <p>Research, open-source robotics and robot builds.</p>
+        <a class="btn" href="#" data-email data-subject="Collaboration">Suggest a project</a>
+      </div>
+      <div class="ccard tile-dark" data-reveal>
+        <h2>Humanoids for business</h2>
+        <p>See where humanoids, quadrupeds and AMRs fit your business. No obligation.</p>
+        <a class="btn btn-light" href="{{ '/humanoids-for-business.html' | relative_url }}">For business</a>
+      </div>
     </div>
-    <div>
-      <span class="label label-muted">02</span>
-      <h2 class="h3">Send an email</h2>
-      <p class="small">For written enquiries, introductions and opportunities. Please include a short summary of the subject.</p>
-      <p class="small" style="margin-top:12px;"><a href="#" data-email data-email-text style="font-family:var(--display);font-size:15px;font-weight:600;">Show the email address</a></p>
-      <noscript><p class="small">Email: rakshith [at] bkrakshith [dot] com</p></noscript>
-    </div>
-    <div>
-      <span class="label label-muted">03</span>
-      <h2 class="h3">Podcast guests</h2>
-      <p class="small">Unfiltered Robotics looks for working roboticists, builders and founders in legged and applied robotics. Send a short pitch by email.</p>
-      <div class="actions"><a class="button" href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics&nbsp;↗</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap sec" style="padding-top:0;" aria-labelledby="elsewhere-title">
-  <div class="cols-2">
-    <div>
-      <h2 class="label" id="elsewhere-title" style="margin-bottom:12px;">Elsewhere</h2>
-      <dl class="facts">
-        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/rakshithbangalore" target="_blank" rel="noopener">linkedin.com/in/rakshithbangalore&nbsp;↗</a></dd></div>
-        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/mr.rakshith/" target="_blank" rel="noopener">@mr.rakshith&nbsp;↗</a></dd></div>
-        <div><dt>Podcast</dt><dd><a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">unfilteredrobotics.com&nbsp;↗</a></dd></div>
-        <div><dt>Articles</dt><dd><a href="{{ '/articles/' | relative_url }}">Articles</a> · <a href="{{ '/articles/feed.xml' | relative_url }}">RSS feed</a></dd></div>
-      </dl>
-    </div>
-    <div>
-      <h2 class="label" style="margin-bottom:12px;">Locations</h2>
-      <dl class="facts">
-        <div><dt>Based in</dt><dd>United Kingdom and Singapore</dd></div>
-        <div><dt>Works with</dt><dd>Teams in robotics, AI software and hardware products</dd></div>
-      </dl>
+    <div class="contact-rows" data-reveal style="margin-top:40px">
+      <div><b>Email</b><a href="#" data-email data-email-text>rakshith [at] bkrakshith [dot] com</a></div>
+      <div><b>Podcast guests</b><a href="https://unfilteredrobotics.com" target="_blank" rel="noopener">Unfiltered Robotics ↗</a></div>
+      <div><b>Based in</b><span class="muted">United Kingdom and Singapore</span></div>
+      <div><b>Social</b>{% include socials.html %}</div>
     </div>
   </div>
 </section>

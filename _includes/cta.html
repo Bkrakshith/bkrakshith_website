@@ -1,0 +1,19 @@
+<section class="sec cta" aria-labelledby="cta-title">
+  <div class="wrap cta-grid">
+    <div class="cta-photo" data-reveal>
+      <img src="{{ page.cta_image | default: '/assets/raks-profile.webp' | relative_url }}" alt="Rakshith Bangalore" width="1200" height="1200" loading="lazy">
+      <span class="badge" aria-hidden="true">{% include icon.html name="hand" %}</span>
+    </div>
+    <div>
+      <h2 class="h-sec" id="cta-title" data-split>Let's talk robots</h2>
+      <p class="lede" data-reveal>Rakshith enjoys meeting people who build and use robots. Invite Rakshith to speak, to join a conference or panel, or to collaborate on a project.</p>
+      <ul class="invites" data-reveal>
+        <li>Talks</li><li>Conferences and panels</li><li>Podcasts</li><li>Collaborations</li>
+      </ul>
+      <div class="actions" data-reveal>
+        <a class="btn btn-solid" href="{{ '/contact.html' | relative_url }}" data-email data-subject="Invitation">Send an invitation {% include icon.html name="arrow" %}</a>
+        <a class="btn" href="{{ topmate }}" target="_blank" rel="noopener">Book a chat</a>
+      </div>
+    </div>
+  </div>
+</section>

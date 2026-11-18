@@ -2,165 +2,147 @@
 layout: site
 nav: home
 person_schema: true
-title: "Rakshith Bangalore | Robotics Solutions Architect"
-description: "Robotics solutions architect and hands-on generalist across hardware and software. Rakshith Bangalore helps startups and businesses start robotics programmes."
+faq: faq
+title: "Rakshith Bangalore | Robotics Engineer"
+description: "Rakshith Bangalore is a robotics engineer who architects solutions and gets robots into productive work: humanoids, simulation and real hardware. Open to talks, conferences and collaborations."
 image: /assets/og-default.jpg
 ---
-<!-- ===================== HERO ===================== -->
-<section class="wrap" style="padding-bottom:clamp(30px,5vw,64px);" aria-labelledby="hero-name">
-  <h1 class="wordmark" id="hero-name">Rakshith<span class="visually-hidden"> Bangalore — robotics solutions architect and robotics generalist for startups and businesses</span></h1>
-  <div class="hero-grid">
-    <figure class="side-l">
-      <div class="photo r-4x5"><img src="assets/humanoid-01-gantry.jpg" alt="Rakshith Bangalore with the Unitree H1-2 humanoid robot on its gantry" style="object-position:center 30%;" width="1000" height="1244"></div>
-      <figcaption class="cap">Fig. 1 — With the Unitree H1-2 humanoid on its gantry.</figcaption>
-    </figure>
-    <div class="portrait">
-      <img class="bw" src="assets/raks-profile.webp" alt="Portrait of Rakshith Bangalore, robotics solutions architect" width="1200" height="1200" fetchpriority="high">
+{%- assign topmate = "https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&utm_campaign=rakshith_bangalore" -%}
+
+<section class="hero" aria-labelledby="hero-name">
+  <div class="hero-row">
+    <div class="hero-left">
+      <h1 class="hero-name" id="hero-name">Rakshith Bangalore<span class="visually-hidden">, robotics engineer</span></h1>
+      <p class="hero-word" data-split aria-hidden="true">Robotics</p>
     </div>
-    <div class="side-r">
-      <div class="label label-muted" style="margin-bottom:14px;">Robotics solutions architect · Generalist</div>
-      <h2 class="h3" style="margin-bottom:12px;">Hands-on with real robots, across hardware and software.</h2>
-      <p class="small">Rakshith Bangalore was involved in starting a robotics programme at Nottingham Trent University. The work is hands-on: running demos, teleoperating the robots, building reinforcement learning pipelines, and reading and testing different methods to make humanoid robots work in industrial settings. Most of Rakshith's experience comes from work on real hardware.</p>
-      <div class="actions">
-        <a class="button button-dark" href="robotics-consulting.html">Work with Rakshith&nbsp;→</a>
-        <a class="button" href="projects.dc.html">View the projects</a>
+    <div class="hero-card">
+      <div class="hero-card-inner">
+        <img src="{{ '/assets/humanoid-01-gantry.jpg' | relative_url }}" alt="Rakshith Bangalore with the Unitree H1-2 humanoid robot" width="1000" height="1244" fetchpriority="high">
+      </div>
+      <span class="badge" aria-hidden="true">{% include icon.html name="hand" %}</span>
+    </div>
+    <div class="hero-right">
+      <p class="hero-word" data-split aria-hidden="true" style="--d:.15s">Engineer</p>
+      <p class="hero-tag">Getting robots out of the lab and into productive work. UK and Singapore.</p>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<section class="sec" aria-labelledby="svc-title">
+  <div class="wrap svc-split">
+    <div>
+      <h2 class="h-sec" id="svc-title" data-split>What Rakshith works on</h2>
+      <p class="lede" data-reveal>A robotics engineer who architects solutions, and likes robots best when they do real work.</p>
+      <div class="acc">
+        <details open data-reveal>
+          <summary>1. Humanoid robots {% include icon.html name="chevron" %}</summary>
+          <div class="acc-body"><ul><li>Unitree H1-2 and G1</li><li>Live demos and teleoperation</li><li>Case handling and palletising</li></ul></div>
+        </details>
+        <details data-reveal>
+          <summary>2. Simulation and RL {% include icon.html name="chevron" %}</summary>
+          <div class="acc-body"><ul><li>Isaac Sim and MuJoCo</li><li>Reinforcement learning pipelines</li><li>Sim-to-real tests on hardware</li></ul></div>
+        </details>
+        <details data-reveal>
+          <summary>3. Robots at work {% include icon.html name="chevron" %}</summary>
+          <div class="acc-body"><ul><li>Tasks a robot can do every shift</li><li>Humanoids, quadrupeds and AMRs</li><li>From demo to productive use</li></ul></div>
+        </details>
+        <details data-reveal>
+          <summary>4. Solution architecture {% include icon.html name="chevron" %}</summary>
+          <div class="acc-body"><ul><li>Hardware and software as one system</li><li>Robot, sensor and software choice</li><li>Safety and integration</li></ul></div>
+        </details>
       </div>
     </div>
+    <div class="card-slot" data-card-slot aria-hidden="true">
+      <img src="{{ '/assets/humanoid-01-gantry.jpg' | relative_url }}" alt="" width="1000" height="1244" loading="lazy">
+    </div>
   </div>
 </section>
 
-<!-- ===================== SERVICES ===================== -->
-<section class="wrap sec" style="padding-top:clamp(16px,3vw,36px);" aria-labelledby="services-title">
-  <div class="sec-head">
-    <h2 class="label" id="services-title">Work with Rakshith</h2>
-    <a class="label label-muted" href="robotics-consulting.html" style="text-decoration:none;">All services and questions&nbsp;→</a>
-  </div>
-  <div class="cols-3">
+<section class="sec" aria-labelledby="about-title">
+  <div class="wrap about-split">
     <div>
-      <h3 class="h3" style="margin-bottom:12px;">Starting a robotics programme</h3>
-      <p class="small">For a team that is starting a robotics programme, Rakshith can get hands-on from the first week: knowing what to prioritise, what to build first, and which demos help to win clients.</p>
-    </div>
-    <div>
-      <h3 class="h3" style="margin-bottom:12px;">Simulation and RL pipelines</h3>
-      <p class="small">Simulation in Isaac Sim or MuJoCo, reinforcement learning pipelines, and tests of methods from current research on real robot hardware.</p>
-    </div>
-    <div>
-      <h3 class="h3" style="margin-bottom:12px;">Demos and first pilots</h3>
-      <p class="small">Demos and teleoperation sessions for customers and partners, and help to scope a first pilot with a measurable end state.</p>
-    </div>
-  </div>
-  <div class="actions" style="margin-top:clamp(24px,3vw,36px);">
-    <a class="button button-dark" href="robotics-consulting.html">Robotics services&nbsp;→</a>
-    <a class="button" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Book a call&nbsp;↗</a>
-  </div>
-</section>
-
-<!-- ===================== LATEST ===================== -->
-<section class="wrap sec" style="padding-top:0;" aria-labelledby="latest-title">
-  <div class="sec-head">
-    <span class="label">Latest project</span>
-    <span class="label label-muted">Kyne Robotics · Simulation only</span>
-  </div>
-  <div class="split">
-    <figure>
-      <a href="project-fragrance-castle.dc.html" class="photo r-16x10" style="display:block;" tabindex="-1" aria-hidden="true"><img src="assets/fragrance-castle/boutique.jpg" alt="" loading="lazy" width="1600" height="900"></a>
-      <figcaption class="cap">G2-H and the AMR trolley in the Fragrance Castle boutique. Isaac Sim 6.0.1, RTX real-time path tracing.</figcaption>
-    </figure>
-    <div>
-      <div class="label" style="margin-bottom:14px;">Fragrance Castle</div>
-      <h2 class="h2" id="latest-title" style="font-size:clamp(26px,3.1vw,42px);">Humanoid robots for a perfume business, from dock to boutique.</h2>
-      <p class="body dropcap" style="margin-top:22px;">A Kyne Robotics case study for Fragrance Castle. Two AgiBot G2 humanoids and an AMR restock a warehouse, pack online orders and refill a luxury boutique, in a site built to Singapore building rules. The site, the robots and the film were all built in Isaac Sim.</p>
-      <div class="stats stats-3" style="margin:24px 0;">
-        <div><div class="num">16/16</div><div class="label">Shots passed the gate</div></div>
-        <div><div class="num">3</div><div class="label">Robots on one site</div></div>
-        <div><div class="num">314</div><div class="label">Automated tests</div></div>
+      <h2 class="h-sec" id="about-title" data-split>About Rakshith</h2>
+      <p class="lede" data-reveal>Robotics engineer across hardware and software. Involved in starting a robotics programme at Nottingham Trent University, and learnt most of it hands-on, with real robots.</p>
+      <div class="stats" data-stagger>
+        <div data-reveal><div class="stat-num"><span data-count="2">2</span></div><div class="stat-label">Years on humanoids</div></div>
+        <div data-reveal><div class="stat-num"><span data-count="20">20</span></div><div class="stat-label">Projects</div></div>
+        <div data-reveal><div class="stat-num"><span data-count="5">5</span></div><div class="stat-label">Organisations</div></div>
       </div>
-      <div class="actions" style="margin-top:0;">
-        <a class="button button-dark" href="project-fragrance-castle.dc.html">Read the project&nbsp;→</a>
-        <a class="button" href="https://kynerobotics.com/work-fragrance-castle.html" target="_blank" rel="noopener">Kyne Robotics case study&nbsp;↗</a>
+      <div class="contact-rows" data-reveal>
+        <div><b>Email</b><a href="{{ '/contact.html' | relative_url }}" data-email data-email-text>Email</a></div>
+        <div><b>Book a chat</b><a href="{{ topmate }}" target="_blank" rel="noopener">topmate.io</a></div>
       </div>
+      <div data-reveal style="margin-top:22px">{% include socials.html %}</div>
+      <div class="actions" data-reveal><a class="btn" href="{{ '/about.html' | relative_url }}">Full story</a></div>
+    </div>
+    <div class="about-photo about-robot" data-scale>
+      <img src="{{ '/assets/galbot-s1.webp' | relative_url }}" alt="Galbot S1 humanoid robot" width="860" height="1236" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ===================== THE ENGINEER ===================== -->
-<section class="wrap sec" style="padding-top:0;" aria-labelledby="engineer-title">
-  <div class="sec-head">
-    <span class="label">The engineer</span>
-    <a class="label label-muted" href="about.html" style="text-decoration:none;">Full profile and career history&nbsp;→</a>
+<section class="sec" aria-labelledby="work-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="work-title" data-split>Featured projects</h2>
+    <p class="lede" data-reveal>Recent work, in simulation and on real humanoid robots.</p>
+    <div class="stack">
+      {%- assign n = 0 -%}
+      {%- for p in site.data.projects -%}{%- if p.featured %}
+      <div class="stack-card" style="--i:{{ n }}">{% include pcard.html p=p %}</div>
+      {%- assign n = n | plus: 1 -%}
+      {%- endif -%}{%- endfor %}
+    </div>
+    <div class="center-actions" data-reveal><a class="btn" href="{{ '/projects.dc.html' | relative_url }}">Browse all projects</a></div>
   </div>
-  <div class="collage">
-    <div class="photo r-4x5" style="grid-column:span 3;"><img src="assets/humanoid-03-case-grip.jpg" alt="Humanoid end effector taking a packed case" loading="lazy" width="1024" height="576"></div>
-    <div class="photo r-3x4 hide-sm" style="grid-column:span 3;margin-top:clamp(40px,7vw,96px);"><img src="assets/humanoid-05-lab.jpg" alt="The robotics laboratory after hours" loading="lazy" width="1600" height="900"></div>
-    <figure style="grid-column:span 6;">
-      <div class="photo r-1x1"><img src="assets/humanoid-04-palletising.jpg" alt="Humanoid robot palletising trials on the laboratory floor" loading="lazy" width="1024" height="576"></div>
-      <figcaption class="cap">Fig. 2 — Palletising trials with a humanoid robot, PepsiCo programme.</figcaption>
-    </figure>
-    <h2 class="h1 overlay-title" id="engineer-title">Intelligence<br>into machines</h2>
+</section>
+
+<section class="sec" aria-labelledby="orgs-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="orgs-title" data-split>Worked with</h2>
+    <p class="lede" data-reveal>Organisations Rakshith has worked with.</p>
+    <ul class="orgs" data-stagger>
+      <li class="org" data-reveal>Nottingham Trent University</li>
+      <li class="org" data-reveal>PepsiCo</li>
+      <li class="org" data-reveal>Unitree</li>
+      <li class="org" data-reveal>Autodiscovery</li>
+      <li class="org" data-reveal>Fragrance Castle</li>
+    </ul>
   </div>
-  <div class="cols-3" style="margin-top:clamp(36px,5vw,60px);">
+</section>
+
+<section class="sec" aria-labelledby="faq-title">
+  <div class="wrap faq-split">
     <div>
-      <h3 class="h3" style="margin-bottom:12px;">Profile</h3>
-      <p class="small">Rakshith is a robotics solutions architect and hands-on generalist. The experience covers humanoid robot R&amp;D for PepsiCo, mobile manipulation for Walkers, medical robotics with an NHS Trust, robot simulation, and hardware and software product delivery.</p>
+      <h2 class="h-sec" id="faq-title" data-split>Why robots</h2>
+      <p class="lede" data-reveal>What got Rakshith into robotics, and what keeps it interesting.</p>
     </div>
-    <div>
-      <h3 class="h3" style="margin-bottom:12px;">Approach</h3>
-      <p class="small">A system rarely fails because of the model. It fails because of the parts around the model. Rakshith identifies the system before trusting it, on a humanoid actuator and in an AI product alike.</p>
+    <div class="acc">
+      {%- for q in site.data.faq %}
+      <details data-reveal>
+        <summary>{{ forloop.index }}. {{ q.q }} {% include icon.html name="chevron" %}</summary>
+        <div class="acc-body"><p>{{ q.a }}</p></div>
+      </details>
+      {%- endfor %}
     </div>
-    <div>
-      <h3 class="h3" style="margin-bottom:12px;">At a glance</h3>
-      <ul class="points" style="margin-top:4px;">
-        <li data-n="01" class="small">Involved in starting a robotics programme at Nottingham Trent University</li>
-        <li data-n="02" class="small">Humanoid R&amp;D on Unitree H1-2 and G1</li>
-        <li data-n="03" class="small">Hardware and software, from BOM to ROS 2</li>
-      </ul>
-    </div>
-  </div>
-  <div class="actions" style="margin-top:clamp(28px,4vw,40px);">
-    <a class="button" href="about.html">Read the career history&nbsp;→</a>
   </div>
 </section>
 
-<!-- ===================== CAPABILITIES ===================== -->
-<div class="ticker" role="marquee" aria-label="Capabilities: robotics programmes, solution architecture, legged control, neural policies, sim-to-real transfer, actuator identification, mobile manipulation, robot simulation, ROS 2, systems integration, force feedback, autonomous navigation, production AI">
-  <div class="ticker-track" aria-hidden="true">
-    <span>Robotics programmes &nbsp;✳&nbsp; Solution architecture &nbsp;✳&nbsp; Legged control &nbsp;✳&nbsp; Neural policies &nbsp;✳&nbsp; Sim-to-real &nbsp;✳&nbsp; Actuator identification &nbsp;✳&nbsp; Mobile manipulation &nbsp;✳&nbsp; Robot simulation &nbsp;✳&nbsp; ROS 2 &nbsp;✳&nbsp; Systems integration &nbsp;✳&nbsp; Force feedback &nbsp;✳&nbsp; Autonomous navigation &nbsp;✳&nbsp; Production AI &nbsp;✳&nbsp;&nbsp;</span>
-    <span>Robotics programmes &nbsp;✳&nbsp; Solution architecture &nbsp;✳&nbsp; Legged control &nbsp;✳&nbsp; Neural policies &nbsp;✳&nbsp; Sim-to-real &nbsp;✳&nbsp; Actuator identification &nbsp;✳&nbsp; Mobile manipulation &nbsp;✳&nbsp; Robot simulation &nbsp;✳&nbsp; ROS 2 &nbsp;✳&nbsp; Systems integration &nbsp;✳&nbsp; Force feedback &nbsp;✳&nbsp; Autonomous navigation &nbsp;✳&nbsp; Production AI &nbsp;✳&nbsp;&nbsp;</span>
-  </div>
-</div>
-
-<!-- ===================== THE RECORD ===================== -->
-<section class="wrap sec" aria-labelledby="record-title">
-  <div class="center" style="margin-bottom:clamp(30px,4.5vw,56px);">
-    <div class="label label-muted" style="margin-bottom:14px;">Selected work</div>
-    <h2 class="h1" id="record-title">The record</h2>
-  </div>
-  {% include record.html %}
-  <div class="actions" style="justify-content:center;margin-top:clamp(30px,4vw,48px);">
-    <a class="button button-dark" href="projects.dc.html">Featured projects&nbsp;→</a>
-    <a class="button" href="projects-archive.dc.html">Full index</a>
-  </div>
-</section>
-
-<!-- ===================== SOCIAL =====================
-     Drawn by social-feed.js from social/feed.json (edited in Pages CMS).
-     Hidden automatically when there is nothing to show. -->
-<social-feed data-config="social/feed.json"></social-feed>
-<script src="social-feed.js" defer></script>
-
-<!-- ===================== CLOSING ===================== -->
-<section style="border-top:1px solid var(--ink);overflow:hidden;" aria-labelledby="connect-title">
-  <div class="wrap closing" style="padding-top:clamp(40px,6vw,80px);">
-    <div class="fig"><img class="bw" src="assets/humanoid-figure.jpg" alt="" loading="lazy" style="height:clamp(260px,30vw,400px);width:auto;margin-right:auto;"></div>
-    <div class="center" style="padding-bottom:clamp(40px,6vw,90px);">
-      <div class="label label-muted" style="margin-bottom:18px;">Get in touch</div>
-      <h2 id="connect-title" style="margin:0;"><a class="big-link" href="https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&amp;utm_campaign=rakshith_bangalore" target="_blank" rel="noopener">Let's Connect&nbsp;<span aria-hidden="true">→</span></a></h2>
-      <p class="body" style="max-width:48ch;margin:20px auto 0;">Starting a robotics programme, or need a robotics generalist who works across hardware and software? Book a call, or send an email.</p>
-      <div class="actions" style="justify-content:center;">
-        <a class="button button-dark" href="contact.html">Contact page&nbsp;→</a>
-        <a class="button" href="contact.html" data-email>Send an email</a>
-      </div>
+{%- assign posts = site.posts | where_exp: "p", "p.published != false" -%}
+{%- if posts.size > 0 %}
+<section class="sec" aria-labelledby="art-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="art-title" data-split>Articles</h2>
+    <p class="lede" data-reveal>Notes from the lab and the field.</p>
+    <div class="grid-2" style="margin-top:36px" data-stagger>
+      {%- for post in posts limit: 2 %}
+      {% include acard.html post=post %}
+      {%- endfor %}
     </div>
-    <div class="fig"><img class="bw" src="assets/humanoid-figure.jpg" alt="" loading="lazy" style="height:clamp(260px,30vw,400px);width:auto;margin-left:auto;transform:scaleX(-1);"></div>
+    <div class="center-actions" data-reveal><a class="btn" href="{{ '/articles/' | relative_url }}">All articles</a></div>
   </div>
 </section>
+{%- endif %}
+
+<social-feed data-config="{{ '/social/feed.json' | relative_url }}"></social-feed>
+<script src="{{ '/social-feed.js' | relative_url }}" defer></script>

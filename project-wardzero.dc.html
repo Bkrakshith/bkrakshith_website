@@ -1,171 +1,45 @@
 ---
-layout: site
+layout: project
 nav: projects
+slug: wardzero
 title: "WardZero: Simulated Hospital for Robots | Rakshith Bangalore"
 description: "WardZero by Rakshith Bangalore: an open platform to develop and test hospital robots in simulation, with Isaac Sim, MuJoCo, a safety layer and ROS 2."
 image: /assets/wardzero/hospital-wing.jpg
 project: true
 keywords: "robot simulation, hospital robots, Isaac Sim, MuJoCo, ROS 2, Nav2, reinforcement learning, Unitree G1, humanoid robot"
+heading: "WardZero"
+lede: "A simulated hospital where robots train before they meet patients. Open source."
+links:
+  - label: "WardZero website"
+    url: "https://bkrakshith.github.io/wardzero/"
+video: /assets/wardzero/wardzero-film.mp4
+poster: /assets/wardzero/hospital-wing.jpg
+caption: "The hospital and surgical wing in Isaac Sim 6.0, path traced. Scripted camera, not a robot view."
+stats:
+  - { v: "99.6%", count: 99.6, suf: "%", l: "Map accuracy" }
+  - { v: "96.6%", count: 96.6, suf: "%", l: "Map coverage" }
+  - { v: "0.05 → 0.97", l: "Stand survival" }
+  - { v: "2048", count: 2048, l: "Robots per GPU" }
+blocks:
+  - h: "Brief"
+    p: "A place to develop and test hospital robots away from patients: a surgical wing, two simulators, a safety layer and navigation."
+  - h: "Build"
+    p: "The same low-level interface as the real Unitree G1, so one stack runs in MuJoCo, in Isaac Sim and on the robot. PPO trains 2048 robots at once in MuJoCo MJX."
+  - h: "Result"
+    p: "Hospital, simulators, safety layer, teleoperation, mapping and navigation are complete. Standing is trained; walking is next. Simulation only so far."
+facts:
+  - { k: "Role", v: "Author and developer" }
+  - { k: "Robot", v: "Unitree G1 · BrainCo Revo2 hands" }
+  - { k: "Simulators", v: "Isaac Sim 6.0 · MuJoCo · MuJoCo MJX" }
+  - { k: "Stack", v: "ROS 2 Humble · Nav2 · slam_toolbox · PPO · ONNX" }
+  - { k: "Licence", v: "Apache 2.0" }
+  - { k: "Status", v: "In development · simulation only" }
+gallery:
+  - { src: /assets/wardzero/architecture.svg, alt: "WardZero system architecture", contain: true }
+  - { src: /assets/wardzero/wing_plan.png, alt: "Plan of the surgical wing", contain: true }
+  - { src: /assets/wardzero/training_curve.svg, alt: "Stand survival against training steps", contain: true }
+  - { src: /assets/wardzero/hospital-wing.jpg, alt: "Operating theatre in the surgical wing, Isaac Sim 6.0" }
+  - { src: /assets/wardzero/robot-model.jpg, alt: "Unitree G1 with two BrainCo Revo2 hands" }
+  - { src: /assets/wardzero/slam-navigation.jpg, alt: "slam_toolbox map, robot path and head camera" }
+note: "Research software in development, tested in simulation only. Not a medical device. Assets: NVIDIA Isaac Sim hospital building, NVIDIA Isaac for Healthcare (Apache 2.0), Lightwheel SimReady © Lightwheel AI (CC BY-NC 4.0), Unitree G1 descriptions from unitree_ros, BrainCo Revo2 hand descriptions."
 ---
-<header class="wrap page-head">
-  <nav class="crumbs label" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span><a href="{{ '/projects.dc.html' | relative_url }}">Projects</a><span aria-hidden="true">/</span><span aria-current="page">WardZero</span></nav>
-  <div class="kicker"><span class="no">R·1</span><span class="label">Independent research · Open source</span></div>
-  <h1 class="h1">WardZero: a simulated hospital for robots</h1>
-  <p class="deck">WardZero is an open platform, created by Rakshith, to develop and test robot solutions for hospitals. It provides a full simulated hospital, two simulators, a safety layer and navigation. Robots train in WardZero before they work near patients.</p>
-  <div class="chips"><span class="chip chip-dark">Robot simulation</span><span class="chip">Isaac Sim · MuJoCo</span><span class="chip">ROS 2 Humble</span><span class="chip">Reinforcement learning</span><span class="chip">Humanoid robots</span></div>
-</header>
-
-<section class="wrap sec-tight" aria-labelledby="film-title">
-  <h2 class="label" id="film-title" style="margin-bottom:12px;">Film</h2>
-  <div class="film">
-    <video src="{{ '/assets/wardzero/wardzero-film.mp4' | relative_url }}" poster="{{ '/assets/wardzero/hospital-wing.jpg' | relative_url }}" controls preload="metadata" playsinline title="WardZero hospital and surgical wing in Isaac Sim"></video>
-  </div>
-  <p class="cap">The hospital and surgical wing in Isaac Sim 6.0, path traced. The camera moves on a scripted path; it is not a robot view.</p>
-</section>
-
-<section class="wrap sec-tight" aria-labelledby="results-title">
-  <h2 class="label" id="results-title" style="margin-bottom:12px;">Results in simulation</h2>
-  <div class="stats">
-    <div><div class="num">99.6%</div><div class="label">Map accuracy</div><p class="small">Wall cells within 0.10 m of the Isaac ground truth</p></div>
-    <div><div class="num">96.6%</div><div class="label">Map coverage</div><p class="small">Of the floor that the robot can reach</p></div>
-    <div><div class="num">0.05 → 0.97</div><div class="label">Stand survival</div><p class="small">Stage A1, in 39 million steps</p></div>
-    <div><div class="num">2048</div><div class="label">Parallel robots</div><p class="small">On one RTX 3070 GPU</p></div>
-  </div>
-</section>
-
-<section class="wrap sec">
-  <div class="split">
-    <div>
-      <div class="block">
-        <h2 class="label">What</h2>
-        <p class="body">WardZero is a full simulated hospital for robot development. The surgical wing has corridors, pre-operative bays, a recovery ward, a sterile store, a scrub room and an operating theatre. Users can bring their own robot, controller or task. The platform supports mapping, navigation, controller training, teleoperation, safety functions and robot tasks, and it records synchronised sensor data with exact ground truth.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">How</h2>
-        <p class="body">All parts use the low-level interface of the real robot. The controller sends motor targets on <code>/lowcmd</code> at 500 Hz and reads joint states on <code>/lowstate</code>. As a result, the same software runs in MuJoCo, in Isaac Sim and on the real robot.</p>
-        <p class="body">The component repositories with the prefix <code>hospital-sim-</code> contain no robot-specific code. A different robot supplies its own model, simulator bindings and controller, so the platform is robot agnostic.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Results</h2>
-        <p class="body">The hospital, both simulators, the safety layer, teleoperation, mapping and navigation are complete. The controller has completed training stage A1 (stand). All tests used simulation only; no test on a real robot and no sim-to-real test is complete yet.</p>
-      </div>
-    </div>
-    <aside aria-label="Project facts">
-      <dl class="facts">
-        <div><dt>Project</dt><dd><a href="https://bkrakshith.github.io/wardzero/" target="_blank" rel="noopener">WardZero website&nbsp;↗</a></dd></div>
-        <div><dt>Role</dt><dd>Author and developer</dd></div>
-        <div><dt>Robot</dt><dd>Unitree G1, 29 DoF · two BrainCo Revo2 hands, 6 DoF each</dd></div>
-        <div><dt>Simulators</dt><dd>Isaac Sim 6.0 · MuJoCo · MuJoCo MJX</dd></div>
-        <div><dt>Stack</dt><dd>ROS 2 Humble · Nav2 · slam_toolbox · Brax PPO · ONNX · MediaPipe</dd></div>
-        <div><dt>Licence</dt><dd>Apache 2.0 · open source</dd></div>
-        <div><dt>Status</dt><dd>In development · simulation only</dd></div>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<section class="wrap" aria-labelledby="arch-title">
-  <div class="sec-head"><h2 class="label" id="arch-title">System architecture</h2><span class="label label-muted">Select the diagram to enlarge it</span></div>
-  <figure><a class="zoom diagram" href="{{ '/assets/wardzero/architecture.svg' | relative_url }}"><img src="{{ '/assets/wardzero/architecture.svg' | relative_url }}" alt="WardZero architecture: inputs and autonomy send requests to the mode manager, the mode manager drives the controller, and the controller drives MuJoCo, Isaac Sim or the real G1" loading="lazy"></a><figcaption class="visually-hidden">WardZero system architecture</figcaption></figure>
-  <div class="cols-3" style="margin-top:clamp(26px,3.5vw,40px);">
-    <div><h3 class="h3" style="margin-bottom:10px;">One interface</h3><p class="small">The controller sends <code>/lowcmd</code> and receives <code>/lowstate</code>, as on the real robot. The simulators also publish the lidar scan, odometry and head camera.</p></div>
-    <div><h3 class="h3" style="margin-bottom:10px;">One safety layer</h3><p class="small">All input sources send requests to the mode manager. It uses a control lease, a watchdog, an emergency-stop gate and speed zones.</p></div>
-    <div><h3 class="h3" style="margin-bottom:10px;">One building</h3><p class="small">One Python layout file defines the hospital. It generates the Isaac scene and the MuJoCo walls in the same world frame, so a map from one simulator is correct in the other.</p></div>
-  </div>
-</section>
-
-<section class="wrap sec">
-  <div class="split">
-    <div>
-      <div class="block">
-        <h2 class="label">World</h2>
-        <p class="body">The hospital is the NVIDIA Isaac Sim hospital building. A generated surgical wing connects to its south-east door, with the operating theatre and props of NVIDIA Isaac for Healthcare and Lightwheel SimReady.</p>
-        <p class="body">A generator builds the scene from the layout file. A build check stops the build if furniture blocks a door, if two props overlap or if a prop is outside its room. The corridors are 2 m and 4 m wide, and the doors have 2 m of clear width. A reduced copy of the assets runs on an 8 GB graphics card.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Simulation for training and test</h2>
-        <p class="body">Two simulators replace the robot and use the same low-level interface. MuJoCo provides fast physics: the ROS 2 simulator node steps it at 500 Hz, and MuJoCo MJX trains the controller. Isaac Sim provides realistic rendering, a GPU lidar and a head camera for tests of navigation and perception.</p>
-      </div>
-    </div>
-    <figure><a class="zoom diagram" href="{{ '/assets/wardzero/wing_plan.png' | relative_url }}"><img src="{{ '/assets/wardzero/wing_plan.png' | relative_url }}" alt="Plan of the surgical wing" loading="lazy"></a><figcaption class="cap">Plan of the surgical wing. Top: pre-operative bays, link corridor and recovery ward. Middle: surgical corridor. Bottom: sterile store, scrub room and operating theatre.</figcaption></figure>
-  </div>
-</section>
-
-<section class="wrap" style="padding-bottom:clamp(52px,7.5vw,104px);">
-  <div class="split">
-    <div>
-      <div class="block">
-        <h2 class="label">Controller training</h2>
-        <p class="body">PPO trains the whole-body controller in MuJoCo MJX, with 2048 robots in parallel on one RTX 3070. The curriculum has three stages: stand (A), walk with arm targets (B) and follow full-body motions (C). A teacher policy with privileged data trains a student policy that uses only the sensors of the real robot. The controller loads the student as an ONNX file.</p>
-        <p class="body">Stage A1 is complete. Survival increased from 0.05 to 0.97 in 39 million steps, in approximately one hour. Before training, the policy falls after 1.0 s; after training, it stands for the full 11 s test with a maximum tilt of 2.7 degrees.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Teleoperation and safety</h2>
-        <p class="body">All input sources send requests to the mode manager, which makes the decision. A control lease sets which source has control. A watchdog sets HOLD if the interface signal stops. A hardware emergency stop has priority over all inputs, and speed zones on the map set the maximum speed. Webcam teleoperation, with MediaPipe and a fork of xr_teleoperate, controls the arms and hands without a VR headset.</p>
-      </div>
-      <div class="block">
-        <h2 class="label">Autonomy</h2>
-        <p class="body">Navigation uses standard ROS 2 packages: slam_toolbox builds the map, AMCL localises the robot, and Nav2 with the MPPI controller plans the path. In the test, the robot followed a route of 60 points through the hospital and the surgical wing.</p>
-      </div>
-    </div>
-    <div>
-      <figure><a class="zoom diagram" href="{{ '/assets/wardzero/training_curve.svg' | relative_url }}"><img src="{{ '/assets/wardzero/training_curve.svg' | relative_url }}" alt="Survival in stage A1 against training steps" loading="lazy"></a><figcaption class="cap">Survival in stage A1 against training steps. The green ring marks the checkpoint that passed the gate.</figcaption></figure>
-      <h2 class="label" style="margin:28px 0 10px;">Mode manager · seven modes</h2>
-      <div class="status modes">
-        <div><span class="label">DAMP</span><span class="small">Removes power from the motors</span></div>
-        <div><span class="label">STAND</span><span class="small">The robot stands</span></div>
-        <div><span class="label">LOCO</span><span class="small">Walks to velocity commands</span></div>
-        <div><span class="label">MANIP</span><span class="small">Arm and hand control</span></div>
-        <div><span class="label">NAV</span><span class="small">Nav2 drives the robot</span></div>
-        <div><span class="label">AUTO</span><span class="small">The task layer drives the robot</span></div>
-        <div><span class="label">HOLD</span><span class="small">Stops the robot in place until an explicit resume</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap" aria-labelledby="status-title">
-  <div class="cols-2">
-    <div>
-      <h2 class="label" id="status-title" style="margin-bottom:12px;">Status and next steps</h2>
-      <div class="status">
-        <div><span class="chip chip-dark">Done</span><span class="small">Hospital and surgical wing in Isaac Sim and MuJoCo, from one layout</span></div>
-        <div><span class="chip chip-dark">Done</span><span class="small">Real-robot interface in both simulators, with lidar, odometry and head camera</span></div>
-        <div><span class="chip chip-dark">Done</span><span class="small">Mode manager, teleoperation, mapping and navigation</span></div>
-        <div><span class="chip">Partial</span><span class="small">Controller: stage A1 complete; walking and motion tracking next</span></div>
-        <div><span class="chip">Next</span><span class="small">Simulated patient personas for robot-human interaction studies</span></div>
-        <div><span class="chip">Next</span><span class="small">Sim-to-real transfer and tests on a real robot</span></div>
-      </div>
-    </div>
-    <div>
-      <h2 class="label" style="margin-bottom:12px;">Components</h2>
-      <dl class="facts">
-        <div><dt>hospital-sim</dt><dd>Master repository: interface contract, environment script, component list</dd></div>
-        <div><dt>…-env</dt><dd>Isaac Sim hospital and surgical wing, layout generator</dd></div>
-        <div><dt>…-description</dt><dd>Robot model: URDF, MJCF, meshes, specification</dd></div>
-        <div><dt>…-mujoco-sim</dt><dd>MuJoCo hospital from the same layout</dd></div>
-        <div><dt>…-isaac-sim</dt><dd>Physics layer, lidar, cameras, DDS and ROS 2 bridge</dd></div>
-        <div><dt>…-whole-body-rl</dt><dd>Controller training in MuJoCo MJX, ONNX export</dd></div>
-        <div><dt>…-ros2</dt><dd>Controller, mode manager, teleoperation, navigation, tasks</dd></div>
-        <div><dt>…-webcam-teleop</dt><dd>Webcam teleoperation of the arms and hands</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section class="wrap sec" aria-labelledby="stills-title">
-  <div class="sec-head"><h2 class="label" id="stills-title">Stills</h2><span class="label label-muted">Select a still to enlarge it</span></div>
-  <div class="figs">
-    <figure><a class="zoom" href="{{ '/assets/wardzero/hospital-wing.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/wardzero/hospital-wing.jpg' | relative_url }}" alt="Operating theatre in the surgical wing" loading="lazy"></div></a><figcaption class="cap">Operating theatre in the surgical wing, Isaac Sim 6.0.</figcaption></figure>
-    <figure><a class="zoom" href="{{ '/assets/wardzero/robot-model.jpg' | relative_url }}"><div class="photo"><img src="{{ '/assets/wardzero/robot-model.jpg' | relative_url }}" alt="Unitree G1 reference robot model" loading="lazy"></div></a><figcaption class="cap">Reference robot: Unitree G1 with two BrainCo Revo2 hands.</figcaption></figure>
-    <figure><a class="zoom" href="{{ '/assets/wardzero/slam-navigation.jpg' | relative_url }}"><div class="photo" style="background:#161b26;"><img src="{{ '/assets/wardzero/slam-navigation.jpg' | relative_url }}" alt="Mapping and navigation: map, robot path and head camera" loading="lazy" style="object-fit:contain;"></div></a><figcaption class="cap">Mapping and navigation: slam_toolbox map, robot path and head camera.</figcaption></figure>
-  </div>
-  <div style="border-top:1px solid var(--line);margin-top:clamp(30px,4vw,48px);padding-top:18px;">
-    <p class="small" style="color:var(--muted);"><strong class="label">Disclaimer.</strong> WardZero is research software in development. All tests used simulation only. WardZero is not a medical device. It is not for patient care, for a clinical procedure, or for the control of a real robot near people without a separate safety analysis, tests and approvals.</p>
-    <p class="small" style="color:var(--muted);margin-top:8px;"><strong class="label">Assets.</strong> Hospital building: NVIDIA Isaac Sim (NVIDIA Limited Use Content). Operating theatre: NVIDIA Isaac for Healthcare (Apache 2.0). Surgical props: Lightwheel SimReady assets © Lightwheel AI, CC BY-NC 4.0. Robot: Unitree G1 descriptions from unitree_ros and BrainCo Revo2 hand descriptions. Based on hospital-sim by Bkrakshith.</p>
-  </div>
-  <nav class="prevnext" aria-label="More projects">
-    <a href="{{ '/projects.dc.html' | relative_url }}"><span class="label label-muted">← Back to</span><div class="h3">Featured projects</div></a>
-    <a href="{{ '/project-humanoid.dc.html' | relative_url }}"><span class="label label-muted">Next →</span><div class="h3">Humanoid robotics</div></a>
-  </nav>
-</section>
