@@ -1,0 +1,109 @@
+---
+layout: site
+nav: business
+no_cta: true
+service: true
+faq: business_faq
+redirect_from:
+  - /robotics-consulting.html
+title: "Humanoid Robots for Business | Rakshith Bangalore"
+description: "Where humanoids, quadrupeds and AMRs fit into a business, and how they do productive work round the clock. Talk to Rakshith Bangalore about joining the humanoid early adopters. No obligation."
+image: /assets/fragrance-castle/og.jpg
+---
+{%- assign topmate = "https://topmate.io/rakshith_bangalore/2306081?utm_source=public_profile&utm_campaign=rakshith_bangalore" -%}
+<section class="page-hero" aria-labelledby="biz-h1">
+  <div class="wrap">
+    <span class="kicker" data-reveal>For business</span>
+    <h1 class="h-xl" id="biz-h1" data-split>Robots at work, round the clock</h1>
+    <p class="lede" data-reveal>Humanoids, quadrupeds and AMRs can now do useful work on real sites. Talk to Rakshith about where they fit in your business. No obligation.</p>
+    <div class="actions" data-reveal>
+      <a class="btn btn-solid" href="{{ topmate }}" target="_blank" rel="noopener">Talk to Rakshith {% include icon.html name="arrow" %}</a>
+      <a class="btn" href="#work">See the work</a>
+    </div>
+    <figure class="media media-photo" data-scale>
+      <img src="{{ '/assets/fragrance-castle/aisle_pick.jpg' | relative_url }}" alt="A humanoid robot picks an order into an AMR trolley in a simulated warehouse" width="1600" height="900" fetchpriority="high">
+    </figure>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="why-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="why-title" data-split>Why humanoids now</h2>
+    <p class="lede" data-reveal>What robots change for a business.</p>
+    <div class="impact" data-stagger>
+      <div data-reveal><h3>Every shift</h3><p>Robots can work nights, weekends and peaks, so output grows without extra shifts.</p></div>
+      <div data-reveal><h3>Built for people</h3><p>Humanoids use the same aisles, shelves and tools as your team, with fewer changes to the site.</p></div>
+      <div data-reveal><h3>The hard jobs</h3><p>Repetitive lifting, carrying and picking go to the robot. People move to work that needs judgement.</p></div>
+      <div data-reveal><h3>Room to scale</h3><p>Add robots as demand grows, and give them new tasks as the business changes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="fit-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="fit-title" data-split>Which robot fits</h2>
+    <p class="lede" data-reveal>The task decides the robot.</p>
+    <div class="fit" data-stagger>
+      <div class="tile tile-accent" data-reveal><span class="no">Humanoids</span><div><h3>Hands where people work</h3><p>Picking, packing, restocking and moving boxes, in spaces built for people.</p></div></div>
+      <div class="tile" data-reveal><span class="no">Quadrupeds</span><div><h3>Rough ground and stairs</h3><p>Inspection and patrol rounds, day and night, where wheels cannot go.</p></div></div>
+      <div class="tile tile-dark" data-reveal><span class="no">AMRs</span><div><h3>Goods on the move</h3><p>Carts, totes and trolleys between stations, all shift long.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="how-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="how-title" data-split>How it starts</h2>
+    <ol class="steps" data-stagger>
+      <li data-reveal><b>Talk</b><span>A free call about your site and the work. No obligation.</span></li>
+      <li data-reveal><b>Find the fit</b><span>Pick one task a robot can do every shift.</span></li>
+      <li data-reveal><b>See it work</b><span>Test the task in a simulation of your site, then on the floor.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <h2 class="h-sec" id="work-title" data-split>The work</h2>
+    <p class="lede" data-reveal>Humanoids in a perfume warehouse, a simulated hospital and a PepsiCo programme.</p>
+    <div class="pgrid pgrid-3" data-stagger=".06">
+      {%- for p in site.data.projects %}{% if p.featured %}
+      <div class="pcard-wrap" data-reveal>{% include pcard.html p=p %}</div>
+      {%- endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="faq-title">
+  <div class="wrap faq-split">
+    <div>
+      <h2 class="h-sec" id="faq-title" data-split>Questions</h2>
+      <p class="lede" data-reveal>Something else? Ask on the call.</p>
+    </div>
+    <div class="acc">
+      {%- for q in site.data.business_faq %}
+      <details data-reveal{% if forloop.first %} open{% endif %}>
+        <summary>{{ forloop.index }}. {{ q.q }} {% include icon.html name="chevron" %}</summary>
+        <div class="acc-body"><p>{{ q.a }}</p></div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec cta" aria-labelledby="join-title">
+  <div class="wrap cta-grid">
+    <div class="cta-photo about-robot" data-reveal>
+      <img src="{{ '/assets/humanoid-figure.jpg' | relative_url }}" alt="Unitree H1-2 humanoid robot" width="562" height="1389" loading="lazy">
+      <span class="badge" aria-hidden="true">{% include icon.html name="hand" %}</span>
+    </div>
+    <div>
+      <h2 class="h-sec" id="join-title" data-split>Join the early adopters</h2>
+      <p class="lede" data-reveal>Put humanoids to work on a real task, early. It starts with a conversation, with no obligation.</p>
+      <div class="actions" data-reveal>
+        <a class="btn btn-solid" href="{{ topmate }}" target="_blank" rel="noopener">Talk to Rakshith {% include icon.html name="arrow" %}</a>
+        <a class="btn" href="{{ '/contact.html' | relative_url }}" data-email data-subject="Humanoids for business">Send an email</a>
+      </div>
+    </div>
+  </div>
+</section>

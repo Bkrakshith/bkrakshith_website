@@ -6,9 +6,9 @@ Personal website of Rakshith Bangalore. Hosted on GitHub Pages, which builds it 
 `CNAME` contains `bkrakshith.com`. DNS points at GitHub Pages per GitHub's "Managing a custom domain" docs.
 
 ## Design
-Clean, white and animated: Antonio (tall, uppercase) for headlines, Inter for text, one accent colour (#5E67E6), rounded cards and pill buttons.
+Clean, white and animated: Antonio (tall, uppercase) for headlines, Inter for text, one accent colour (#1A0161, deep indigo), rounded cards and pill buttons.
 - `assets/site.css` — the only stylesheet. Colours and sizes are variables at the top.
-- `assets/site.js` — the pill menu, the email link, the lightbox and the animations: headings that rise letter by letter, sections that fade in on scroll, count-up numbers, accordions, the tilting hero card, stacked project cards and the project filters. All motion stops when the visitor asks for reduced motion, and every page still reads correctly without the script.
+- `assets/site.js` — the pill menu, the email link, the lightbox and the animations: headings that rise letter by letter, sections that fade in on scroll, count-up numbers, accordions, the hero photo card (it tilts with the pointer, then travels with the scroll into the next section), stacked project cards and the project filters. All motion stops when the visitor asks for reduced motion, and every page still reads correctly without the script.
 
 Animation hooks you can add to any element:
 - `data-reveal` — fades and slides in when it scrolls into view. Put `data-stagger` on the parent to reveal its children one after another.
@@ -17,13 +17,13 @@ Animation hooks you can add to any element:
 - `data-count="99.6" data-suffix="%"` — counts up from 0. Keep the final value as the element's text.
 
 ## Structure
-- `_layouts/site.html` — the shared shell: page head and SEO tags, the pill menu, the "Let's work together" block and the footer. Add `no_cta: true` to a page to hide the block, or `cta_image:` to change its photo.
+- `_layouts/site.html` — the shared shell: page head and SEO tags, the pill menu, the "Let's talk robots" invitation block and the footer. Add `no_cta: true` to a page to hide the block, or `cta_image:` to change its photo.
 - `_layouts/project.html` — the project page template. A project page is front matter only: `heading`, `lede`, `links`, `video` + `poster` or `hero_image`, `caption`, `stats`, `blocks` (Brief, Build, Result), `facts`, `gallery` and `note`.
 - `_layouts/article.html` — the article template.
 - `_data/projects.yml` — the list of projects: order, title, tag, one-line summary and card image (or colour and mark). The homepage, the Projects page and the "Next project" links all read it.
-- `_data/faq.yml` — questions on the homepage and the Services page, and the FAQ structured data.
+- `_data/faq.yml` — the homepage questions (what got Rakshith into robotics). `_data/business_faq.yml` — the For business questions. A page's `faq:` front matter names which file feeds its FAQ structured data.
 - `_includes/` — `pcard.html` (project card), `acard.html` (article card), `cta.html`, `socials.html`, `icon.html` (inline icons).
-- `index.html` — homepage. `about.html` — profile and career. `robotics-consulting.html` — services. `contact.html` — contact.
+- `index.html` — homepage. `about.html` — profile and career. `humanoids-for-business.html` — the For business page (the old `robotics-consulting.html` address redirects here). `contact.html` — contact.
 - `projects.dc.html` — all project cards with filters; `projects-archive.dc.html` — the full index of 20 projects.
 - `project-*.dc.html` — one page per project: `fragrance-castle`, `wardzero`, `humanoid`, `manipulator`, `laparoscopic`, `cabin-lab`, `ai-software`, `portable-podcasting`.
 - `university-life.dc.html` — the University Life page. Its animated film is `university-life-film.html`, shown in an iframe and rendered by `support.js` with `animations-v2.jsx`, `tweaks-panel.jsx` and `university-life-video.jsx`.
@@ -32,7 +32,7 @@ Animation hooks you can add to any element:
 
 To add a project: add it to `_data/projects.yml`, copy a `project-*.dc.html` file and change its front matter, then add it to `sitemap.xml`, `llms.txt` and the list in `projects-archive.dc.html`.
 
-Each page starts with front matter (`layout`, `nav`, `title`, `description`, `image`). `nav` marks the current menu item: `home`, `about`, `services`, `projects`, `latest`, `articles` or `contact`. Quote `title` and `description` if they contain a colon.
+Each page starts with front matter (`layout`, `nav`, `title`, `description`, `image`). `nav` marks the current menu item: `home`, `about`, `projects`, `latest`, `business`, `articles` or `contact`. Quote `title` and `description` if they contain a colon.
 
 The `.dc.html` file names are kept from the earlier design-tool export so that existing links keep working.
 

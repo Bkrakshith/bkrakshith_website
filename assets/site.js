@@ -10,7 +10,7 @@
   // ── Email address, assembled here so it is not in the HTML for scrapers.
   var email = 'rakshith' + '@' + 'bkrakshith' + '.com';
   document.querySelectorAll('[data-email]').forEach(function (a) {
-    a.href = 'mailto:' + email;
+    a.href = 'mailto:' + email + (a.dataset.subject ? '?subject=' + encodeURIComponent(a.dataset.subject) : '');
     if (a.hasAttribute('data-email-text')) a.textContent = email;
   });
 
@@ -113,21 +113,78 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
-  // ── Hero: card flips in, then follows the pointer.
+  // ── Hero: the photo card flips in and follows the pointer. On wide
+  //    screens it then travels with the scroll, straightens up and lands
+  //    in the [data-card-slot] beside the next section's text.
   var hero = document.querySelector('.hero');
   if (hero) {
     var go = function () { hero.classList.add('is-in'); };
     if (reduce) go(); else requestAnimationFrame(function () { requestAnimationFrame(go); });
-    var card = hero.querySelector('.hero-card-inner');
-    if (card && !reduce && window.matchMedia('(hover: hover)').matches) {
+    var heroCard = hero.querySelector('.hero-card');
+    var inner = hero.querySelector('.hero-card-inner');
+    var slot = document.querySelector('[data-card-slot]');
+    var wide = window.matchMedia('(min-width: 901px)');
+    var geo = null;
+    var flying = function () { return heroCard && heroCard.classList.contains('flying'); };
+
+    if (inner && !reduce && window.matchMedia('(hover: hover)').matches) {
       setTimeout(function () { hero.classList.add('tilt-ready'); }, 1900);
       hero.addEventListener('pointermove', function (e) {
-        if (!hero.classList.contains('tilt-ready')) return;
+        if (!hero.classList.contains('tilt-ready') || flying()) return;
         var r = hero.getBoundingClientRect();
         var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = 'rotateY(' + (-22 + x * 26).toFixed(1) + 'deg) rotateX(' + (6 - y * 16).toFixed(1) + 'deg) rotateZ(2deg)';
+        inner.style.transform = 'rotateY(' + (-22 + x * 26).toFixed(1) + 'deg) rotateX(' + (6 - y * 16).toFixed(1) + 'deg) rotateZ(2deg)';
       });
-      hero.addEventListener('pointerleave', function () { card.style.transform = ''; });
+      hero.addEventListener('pointerleave', function () { if (!flying()) inner.style.transform = ''; });
+    }
+
+    if (heroCard && slot && !reduce) {
+      var docPos = function (el) {
+        var x = 0, y = 0;
+        for (var n = el; n; n = n.offsetParent) { x += n.offsetLeft; y += n.offsetTop; }
+        return { x: x, y: y, w: el.offsetWidth };
+      };
+      var place = function () {
+        if (!geo) return;
+        var p = Math.max(0, Math.min(1, window.scrollY / geo.dy));
+        var e = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+        if (p === 0) {
+          heroCard.classList.remove('flying');
+          heroCard.style.transform = '';
+          inner.style.transform = '';
+          return;
+        }
+        heroCard.classList.add('flying');
+        heroCard.style.transform = 'translate(' + (geo.dx * e).toFixed(1) + 'px,' + (geo.dy * p).toFixed(1) + 'px) scale(' + (1 + (geo.s - 1) * e).toFixed(4) + ')';
+        var k = 1 - e;
+        inner.style.transform = 'rotateY(' + (-22 * k).toFixed(2) + 'deg) rotateX(' + (6 * k).toFixed(2) + 'deg) rotateZ(' + (2 * k).toFixed(2) + 'deg)';
+      };
+      var measure = function () {
+        if (!wide.matches) {
+          geo = null;
+          root.classList.remove('fly-on');
+          heroCard.classList.remove('flying');
+          heroCard.style.transform = '';
+          inner.style.transform = '';
+          return;
+        }
+        var a = docPos(heroCard), b = docPos(slot);
+        var dy = b.y - a.y;
+        if (dy <= 0) { geo = null; return; }
+        geo = { dx: b.x - a.x, dy: dy, s: b.w / a.w };
+        root.classList.add('fly-on');
+        place();
+      };
+      var queued = false;
+      window.addEventListener('scroll', function () {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(function () { queued = false; place(); });
+      }, { passive: true });
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+      measure();
     }
   }
 

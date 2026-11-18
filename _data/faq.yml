@@ -1,17 +1,15 @@
-# Questions and answers on the Services page (robotics-consulting.html) and
-# the homepage. The same entries feed the FAQPage structured data in
-# _layouts/site.html, so edit them here only. Third person, short sentences.
-- q: "What does a robotics solutions architect do?"
-  a: "A robotics solutions architect turns a business problem into a working robot system: the use case, the robot and software choice, safety, the pilot and the deployment plan. Rakshith Bangalore does this work hands-on, across hardware and software."
-- q: "How does a startup or a business start a robotics programme?"
-  a: "Start with one task that has a measurable end state, not the hardest task. Prove it in simulation, then run one instrumented pilot and plan the move to production before the pilot starts."
-- q: "What is a high-velocity robotics generalist?"
-  a: "An engineer who works across mechanical design, electronics, control, simulation, machine learning and product delivery, and moves an idea to a pilot quickly. Rakshith learnt most of this hands-on with real hardware."
-- q: "Why does a robotics programme need both hardware and software experience?"
-  a: "Most robotics failures happen between disciplines. A controller that works in simulation can fail on a real actuator, and a working prototype can be too expensive to make."
-- q: "Which robots and tools does Rakshith work with?"
-  a: "Unitree H1-2 and G1 humanoids, UR-10 arms and Omron LD250 mobile bases. ROS 2, Nav2, Isaac Sim, MuJoCo, reinforcement learning with PPO, Fusion 360 and Ansys."
-- q: "Where does Rakshith Bangalore work?"
-  a: "In the United Kingdom and Singapore, and remotely with teams worldwide."
-- q: "How can a team work with Rakshith?"
-  a: "Book a call on Topmate or send an email from the contact page. Work includes programme set-up, architecture and feasibility, pilots, simulation, hardware to market and fractional robotics leadership."
+# Homepage questions: what got Rakshith into robotics and what keeps it
+# interesting. Also feeds the FAQPage structured data on the homepage.
+# Third person, short sentences.
+- q: "What got Rakshith into robotics?"
+  a: "Building things at university. Rakshith founded the robotics club and the drone society at Nottingham Trent University, and worked on an aircraft cabin lab, a surgery trainer and a mobile manipulator before moving to humanoid robots."
+- q: "What keeps Rakshith motivated?"
+  a: "Seeing a robot do useful work outside a demo. Most of what Rakshith knows came from real hardware: running demos, teleoperating robots and testing new methods on humanoids."
+- q: "Why humanoid robots?"
+  a: "Most workplaces are built for people. A humanoid can use the same aisles, shelves and tools, so it can do productive work with fewer changes to the site."
+- q: "Why both hardware and software?"
+  a: "Most robotics problems sit between the two. A controller that works in simulation can fail on a real actuator, so Rakshith tests on the hardware early."
+- q: "What is Unfiltered Robotics?"
+  a: "Rakshith's podcast about legged robots, hobby builds and hardware development, with the people who build them."
+- q: "Where is Rakshith based?"
+  a: "In the United Kingdom and Singapore. Always happy to meet people in robotics, in person or online."
